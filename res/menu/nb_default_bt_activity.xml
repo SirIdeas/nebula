@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <item
+        android:id="@+id/__nb_connect"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:title="@string/__nb_connect"/>
+    
+    <item
+        android:id="@+id/__nb_disconnect"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:title="@string/__nb_disconnect"/>
+    
+</menu>

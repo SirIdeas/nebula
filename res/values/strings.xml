@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="__nb_connect">Conectar</string>
+    <string name="__nb_disconnect">Desconectar</string>
+    
+    <string name="__nb_connected">Conectado</string>
+    <string name="__nb_disconnected">Desconectado</string>
+    <string name="__nb_connecting">Conectando</string>
+   	
+</resources>
