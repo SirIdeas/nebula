@@ -1,0 +1,39 @@
+...
+#include <Nb.h>
+#define ID_HCSR04 1  // Identidicador
+#define TRIG_PIN 2
+#define ECHO_PIN 3
+
+...
+// El objeto "com" se asume como instancia de la comunicación en Arduino.
+Nb com;
+
+long last_hcsr04 = 0;
+
+// Read HCSR04
+long read_hcsr04(int trig, int echo){
+  digitalWrite(trig, LOW); 
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+  return pulseIn(echo, HIGH);
+}
+
+// procesar envios
+void cmd_send(void){
+  long lect = read_hcsr04(TRIG_PIN, ECHO_PIN);
+  if(last_hcsr04 == lect) return;
+  com.setObjectValue(ID_HCSR04);  // ID del componente
+  com.addLong(lect);
+  last_hcsr04 = lect;
+}
+
+void setup(){
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  com.setCallbackSend(cmd_send);
+  ...
+}
+
+...

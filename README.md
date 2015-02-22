@@ -1,2 +1,2 @@
 # nb-docs
-Página de documentación para Librería Nébula
+Documentación para librería Nébula. https://github.com/SirIdeas/nb-docs.git

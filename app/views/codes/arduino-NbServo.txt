@@ -1,0 +1,31 @@
+...
+#include <Nb.h>
+#include <Servo.h>
+#define ID_SERVO 1  // Identidicador
+
+...NbServo
+// El objeto "com" se asume como instancia de la comunicación en Arduino.
+Nb com;
+
+Servo servo;
+
+// procesar mensaje a objetos
+bool cmd_object(int id){
+
+  // Si el servo
+  if(id == ID_SERVO && com.available(1)){
+    servo.write(com.read());
+    return true;
+  }
+
+  return false;
+
+}
+
+void setup(){
+  servo.attach(12);
+  com.setCallbackObject(cmd_object);
+  ...
+}
+
+...

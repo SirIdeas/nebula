@@ -1,0 +1,11 @@
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+
+  #RewriteBase /sandbox/
+  
+  RewriteRule . am.php [L]
+  RewriteRule ^$ am.php [L]
+
+</IfModule>

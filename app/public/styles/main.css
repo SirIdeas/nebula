@@ -1,0 +1,194 @@
+body {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  color: #263238;
+}
+.brand-logo img {
+  height: 64px;
+}
+.brand-logo span {
+  display: inline-block;
+  line-height: 64px;
+  vertical-align: top;
+}
+nav.page {
+  position: relative;
+  z-index: 2;
+  background-color: #263238;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+footer.page {
+  line-height: 50px;
+  background-color: #455a64;
+  color: #fff;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.home nav.page,
+.home footer.page {
+  background-color: transparent !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.home nav.page {
+  top: 0;
+}
+.home footer.page {
+  bottom: 0;
+}
+.viewport {
+  position: relative;
+  z-index: 0;
+}
+.sidebar-logo {
+  text-align: right;
+}
+.sidebar-logo h5 {
+  font-weight: bold;
+  color: #fff;
+  margin-top: -20px;
+}
+.indice {
+  text-align: right;
+  padding: 0 20px;
+}
+.indice h6 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.indice li {
+  line-height: 1.1em;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.page-inner {
+  background-color: #fff;
+  padding: 5px 30px;
+}
+.home-bg {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-image: url("../images/index.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
+  .home-bg {
+    background-image: url("..\images\index@2x.jpg");
+    -webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    background-size: auto auto;
+  }
+}
+.home-inner {
+  color: #fff;
+  position: relative;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  padding-bottom: 50px;
+}
+.home-inner p {
+  color: #fff;
+}
+.home-inner i:before {
+  font-size: 96px;
+}
+.blanco-fade {
+  background-color: rgba(255,255,255,0.2);
+  border: 3px solid #fff;
+}
+.blanco-fade:hover {
+  background-color: #455a64;
+}
+pre {
+  border: 1px solid #808080;
+  background-color: #d3d3d3;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 0;
+}
+.ajustar {
+  max-width: 100%;
+}
+.proceso-com td,
+.proceso-com th {
+  padding: 3px 8px;
+}
+.proceso-com pre {
+  margin-bottom: 0px;
+  border: none;
+  background-color: transparent;
+}
+.block-classes {
+  color: #fff;
+  text-align: center;
+}
+.block-classes .row {
+  margin: 0;
+}
+.block-classes .texto {
+  padding: 0.5rem 0;
+}
+.block-classes .sep {
+  padding-bottom: 0.5rem;
+}
+.block-classes [class^="color-"] {
+  -webkit-box-shadow: 2px 2px 8px rgba(50,50,50,0.5);
+  box-shadow: 2px 2px 8px rgba(50,50,50,0.5);
+}
+.block-classes .color-1 {
+  background-color: #00f;
+}
+.block-classes .color-2 {
+  background-color: #8a2be2;
+}
+.block-classes .color-3 {
+  background-color: #483d8b;
+}
+.block-classes .color-4 {
+  background-color: #dc143c;
+}
+.block-classes .color-5 {
+  background-color: #0f0;
+}
+.block-classes .color-6 {
+  background-color: #ff8c00;
+}
+.rejilla td {
+  font-size: 10px;
+  text-align: center;
+  border: 1px solid #000;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.rejilla tbody th {
+  border-bottom: 1px solid #000;
+}
+.rejilla .byte {
+  width: 50px;
+  text-align: center;
+}
+.rejilla .obb {
+  background-color: #808080;
+}
+.rejilla .even {
+  background-color: #d3d3d3;
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}

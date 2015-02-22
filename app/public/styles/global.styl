@@ -1,0 +1,76 @@
+@import 'nib'
+
+///////////////////////////////////////////////////////////
+// Incorporar Alinecacion vertical
+///////////////////////////////////////////////////////////
+$vrtAlignChilds($middle = false)
+  &:before
+  >*
+    display         inline-block
+    vertical-align  $middle if $middle != false
+  &:before
+    height     100%
+    content    ' '
+
+///////////////////////////////////////////////////////////
+// Crear clases para alineacion vertical
+///////////////////////////////////////////////////////////
+$generateVerticalAlign($prefix)
+  [class^={'"'+$prefix+'-"'}],
+  [class*={'" '+$prefix+'-"'}]
+    $vrtAlignChilds()
+    
+  $aligns = top, middle, bottom
+  for $val in $aligns
+    .{$prefix}-{$val}
+      &:before,
+      >*
+        vertical-align  $val
+
+///////////////////////////////////////////////////////////
+// Generar de contenedores y grilla
+///////////////////////////////////////////////////////////
+
+$generateGrid($prefix, $padding, $cols)
+  for $i in 1..$cols
+    {$prefix}{$i}
+      width           (100% / $cols) * $i
+      
+$defaultGenerateGrid($padding, $cols)
+  .container-fluid
+  .container
+    padding-right   $padding
+    padding-left    $padding
+    margin-right    auto
+    margin-left     auto
+  .row
+    margin-right    - $padding
+    margin-left     - $padding
+  .col
+    display           inline-block
+    box-sizing        border-box
+  
+  // Telefonos
+  @media (min-width:750px)
+    .container
+      width         750px - $padding*2
+    $generateGrid(".col.s", $padding, $cols)
+    
+  // Mini tabletas
+  @media (min-width:860px)
+    .container
+      width         860px - $padding*2
+    $generateGrid(".col.m", $padding, $cols)
+      
+  // Mini tabletas
+  @media (min-width:980px)
+    .container
+      width         980px - $padding*2
+    $generateGrid(".col.l", $padding, $cols)
+      
+  // Pantallas compuradoras
+  @media (min-width:1220px)
+    .container
+      width         1220px - $padding*2
+    $generateGrid(".col.x", $padding, $cols)
+    

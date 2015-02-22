@@ -1,0 +1,7 @@
+USB Usb;
+BTD Btd(&Usb);
+SPP SerialBT(&Btd,
+  "NebulaBoard",
+  "1234");
+
+NbSPP com(&SerialBT);

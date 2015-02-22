@@ -1,0 +1,45 @@
+// com es una instancia de NbBt.
+NbCom com = getCom();
+
+com.addHandler(new NbComHandler(){
+  
+  // Se recibió el primer mesage.
+  public void firstMessage(){
+  }
+
+  // Existe al menos un dispositivo pareado.
+  public void anyPairedDevices(){
+  }
+
+  // No existe dispositivos pareados.
+  public void noPairedDevices(){
+  }
+
+  // Inicio el escaneo de dispositivos Bluetooth.
+  public void doDiscoveryStart(){
+  }
+
+  // Terminó el escaneo de dispositivos Bluetooth.
+  public void doDiscoveryFinished(){
+  }
+
+  // No se encontraton dispositivos Bluetooth durante el escaneo.
+  public void noNewDevicesFound(){
+  }
+
+  // Se encontró un dispositivo pareado.
+  public void addPairedDevices(BluetoothDevice device){
+    // device: Dispositivo pareado.
+  }
+
+  // Se encontró un dispositivo en el escaneo.
+  public void addNewDevices(BluetoothDevice device){
+    // device: dispositivo encontrado.
+  }
+
+  // Se selecionó un dispositivo para conectar.
+  public void selectedDevice(BluetoothDevice device){
+    // device: dispotivo seleccionado.
+  }
+
+});

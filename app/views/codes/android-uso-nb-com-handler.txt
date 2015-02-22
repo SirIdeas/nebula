@@ -1,0 +1,52 @@
+// com es una instancia de NbBt o NbAdk.
+NbCom com = getCom();
+
+com.addHandler(new NbComHandler(){
+      
+  // Se enviaron datos.
+  public void dataWrite(NbBytes data){
+    // data: datos enviados.
+  }
+
+  // Se recibieron datos.
+  public void dataReceived(NbBuffer data){
+    // data: datos recibidos y require un trato adecuado.
+  }
+
+  // Cambió el estado de la conexión.
+  public void stateChanged(NbComStateEnum state){
+    // state: el nuevo estado.
+  }
+
+  // Se intenta establecer conexión.
+  public void connecting(Object obj){
+    // obj: instancia del elemento al que se intenta conectar.
+  }
+
+  // Se estableció conexión.
+  public void connected(Object obj){
+    // obj: instancia del elemento al que se conectó.
+  }
+
+  // Se inición la conexión
+  public void initConnection(){
+  }
+
+  // Se desconectó.
+  public void disconnect(){
+  }
+
+  // Falló el intento de conexión
+  public void connectionFailed(){
+  }
+
+  // Se perdió la conexión establecida
+  public void connectionLost(){
+  }
+
+  // Se generó un error en las rutinas internas
+  public void error(NbComErrorEnum error){
+    //error: Valor del error generado
+  }
+
+});

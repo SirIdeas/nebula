@@ -1,0 +1,62 @@
+...
+#include <Nb.h>
+#include <LiquidCrystal.h>
+#define ID_LCD 1  // Identidicador
+
+...
+// El objeto "com" se asume como instancia de la comunicación en Arduino.
+Nb com;
+
+LiquidCrystal lcd(31, 30, 25, 24, 23, 22);
+
+// procesar mensaje a objetos
+bool cmd_object(int id){
+  
+  // Si es la pantalla LCD
+  if(id == ID_LCD){
+    if(com.available(1)){
+      
+      // Obtener comandos
+      char cmd = com.read();
+
+      // Limpiar pantalla
+      if(cmd == NB_CMD_LCD_CLEAR){
+        lcd.clear();
+        return true;
+
+      // Mover cursos
+      }else if(cmd == NB_CMD_LCD_SET_CURSOR){
+        if(com.available(2)){
+          char col = com.read();
+          char row = com.read();
+          lcd.setCursor(col, row);
+          return true;
+        }
+
+      // Mostrar cadena
+      }else if(cmd == NB_CMD_LCD_PRINT){
+        if(com.available(1)){
+          char len = com.read();
+          if(com.available(len)){
+            char bytes[17];
+            com.readBytes(bytes, len);  // leer cadena
+            bytes[len] = '\0';
+            lcd.print(bytes);
+          }
+        }
+      }
+
+    }
+  }
+
+  return false;
+
+}
+
+void setup(){
+  lcd1.begin(16,2);
+  com.setCallbackObject(cmd_object);
+  ...
+}
+
+...

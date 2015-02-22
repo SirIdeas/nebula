@@ -1,0 +1,11 @@
+{
+  "name": "poligloto",
+  "version": "0.0.0",
+  "dependencies": {
+    "materialize": "0.92.1"
+  },
+  "devDependencies": {
+    "json3": "~3.3.2",
+    "es5-shim": "~4.0.3"
+  }
+}
