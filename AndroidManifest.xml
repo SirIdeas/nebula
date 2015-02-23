@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sirideas.nbtest"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".BtLtDev"
+            android:label="@string/bt_lt_dev" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.ActivityMain"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityDigitalOuts"
+            android:label="@string/str_digital_outs" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityAnalogOuts"
+            android:label="@string/str_analog_outs" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityDigitalIns"
+            android:label="@string/str_digital_ins" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityAnalogIns"
+            android:label="@string/str_analog_ins" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivitySensors"
+            android:label="@string/str_sensors" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityLCD"
+            android:label="@string/str_lcd" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityMotors"
+            android:label="@string/str_motors" >
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape"
+            android:name=".activitys.tests.ActivityStepToStep"
+            android:label="@string/str_step_to_step" >
+        </activity>
+    </application>
+    
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    
+</manifest>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NbTest</string>
+    
+    <string name="bt_lt_dev">Lista de dispositivos BT</string>
+    
+    <string name="str_nebula_demo">Nébula Demo</string>
+    <string name="str_components_test">Prueba de componentes</string>
+    
+    <string name="str_connect">Conectar</string>
+    <string name="str_disconnect">Desconectar</string>
+    
+    <string name="str_connected">Conectado</string>
+    <string name="str_disconnected">Desconectado</string>
+    <string name="str_connecting">Conectando</string>
+    
+    <string name="str_digital_outs">Salidas digitales</string>
+    <string name="str_analog_outs">Salidas analógicas</string>
+    <string name="str_digital_ins">Entradas digitales</string>
+    <string name="str_analog_ins">Entradas analógicas</string>
+    <string name="str_sensors">Sensores</string>
+    <string name="str_lcd">Pantalla LCD</string>
+    <string name="str_step_to_step">Motor paso a paso</string>
+    <string name="str_motors">Motores</string>
+    
+    <string name="str_L0R">Led-0 rojo</string>
+    <string name="str_L0B">Led-0 azul</string>
+    <string name="str_L0G">Led-0 verde</string>
+    <string name="str_L1R">Led-1 rojo</string>
+    <string name="str_L1B">Led-1 azul</string>
+    <string name="str_L1G">Led-1 verde</string>
+    
+    <string name="str_I0">Interruptor-0</string>
+    <string name="str_I1">Interruptor-1</string>
+    <string name="str_I2">Interruptor-2</string>
+    
+    <string name="str_B0">Boton-0</string>
+    <string name="str_B1">Boton-1</string>
+    <string name="str_B2">Boton-2</string>
+    
+    <string name="str_T0">Trimmer-0</string>
+    <string name="str_T1">Trimmer-1</string>
+    
+    <string name="str_LM35">LM35</string>
+    <string name="str_SHARP">SHARP</string>
+    <string name="str_LDR">LDR</string>
+    <string name="str_QTRA">QTRA</string>
+    <string name="str_HCSR04_0">HCSR04-0</string>
+    <string name="str_HCSR04_1">HCSR04-1</string>
+    <string name="str_CNY70_0">CNY7-0</string>
+    <string name="str_CNY70_1">CNY7-1</string>
+    
+    <string name="str_into_text">Introduzca texto</string>
+    <string name="str_clear">Clear</string>
+    <string name="str_send">Enviar</string>
+    
+    <string name="str_S0">Servo-0</string>
+    <string name="str_S1">Servo-1</string>
+    <string name="str_S2">Servo-2</string>
+    
+    <string name="str_stop">Detener</string>
+    
+    <string name="str_steps">Steps</string>
+    <string name="str_delay">Delay</string>
+    
+    <string name="str_one_dir">One Dir</string>
+    <string name="str_two_dirs">Two Dir</string>
+   	
+</resources>
