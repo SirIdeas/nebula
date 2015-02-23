@@ -393,15 +393,17 @@ public class NbSketch extends NbCmpVector implements NbPerformer{
 			
 			switch (cmd) {
 			
-			// Indica el final del los datos recividos.
-			case NbDialect.MSG_FINISH:
-				
-				loop();
-				// Si el Sketch no esta pausado entonces se deberá sincronizar las componentes de salidas.
-				if(!isPaused())
-					syncronizeOutputs();
-				else
-					mSyncWhenPlay = true;
+				// Indica el final del los datos recividos.
+				case NbDialect.MSG_FINISH:
+					
+					loop();
+					// Si el Sketch no esta pausado entonces se deberá sincronizar las componentes de salidas.
+					if(!isPaused())
+						syncronizeOutputs();
+					else
+						mSyncWhenPlay = true;
+					
+					return true;
 				
 				// Se envio un cambio de estado de un componente digital/analogico:
 				//	byte 0: pin del dispositivo.

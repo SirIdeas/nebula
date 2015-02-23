@@ -86,7 +86,7 @@ public class NbConnectedThread extends Thread{
      * @param buffer 	Array de bytes que se desea escribir en la salida.
      */
     public void write(byte[] buffer){
-//    	if (Trace.DEBUG) Trace.d(this, String.format("ConnectedThread.write(%s)", new VectorBytes(buffer)));
+    	NbTrace.d(this, String.format("ConnectedThread.write(%s)", new NbBytes(buffer)));
         try {
         	long wait = mCom.getWait();
         	if(wait==0){
@@ -166,7 +166,7 @@ public class NbConnectedThread extends Thread{
 	            	}
 	        		
 	        		// Al terminar la lectura del buffer se genera un evento para indicar la nueva llegada de datos.
-//	        		if (Trace.DEBUG) Trace.d(this, String.format("ConnectedThread.read(%s)", bufferIn));
+	        		NbTrace.d(this, String.format("ConnectedThread.read(%s)", bufferIn));
 	        		getCom().sendMessage(NbComMsgEnum.DATA_RECEIVED, -1, -1, bufferIn, null);
 	        	
 	        	}
