@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">NbBtLedBlink</string>
+    <string name="app_name">Nb Led Blink Bt</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_bt_devices_list">BtDevicesListActivity</string>
