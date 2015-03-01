@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">NbTest</string>
+    <string name="app_name">Nb Test</string>
     
     <string name="bt_lt_dev">Lista de dispositivos BT</string>
     
