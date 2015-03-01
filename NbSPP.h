@@ -28,7 +28,7 @@ public:
   void loadBuffer(void);
   void print(char*, int);
   int readByte(void);
-  bool available(void);
+  bool hasIn(void);
 };
 
 #endif

@@ -74,6 +74,6 @@ int NbAdk::readByte(void){
 }
 
 // Preguntar si existen bytes disponibles
-bool NbAdk::available(void){
+bool NbAdk::hasIn(void){
   return false;
 }

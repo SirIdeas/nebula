@@ -158,7 +158,7 @@ bool lcd_cmd(int id){
 
       }
 
-      NB_TRACE_BAD_CMD("NB_CMD_LCD_SET_CURSOR", com.available());
+      NB_TRACE_BAD_CMD("NB_CMD_LCD_SET_CURSOR", com.availables());
 
       return false; // Si faltan bytes salir
 
@@ -188,7 +188,7 @@ bool lcd_cmd(int id){
 
       }
 
-      NB_TRACE_BAD_CMD("NB_CMD_LCD_PRINT", com.available());
+      NB_TRACE_BAD_CMD("NB_CMD_LCD_PRINT", com.availables());
 
       return false; // Si faltan bytes salir
 
@@ -196,7 +196,7 @@ bool lcd_cmd(int id){
 
   }
 
-  NB_TRACE_BAD_CMD("lcd_cmd", com.available());
+  NB_TRACE_BAD_CMD("lcd_cmd", com.availables());
   return false; // Si faltan bytes salir
 
 }
@@ -253,7 +253,7 @@ bool write_servo(int id){
 
   }
 
-  NB_TRACE_BAD_CMD("write_servo", com.available());
+  NB_TRACE_BAD_CMD("write_servo", com.availables());
   return false;
 
 }

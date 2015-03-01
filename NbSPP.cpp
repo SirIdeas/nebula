@@ -39,6 +39,6 @@ int NbSPP::readByte(void){
 }
 
 // Preguntar si existen bytes disponibles
-bool NbSPP::available(void){
+bool NbSPP::hasIn(void){
   return _spp->available() != 0;
 }

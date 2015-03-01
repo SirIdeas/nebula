@@ -137,7 +137,7 @@ public:
   virtual bool connected()=0;
   virtual void loadBuffer()=0;
   virtual void print(char*, int)=0;
-  virtual bool available(void)=0;
+  virtual bool hasIn(void)=0;
   virtual int readByte(void)=0;
 
   void printByte(char);

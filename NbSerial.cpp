@@ -54,6 +54,6 @@ int NbSerial::readByte(void){
 }
 
 // Preguntar si existen bytes disponibles
-bool NbSerial::available(void){
+bool NbSerial::hasIn(void){
   return _hs->available();
 }
