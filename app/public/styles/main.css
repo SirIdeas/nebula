@@ -5,7 +5,8 @@ body {
   color: #263238;
 }
 .brand-logo img {
-  height: 64px;
+  margin: 7px;
+  height: 50px;
 }
 .brand-logo span {
   display: inline-block;
@@ -57,6 +58,7 @@ footer.page {
   margin-top: -20px;
 }
 .indice {
+  margin-top: 70px;
   text-align: right;
   padding: 0 20px;
 }

@@ -8,6 +8,7 @@ return array(
   "routes" => array(
 
     // Assets
+    "/proyecto" => "redirect#/",
     "/:file(sitemap\.xml|favicon\.ico|robots\.txt|styles/.*|scripts/.*|images/.*|font/.*|videos/.*)"   => "file#public/:file",
     "/:file(styles/.*\.css|scripts/.*\.js)" => "assets#:file",
 

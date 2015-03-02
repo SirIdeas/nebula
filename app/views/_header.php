@@ -2,8 +2,8 @@
   <div class="container">
     <div class="nav-wrapper">
       <a id="logo-container" href="<?php Am::eUrl() ?>" class="brand-logo">
-        <img src="<?php Am::eUrl() ?>/images/nb-white-s.png" alt="Logo">
-        &nbsp;&nbsp;&nbsp;
+        <img src="<?php Am::eUrl() ?>/images/nb-s.png" alt="Logo">
+        &nbsp;
         <span><?php echo $_env->name ?></span>
       </a>
       <ul id="nav-mobile" class="right side-nav">

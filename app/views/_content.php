@@ -34,11 +34,6 @@ $siguiente = $actual!==false && $actual<(count($pasosIndexes)-1)?
 <div class="container">
   <div class="row">
     <div class="col m2">
-      
-      <div class="sidebar-logo">
-        <img src="<?php Am::eUrl() ?>/images/nb-s.png" alt="Logo">
-        <h5><?php echo $_env->name ?></h5>
-      </div>
 
       <div class="indice">
         (# place:views/_sidebar.php #)
@@ -48,7 +43,6 @@ $siguiente = $actual!==false && $actual<(count($pasosIndexes)-1)?
     <div class="col m10">
       <div class="page-inner">
         
-        <br>
         (# put:stepBar #)
         (# child #)
         <br>
