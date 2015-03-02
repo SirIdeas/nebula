@@ -1,7 +1,6 @@
 package com.sirideas.nbtest.activitys.tests;
 
 import com.nebula.sketch.cmp.NbLedDigital;
-import com.sirideas.nbtest.BtLtDev;
 import com.sirideas.nbtest.Global;
 import com.sirideas.nbtest.R;
 import com.sirideas.nbtest.activitys.ActivityBtBase;

@@ -12,8 +12,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".BtLtDev"
-            android:label="@string/bt_lt_dev" >
+            android:name=".BtDevicesListActivity"
+            android:label="@string/bt_lt_dev"
+            android:theme="@android:style/Theme.Holo.Dialog" >
         </activity>
         <activity
             android:launchMode="singleTop"

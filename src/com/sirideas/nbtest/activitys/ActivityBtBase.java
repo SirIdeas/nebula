@@ -7,7 +7,7 @@ import com.db.chart.model.Point;
 import com.db.chart.view.LineChartView;
 import com.db.chart.view.YController;
 import com.nebula.helpers.NbBtMainActivityHelper;
-import com.sirideas.nbtest.BtLtDev;
+import com.sirideas.nbtest.BtDevicesListActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -31,7 +31,7 @@ public class ActivityBtBase extends NbBtMainActivityHelper {
 		super.onCreate(savedInstanceState);
 		
 	    // Indicar la actividad a utilizar para listar los accesorios BT
-	    setBtDeviceListActivityClass(BtLtDev.class);
+	    setBtDeviceListActivityClass(BtDevicesListActivity.class);
 	}
 	
 	@Override
