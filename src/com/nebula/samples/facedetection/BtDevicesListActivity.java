@@ -1,4 +1,4 @@
-package com.nebula.samples.bot;
+package com.nebula.samples.facedetection;
 
 import com.nebula.helpers.NbBtDeviceListActivityHelper;
 

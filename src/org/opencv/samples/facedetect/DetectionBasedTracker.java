@@ -1,4 +1,4 @@
-package com.nebula.samples.bot;
+package org.opencv.samples.facedetect;
 
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;

@@ -2,15 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nebula.samples.bot.MainActivity" >
+    tools:context="com.nebula.samples.facedetection.MainActivity" >
     
     <ImageView
-            android:id="@+id/ivCara"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cara_dormido" />
+        android:id="@+id/ivCara"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cara_dormido"
+        android:visibility="gone" />
 
     <org.opencv.android.JavaCameraView
         android:id="@+id/fd_activity_surface_view"
