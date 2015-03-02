@@ -22,7 +22,7 @@ public class MainActivity extends NbBtMainActivityHelper{
     setBtDeviceListActivityClass(BtDevicesListActivity.class);
     
     // Conectar el led al Sketch
-     getSketch().connect(led);
+    getSketch().connect(led);
     
     // Asignar listener al ToggleButton para encender y apagar el LED
     ((ToggleButton)findViewById(R.id.toggleButton1)).setOnCheckedChangeListener(new OnCheckedChangeListener() {
