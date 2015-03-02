@@ -146,8 +146,8 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
         	int eFace = (int)mapear(areaMayor, 0, FACE_SIZE_SET_POINT*2, -MAX_VEL_MID, MAX_VEL_MID);
         	int e = (int)mapear(x + CONSTANTE_CALIBRACION, 0, mRgba.width(), -MAX_VEL_MID, MAX_VEL_MID);
         	
-        	int velIzq = 90 + 15 - eFace;
-        	int velDer = 90 + 15 + eFace;
+        	int velIzq = 90 + e - eFace;
+        	int velDer = 90 + e + eFace;
         	
     		sIz.setVel(velIzq);
     		sDe.setVel(velDer);
