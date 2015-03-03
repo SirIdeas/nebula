@@ -241,7 +241,7 @@ bool write_servo(int id){
 
     }
 
-    char vel = com.read();
+    byte vel = com.read();
 
     servo->write(vel);
 
@@ -320,5 +320,5 @@ void setup(){
  */
 void loop(){
   Usb.Task();
-  com.task(13);
+  com.task();
 }
