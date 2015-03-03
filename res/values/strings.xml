@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, Main!</string>
-    <string name="app_name">UtilizacionDeSensores</string>
+    <string name="app_name">Nb Accelerometer</string>
+    <string name="title_activity_bt_devices_list">BtDevicesListActivity</string>
 </resources>
