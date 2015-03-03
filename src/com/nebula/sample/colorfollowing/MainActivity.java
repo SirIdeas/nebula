@@ -12,6 +12,7 @@ import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 
 import com.nebula.helpers.NbBtMainActivityHelper;
+import com.nebula.sketch.NbDialect;
 import com.nebula.sketch.cmp.NbServo;
 
 import android.annotation.SuppressLint;
@@ -29,8 +30,9 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 	
 	private static final int 	KD =  50;
 	
-	private static final int	ID_SERVO_IZQ 			= 1;
-	private static final int    ID_SERVO_DER 			= 2;
+	private static final int	ID_SERVO_IZQ 			= 4;
+	private static final int    ID_SERVO_DER 			= 5;
+	private static final int 		INIT_SERVOS 			= NbDialect.__LAST_MSG_CODE + 3;
 	
 	private static final Scalar	FACE_LINE_COLOR     	= new Scalar(0, 255, 0, 255);
     private static final int 	MAX_VEL_MID 			= 30;
@@ -82,6 +84,9 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		
+		// Inicializar Servos
+		getSketch().addSetupByte(INIT_SERVOS);
 
 		// Indicar la actividad a utilizar para listar los accesorios BT
 		setBtDeviceListActivityClass(BtDevicesListActivity.class);
