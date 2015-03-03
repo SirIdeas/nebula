@@ -10,6 +10,7 @@ import com.nebula.sketch.cmp.NbMotor;
 import com.nebula.sketch.cmp.NbMotorDCOneDir;
 import com.nebula.sketch.cmp.NbMotorDCTwoDir;
 import com.nebula.sketch.cmp.NbServo;
+import com.sirideas.nbtest.BtDevicesListActivity;
 import com.sirideas.nbtest.Global;
 import com.sirideas.nbtest.R;
 import com.sirideas.nbtest.activitys.ActivityBtBase;
@@ -53,6 +54,11 @@ public class ActivityMotors extends ActivityBtBase implements OnSeekBarChangeLis
 		
 		// Inicializar Servos
 		getSketch().addSetupByte(Global.INIT_SERVOS);
+
+		// Indicar la actividad a utilizar para listar los accesorios BT
+		setBtDeviceListActivityClass(BtDevicesListActivity.class);
+		
+		getCom().setAutoConnectToDevice("NebulaBoard");
 		
 		// Linkear botones al listener
 		for(int i=0; i<seekBars.length; i++){
