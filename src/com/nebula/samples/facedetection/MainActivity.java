@@ -32,12 +32,13 @@ import android.view.WindowManager;
 
 public class MainActivity extends NbBtMainActivityHelper implements CvCameraViewListener2 {
 	
+	private static final int 	KD = 50;
+	
 	private static final int       	ID_SERVO_IZQ 			= 1;
 	private static final int       	ID_SERVO_DER 			= 2;
 
     private static final int 		MAX_VEL_MID 			= 40;
-    private static final int 		CONSTANTE_CALIBRACION 	= 20;
-    private static final long 		FACE_SIZE_SET_POINT 	= 90000;
+    private static final long 		OBJECT_SIZE_SET_POINT 	= 90000;
 
 	private File 					mCascadeFile;
 	private CascadeClassifier 		mJavaDetector;
@@ -51,8 +52,11 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
     private float                  	mRelativeFaceSize   	= 0.2f;
     private int                    	mAbsoluteFaceSize  		= 0;
 
-	private NbServo 				sIz 					= new NbServo(ID_SERVO_IZQ);
-	private NbServo 				sDe 					= new NbServo(ID_SERVO_DER);
+	private NbServo 	sIz 					= new NbServo(ID_SERVO_IZQ);
+	private NbServo 	sDe 					= new NbServo(ID_SERVO_DER);
+	private int 		eLast       = 0;
+	private int 		eObjectLast = 0;
+	private long 		timeLast   	= 0;
 
 	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
 		@Override
@@ -183,23 +187,38 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
         
         if(mayor!=null){
         	
-        	
         	int x = (int)((double)mayor.x + (double)mayor.width/2),
         		y = (int)((double)mayor.y + (double)mayor.height/2);
+        	long area = (long)areaMayor;
         			
         	Core.line(mRgba, new Point(x, 0), new Point(x, mRgba.height()), FACE_LINE_COLOR, 3);
         	Core.line(mRgba, new Point(0, y), new Point(mRgba.width(), y), FACE_LINE_COLOR, 3);
+
+        	long time = (System.currentTimeMillis());
+        	area = Math.min((long)area, OBJECT_SIZE_SET_POINT*2);
+        	int eObject = (int)mapear(area, 0, OBJECT_SIZE_SET_POINT*2, -MAX_VEL_MID, MAX_VEL_MID);
+        	int e = (int)mapear(x, 0, mRgba.width(), -MAX_VEL_MID, MAX_VEL_MID);
         	
-        	int eFace = (int)mapear(areaMayor, 0, FACE_SIZE_SET_POINT*2, -MAX_VEL_MID, MAX_VEL_MID);
-        	int e = (int)mapear(x + CONSTANTE_CALIBRACION, 0, mRgba.width(), -MAX_VEL_MID, MAX_VEL_MID);
+        	int eDer = 0;
+        	int eDerObject = 0;
         	
-        	int velIzq = 90 + e - eFace;
-        	int velDer = 90 + e + eFace;
+        	if(timeLast!=0){
+        		eDer = (int)(KD*((double)(e - eLast))/((double)(time - timeLast)));
+        		eDerObject = (int)(KD*((double)(eObject - eObjectLast))/((double)(time - timeLast)));
+        	}
+        	
+        	int velIzq = 90 + (e + eDer) - (eObject + eDerObject);
+        	int velDer = 90 + (e + eDer) + (eObject + eDerObject);
+    		
+    		eLast = e;
+    		eObjectLast = eObject;
+    		timeLast = time;
         	
     		sIz.setVel(velIzq);
     		sDe.setVel(velDer);
-	        
-            Log.d("facesArray", String.format("facesArray: x=%d, e=%d, eFace=%d, velIzq=%d, velDer=%d", x, e, eFace, velIzq, velDer));
+        	
+            Log.d("resultado", String.format("resultado: x=%d, e=%d, a=%d, o=%d, i=%d, d=%d, ed=%d, od=%d",
+            		x, e, area, eObject, velIzq, velDer, eDer, eDerObject));
             
         }else{
         	sIz.stop();
