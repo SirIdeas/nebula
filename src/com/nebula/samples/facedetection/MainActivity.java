@@ -32,8 +32,8 @@ import android.view.WindowManager;
 
 public class MainActivity extends NbBtMainActivityHelper implements CvCameraViewListener2 {
 	
-	private static final int       	ID_SERVO_IZQ = 1;
-	private static final int       	ID_SERVO_DER = 2;
+	private static final int       	ID_SERVO_IZQ 			= 1;
+	private static final int       	ID_SERVO_DER 			= 2;
 
     private static final int 		MAX_VEL_MID 			= 40;
     private static final int 		CONSTANTE_CALIBRACION 	= 20;
@@ -53,6 +53,53 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 
 	private NbServo 				sIz 					= new NbServo(ID_SERVO_IZQ);
 	private NbServo 				sDe 					= new NbServo(ID_SERVO_DER);
+
+	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+		@Override
+		public void onManagerConnected(int status) {
+			switch (status) {
+			case LoaderCallbackInterface.SUCCESS: {
+
+				// Load native library after(!) OpenCV initialization
+				System.loadLibrary("detection_based_tracker");
+
+				try {
+					// load cascade file from application resources
+					InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
+					File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
+					mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
+					FileOutputStream os = new FileOutputStream(mCascadeFile);
+
+					byte[] buffer = new byte[4096];
+					int bytesRead;
+					while ((bytesRead = is.read(buffer)) != -1)
+						os.write(buffer, 0, bytesRead);
+					
+					is.close();
+					os.close();
+
+					mJavaDetector = new CascadeClassifier(mCascadeFile.getAbsolutePath());
+					if (mJavaDetector.empty())
+						mJavaDetector = null;
+
+					mNativeDetector = new DetectionBasedTracker(mCascadeFile.getAbsolutePath(), 0);
+
+					cascadeDir.delete();
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				mOpenCvCameraView.enableView();
+			}
+				break;
+			default: {
+				super.onManagerConnected(status);
+			}
+				break;
+			}
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,25 +121,25 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 		mOpenCvCameraView.setCvCameraViewListener(this);
 
 	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (mOpenCvCameraView != null)
-			mOpenCvCameraView.disableView();
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
-	}
-
-	@Override
-	protected void onDestroy() {
-		mOpenCvCameraView.disableView();
-		super.onDestroy();
-	}
+    
+    @Override
+    public void onPause(){
+        super.onPause();
+        if (mOpenCvCameraView != null)
+        	mOpenCvCameraView.disableView();
+    }
+    
+    @Override
+    public void onResume(){
+        super.onResume();
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, mLoaderCallback);
+    }
+    
+    public void onDestroy() {
+        super.onDestroy();
+        if (mOpenCvCameraView != null)
+        	mOpenCvCameraView.disableView();
+    }
 
 	@Override
 	public void onCameraViewStarted(int width, int height) {
@@ -168,55 +215,5 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
     public double mapear(double value, double minFrom, double maxFrom, double minTo, double maxTo){
     	return minTo + value * (maxTo - minTo) / (maxFrom - minFrom);
     }
-
-	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
-		@Override
-		public void onManagerConnected(int status) {
-			switch (status) {
-			case LoaderCallbackInterface.SUCCESS: {
-
-				// Load native library after(!) OpenCV initialization
-				System.loadLibrary("detection_based_tracker");
-
-				try {
-					// load cascade file from application resources
-					InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
-					File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-					mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
-					FileOutputStream os = new FileOutputStream(mCascadeFile);
-
-					byte[] buffer = new byte[4096];
-					int bytesRead;
-					while ((bytesRead = is.read(buffer)) != -1) {
-						os.write(buffer, 0, bytesRead);
-					}
-					is.close();
-					os.close();
-
-					mJavaDetector = new CascadeClassifier(
-							mCascadeFile.getAbsolutePath());
-					if (mJavaDetector.empty()) {
-						mJavaDetector = null;
-					}
-
-					mNativeDetector = new DetectionBasedTracker(
-							mCascadeFile.getAbsolutePath(), 0);
-
-					cascadeDir.delete();
-
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-				mOpenCvCameraView.enableView();
-			}
-				break;
-			default: {
-				super.onManagerConnected(status);
-			}
-				break;
-			}
-		}
-	};
 
 }
