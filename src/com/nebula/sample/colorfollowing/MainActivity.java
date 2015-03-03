@@ -6,17 +6,35 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
+import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
 
 import com.nebula.helpers.NbBtMainActivityHelper;
+import com.nebula.sketch.cmp.NbServo;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends NbBtMainActivityHelper implements CvCameraViewListener2, OnSeekBarChangeListener{
+	
+	private static final int 	KD =  50;
+	
+	private static final int	ID_SERVO_IZQ 			= 1;
+	private static final int    ID_SERVO_DER 			= 2;
+	
+	private static final Scalar	FACE_LINE_COLOR     	= new Scalar(0, 255, 0, 255);
+    private static final int 	MAX_VEL_MID 			= 30;
+    private static final long 	OBJECT_SIZE_SET_POINT 	= 8000;
 	
     public static final int MAX_H = 180;
 	public static final int MAX_S = 255;
@@ -24,14 +42,25 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 
 	public static enum HSVConfElements {MIN_H, MIN_S, MIN_V, MAX_H, MAX_S, MAX_V, };
 
-	private boolean 				debug = true;
-	private int[] 					hsv = { 90, 80, 30,	180,255,180};
+	private boolean	debug 	= true;
+	private int[] 	hsv 	= { 0, 0, 0, MAX_H, MAX_S, MAX_V};
+	private int eLast       = 0;
+	private int eObjectLast = 0;
+	private long timeLast   = 0;
 	
-	private Mat 					mRgba; 
-	private Mat 					mGray;
+	private Mat 	mRgba; 
+	private Mat 	mGray;
 	
     private CameraBridgeViewBase 	mOpenCvCameraView;
 	private SeekBar 				sbMinH, sbMinS, sbMinV, sbMaxH, sbMaxS, sbMaxV;
+	
+	public static SharedPreferences sp = null;
+	public static final String PREFERENCES_NAME = ".PREFERENCES";
+	
+	@SuppressLint("InlinedApi")
+	public static int preferencesMode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
+			Context.MODE_MULTI_PROCESS : 
+				Context.MODE_WORLD_WRITEABLE;
 
 	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
 		@Override
@@ -45,13 +74,28 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 	    }
 	};
 
+	private NbServo sIz	= new NbServo(ID_SERVO_IZQ);
+	private NbServo sDe = new NbServo(ID_SERVO_DER);
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+		// Indicar la actividad a utilizar para listar los accesorios BT
+		setBtDeviceListActivityClass(BtDevicesListActivity.class);
+
+		// Conectar el led al Sketch
+		getSketch().connect(sIz);
+		getSketch().connect(sDe);
+		
+		getCom().setAutoConnectToDevice("NebulaBoard");
         
+		loadConf();
+		
         mOpenCvCameraView = (CameraBridgeViewBase)findViewById(R.id.cameraView);
+		mOpenCvCameraView.setCameraIndex(1);
         mOpenCvCameraView.setCvCameraViewListener(this);
         
         sbMinH = (SeekBar)findViewById(R.id.seekMinH);
@@ -81,6 +125,16 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
         sbMaxH.setOnSeekBarChangeListener(this);
         sbMaxS.setOnSeekBarChangeListener(this);
         sbMaxV.setOnSeekBarChangeListener(this);
+        
+        findViewById(R.id.butDebug).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				debug = !debug;
+				saveConf();
+			}
+		});
+        
+        
         
 	}
 	
@@ -115,6 +169,7 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 			case R.id.seekMaxS: setHSVConfValue(HSVConfElements.MAX_S, sb.getProgress()); break;
 			case R.id.seekMaxV: setHSVConfValue(HSVConfElements.MAX_V, sb.getProgress()); break;
 		}
+		saveConf();
 	}
 
 	@Override
@@ -158,14 +213,93 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 		mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
         
-        int[] result = Comenzar(mGray.getNativeObjAddr(), mRgba.getNativeObjAddr(), hsv);
+        int[] result = Comenzar(mGray.getNativeObjAddr(), mRgba.getNativeObjAddr(), hsv, debug);
         
-        Log.d("resultado", String.format("resultado: error: %d, area: %d", result[0], result[1]));
+        if(result != null){
+        	
+        	int x = result[0],
+        		y = result[1];
+        	long area = result[2];
+            
+        	Core.line(mRgba, new Point(x, 0), new Point(x, mRgba.height()), FACE_LINE_COLOR, 3);
+        	Core.line(mRgba, new Point(0, y), new Point(mRgba.width(), y), FACE_LINE_COLOR, 3);
+
+        	long time = (System.currentTimeMillis());
+        	long realArea = Math.min((long)area, OBJECT_SIZE_SET_POINT*2);
+        	int eObject = (int)mapear(realArea, 0, OBJECT_SIZE_SET_POINT*2, -MAX_VEL_MID, MAX_VEL_MID);
+        	int e = (int)mapear(x, 0, mRgba.width(), -MAX_VEL_MID, MAX_VEL_MID);
+        	
+        	int eDer = 0;
+        	int eDerObject = 0;
+        	
+        	if(timeLast!=0){
+        		eDer = (int)(KD*((double)(e - eLast))/((double)(time - timeLast)));
+        		eDerObject = (int)(KD*((double)(eObject - eObjectLast))/((double)(time - timeLast)));
+        	}
+        	
+        	int velIzq = 90 + (e + eDer) - (eObject + eDerObject);
+        	int velDer = 90 + (e + eDer) + (eObject + eDerObject);
+    		
+    		eLast = e;
+    		eObjectLast = eObject;
+    		timeLast = time;
+        	
+    		sIz.setVel(velIzq);
+    		sDe.setVel(velDer);
+        	
+            Log.d("resultado", String.format("resultado: x=%d, e=%d, a=%d, o=%d, i=%d, d=%d, ed=%d, od=%d",
+            		x, e, area, eObject, velIzq, velDer, eDer, eDerObject));
+        	
+        }else{
+        	
+    		sIz.stop();
+    		sDe.stop();
+    		
+        }
+        
+        Core.flip(mRgba, mRgba, 1);
     	
         return mRgba;
         
 	}
+    
+    public double mapear(double value, double minFrom, double maxFrom, double minTo, double maxTo){
+    	return minTo + value * (maxTo - minTo) / (maxFrom - minFrom);
+    }
+    
+    
+    public SharedPreferences getSharedPreferences(){
+    	if(sp == null)
+			sp = getSharedPreferences(getPackageName() + PREFERENCES_NAME, preferencesMode);
+    	return sp;
+    }
+    
+	public void loadConf(){
+		
+		HSVConfElements[] hsvConfElements = HSVConfElements.values();
+		
+		sp = getSharedPreferences();
+		
+		for(int j=0; j<hsvConfElements.length; j++)
+			hsv[j] = sp.getInt(hsvConfElements[j].name(), hsv[j]);
+		
+		debug = sp.getBoolean("debug", debug);
+		
+	}
 	
-	public static native int[] Comenzar(long matAddrGr, long matAddrRgba, int[] hsv);
+	public void saveConf(){
+
+		SharedPreferences.Editor spe = getSharedPreferences().edit();
+		HSVConfElements[] hsvConfElements = HSVConfElements.values();
+		
+		for(int j=0; j<hsvConfElements.length; j++)
+			spe.putInt(hsvConfElements[j].name(), hsv[j]);
+		
+		spe.putBoolean("debug", debug);
+		spe.commit();
+		
+	}
+	
+	public static native int[] Comenzar(long matAddrGr, long matAddrRgba, int[] hsv, boolean debug);
 
 }

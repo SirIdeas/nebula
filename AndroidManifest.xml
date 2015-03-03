@@ -34,6 +34,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BtDevicesListActivity"
+            android:label="@string/title_activity_bt_devices_list"
+            android:theme="@android:style/Theme.Holo.Dialog" >
+        </activity>
     </application>
 
 </manifest>

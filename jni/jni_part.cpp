@@ -13,6 +13,7 @@ using namespace cv;
 
 const int MAX_NUM_OBJECTS=20;
 const int MIN_OBJECT_AREA = 20*20;
+const int DATA_SIZE = 3;
 //int MAX_OBJECT_AREA = FRAME_HEIGHT*FRAME_WIDTH/1.5;
 
 void morphOps(Mat &thresh){
@@ -33,61 +34,49 @@ void morphOps(Mat &thresh){
 }
 
 extern "C" {
-JNIEXPORT jintArray JNICALL Java_com_nebula_sample_colorfollowing_MainActivity_Comenzar(JNIEnv *env, jobject thiz, jlong addrGray, jlong addrRgba, jintArray hsv){
+JNIEXPORT jintArray JNICALL Java_com_nebula_sample_colorfollowing_MainActivity_Comenzar
+(JNIEnv *env, jobject thiz, jlong addrGray, jlong addrRgba, jintArray hsv, jboolean debug){
 
 	jint *jhsv;
 	jhsv = env->GetIntArrayElements(hsv, NULL);
 
-	jint data[2];
+	jint data[DATA_SIZE];
 	jintArray result;
-	result = env->NewIntArray(2);
+	result = env->NewIntArray(DATA_SIZE);
 	if (result == NULL) {
 		return NULL; /* fuera de memoria */
 	}
 
     Mat& mGr  = *(Mat*)addrGray;
     Mat& mRgb = *(Mat*)addrRgba;
-    vector<KeyPoint> v;
 
     int x,y;
-	Mat threshold;
-	cv::Size s = mRgb.size();
-	jint width = s.width;
-	jint height = s.height;
-
-	CvSize size = cvSize(width, height);
 
 	Mat hsv_frame;
-	Mat thresholded1;
-
-	IplImage img_color = mRgb;
-	IplImage img_gray = mGr;
+	Mat thresholded;
 
 	// Convertimos a HSV
 	cvtColor(mRgb, hsv_frame, CV_BGR2HSV);
 
 	// Se filtran los colores dentro del rango de HSV
-	inRange(hsv_frame, Scalar(jhsv[0],jhsv[1],jhsv[2], 0), Scalar(jhsv[3], jhsv[4], jhsv[5], 0), thresholded1);
+	inRange(hsv_frame, Scalar(jhsv[0],jhsv[1],jhsv[2], 0), Scalar(jhsv[3], jhsv[4], jhsv[5], 0), thresholded);
 
-	//if(debug) cvtColor(thresholded, mRgb, CV_GRAY2BGR);
+	if(debug) cvtColor(thresholded, mRgb, CV_GRAY2BGR);
 
 	CvScalar blue = CV_RGB(64, 64, 255);
 
-	morphOps(thresholded1);
+	morphOps(thresholded);
 
-	for(int i=0; i<2; i++)
+	for(int i=0; i<DATA_SIZE; i++)
 		data[i]=0;
 
 	jint menor_y = 0;
-	jint aux_menor_y = 0;
-	jint error = 0;
-	jint area = 0;
 	vector< vector<Point> > contours;
 	vector<Vec4i> hierarchy;
 
 	double refArea = 0;
 
-	findContours((Mat)thresholded1, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
+	findContours((Mat)thresholded, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
 
 	if (hierarchy.size() > 0) {
 		int numObjects = hierarchy.size();
@@ -95,18 +84,14 @@ JNIEXPORT jintArray JNICALL Java_com_nebula_sample_colorfollowing_MainActivity_C
 			for (int index = 0; index >= 0; index = hierarchy[index][0]) {
 
 				Moments moment = moments((cv::Mat)contours[index]);
-				double area2 = moment.m00;
+				double area = moment.m00;
 
-				if(area2>MIN_OBJECT_AREA && area2>refArea){
-					x = moment.m10/area2;
-					y = moment.m01/area2;
-					if(y > menor_y){
-						menor_y = y;
-						data[0] = (x*100/width);
-						data[1] = (int)area2;
-					}
+				if(area>MIN_OBJECT_AREA && area>refArea){
+					data[0] = x = moment.m10/area;
+					data[1] = y = moment.m01/area;
+					data[2] = (int)(refArea = area);
 					circle(mRgb, Point(x,y), 3, blue, 2);
-					circle(mRgb, Point(x,y), sqrt(area2), Scalar(0,255,0,255), 4);
+					circle(mRgb, Point(x,y), sqrt(area), Scalar(0,255,0,255), 4);
 				}
 
 			}
@@ -117,7 +102,7 @@ JNIEXPORT jintArray JNICALL Java_com_nebula_sample_colorfollowing_MainActivity_C
 
 //    __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Error: %d. Area: %d, %d,%d,%d %d,%d,%d",
 //    		data[0], data[1], jhsv[0], jhsv[1], jhsv[2], jhsv[3], jhsv[4], jhsv[5]);
-	env->SetIntArrayRegion(result,0,2,data);
+	env->SetIntArrayRegion(result,0,DATA_SIZE,data);
 
 	return result;
 
