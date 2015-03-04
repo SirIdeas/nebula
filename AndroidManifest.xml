@@ -4,6 +4,14 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-feature android:name="android.hardware.bluetooth" />
+
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="16" />
@@ -21,6 +29,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".BtDevicesListActivity"
+            android:label="@string/title_activity_bt_devices_list"
+            android:theme="@android:style/Theme.Holo.Dialog" >
         </activity>
     </application>
 
