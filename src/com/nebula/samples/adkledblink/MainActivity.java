@@ -7,6 +7,7 @@ import com.nebula.sketch.cmp.NbTrimmer;
 import com.nebula.sketch.cmp.core.NbCmp;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -20,6 +21,7 @@ public class MainActivity extends NbAdkMainActivityHelper {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
       
     // Conectar el led al Sketch
     getSketch().connect(led);
