@@ -4,6 +4,7 @@ import com.nebula.helpers.NbBtMainActivityHelper;
 import com.nebula.sketch.cmp.NbLedDigital;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ToggleButton;
@@ -17,6 +18,7 @@ public class MainActivity extends NbBtMainActivityHelper{
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     
     // Indicar la actividad a utilizar para listar los accesorios BT
     setBtDeviceListActivityClass(BtDevicesListActivity.class);
