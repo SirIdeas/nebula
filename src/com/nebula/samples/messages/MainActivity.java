@@ -18,6 +18,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 public class MainActivity extends NbBtMainActivityHelper {
@@ -42,9 +43,9 @@ public class MainActivity extends NbBtMainActivityHelper {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
 		// Inicializar LCD
 		getSketch().addSetupByte(INIT_LCD);
