@@ -35,7 +35,6 @@ public class Main extends NbBtMainActivityHelper implements SensorEventListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		
 		// Inicializar Servos
 		getSketch().addSetupByte(INIT_SERVOS);
