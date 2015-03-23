@@ -110,8 +110,8 @@ public class MainActivity extends NbBtMainActivityHelper implements CvCameraView
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.activity_main);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
 		// Inicializar Servos
 		getSketch().addSetupByte(INIT_SERVOS);
