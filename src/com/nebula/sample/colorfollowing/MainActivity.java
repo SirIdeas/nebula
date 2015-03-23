@@ -28,11 +28,11 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends NbBtMainActivityHelper implements CvCameraViewListener2, OnSeekBarChangeListener{
 	
-	private static final int 	KD =  50;
+	private static final int 	KD 						=  50;
 	
 	private static final int	ID_SERVO_IZQ 			= 4;
 	private static final int    ID_SERVO_DER 			= 5;
-	private static final int 		INIT_SERVOS 			= NbDialect.__LAST_MSG_CODE + 3;
+	private static final int 	INIT_SERVOS 			= NbDialect.__LAST_MSG_CODE + 3;
 	
 	private static final Scalar	FACE_LINE_COLOR     	= new Scalar(0, 255, 0, 255);
     private static final int 	MAX_VEL_MID 			= 30;
