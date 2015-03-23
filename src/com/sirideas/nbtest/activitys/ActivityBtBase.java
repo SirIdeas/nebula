@@ -11,6 +11,7 @@ import com.sirideas.nbtest.BtDevicesListActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 public class ActivityBtBase extends NbBtMainActivityHelper {
 	
@@ -29,6 +30,7 @@ public class ActivityBtBase extends NbBtMainActivityHelper {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
 	    // Indicar la actividad a utilizar para listar los accesorios BT
 	    setBtDeviceListActivityClass(BtDevicesListActivity.class);

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.nebula.sketch.cmp.NbCNY70;
 import com.nebula.sketch.cmp.NbHCSR04;
 import com.nebula.sketch.cmp.NbLDR;
+import com.nebula.sketch.cmp.NbLM35;
 import com.nebula.sketch.cmp.NbSHARP;
 import com.nebula.sketch.cmp.core.NbCmp;
 import com.nebula.sketch.cmp.core.NbCmp.OnValueChangeListener;
@@ -18,7 +19,7 @@ import com.sirideas.nbtest.activitys.ActivityBtBase;
 public class ActivitySensors extends ActivityBtBase implements OnValueChangeListener{
 	
 	private NbCmp[] ins = {
-//			new NbLM35(12),		// sensor de temperatura. PROBLEMA
+			new NbLM35(12),		// sensor de temperatura. PROBLEMA
 			new NbLDR(14),		// sensor de luz
 			new NbSHARP(13),	// sensor de distancia
 			new NbCNY70(10),	// PROBLEMA
@@ -32,7 +33,7 @@ public class ActivitySensors extends ActivityBtBase implements OnValueChangeList
 	
 	// Botones
 	private int[] tvs = {
-//			R.id.tv_lm35,
+			R.id.tv_lm35,
 			R.id.tv_ldr,
 			R.id.tv_sharp,
 			R.id.tv_cny70_0,
