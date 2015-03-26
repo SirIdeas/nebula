@@ -2,7 +2,7 @@
 NbCom com = getCom();
 
 com.addHandler(new NbComHandler(){
-  
+
   // Se recibió el primer mesage.
   public void firstMessage(){
   }
