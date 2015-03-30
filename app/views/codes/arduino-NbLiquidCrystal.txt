@@ -11,11 +11,11 @@ LiquidCrystal lcd(31, 30, 25, 24, 23, 22);
 
 // procesar mensaje a objetos
 bool cmd_object(int id){
-  
+
   // Si es la pantalla LCD
   if(id == ID_LCD){
     if(com.available(1)){
-      
+
       // Obtener comandos
       char cmd = com.read();
 

@@ -108,7 +108,7 @@
       Para esto se deberá crear una actividad nueva. Esto se puede hacer desde el menú contextual del proyecto <code>New</code> (<i>New->Other...</i>) en la opción <i>Android/Android Activity</i>.
     </p>
     <p>
-      Esta actividad solo debe extender del helper <?php docEnlace("NbBtDeviceListActivityHelper") ?> Este helper es una clase que extiende de <code>Activity</code> y ofrece toda la funcionalidad básica para escanear, listar y seleccionar dispositivos Bluetooth. Para el caso presente la actividad es llamada <code>BtDevicesListActivity</code>. 
+      Esta actividad solo debe extender del helper <?php docEnlace("NbBtDeviceListActivityHelper") ?> Este helper es una clase que extiende de <code>Activity</code> y ofrece toda la funcionalidad básica para escanear, listar y seleccionar dispositivos Bluetooth. Para el caso presente la actividad es llamada <code>BtDevicesListActivity</code>.
     </p>
     <pre><?php echo getCodeFile("android-bt-simple-list-acivity-class") ?></pre>
 
@@ -138,7 +138,7 @@
 <div class="row">
   <div class="col m9">
     <pre><?php echo getCodeFile("led-blink-main-activity-layout") ?></pre>
-    
+
   </div>
 
   <div class="col m3 center">
@@ -154,7 +154,7 @@
 <pre>setBtDeviceListActivityClass(BtDevicesListActivity.class);</pre>
 
 <p>
-  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase <?php docEnlace("NbLedDigital") ?> que representa la abstracción el LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
+  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase <?php docEnlace("NbLedDigital") ?> que representa la abstracción del LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
 </p>
 <pre>private NbLedDigital led = new NbLedDigital(13);</pre>
 
@@ -173,7 +173,7 @@
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     led.setValue(isChecked);
   }
-  
+
 });
 </pre>
 
@@ -203,5 +203,5 @@
   Al establecer conexión el título de la actividad principal indicará que se estableción conexión, el menú <i>Conectar</i> cambiará <i>Desconectar</i> y el <code>ToogleButton</code> podrá encender y apagar el LED 13 del Arduino.
 </p>
 <p>
-  Puede descargar el proyecto Android para Eclipse desde el siguiente enlace: <a href="" style="color:red">Descargar NbBtLedBlink</a>
+  Puede descargar el proyecto Android para Eclipse desde el siguiente enlace: <a href="" style="color:red">Descargar NbLedBlinkBt</a>
 </p>

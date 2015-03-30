@@ -9,7 +9,7 @@ function enlace($text, $blank = true){
 }
 
 function docEnlace($class){
-  echo '<a><code>'.$class.'</code></a>';
+  echo '<code>'.$class.'</code>';
 }
 
 function parrafosDe($text){

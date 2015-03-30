@@ -12,7 +12,7 @@ long last_hcsr04 = 0;
 
 // Read HCSR04
 long read_hcsr04(int trig, int echo){
-  digitalWrite(trig, LOW); 
+  digitalWrite(trig, LOW);
   delayMicroseconds(2);
   digitalWrite(trig, HIGH);
   delayMicroseconds(10);

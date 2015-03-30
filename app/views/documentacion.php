@@ -17,12 +17,12 @@
 
 <h4><a href="<?php Am::eUrl() ?>/documentacion/sketchs">Sketchs</a></h4>
 <p>
-  Los Sketchs representan un conjunto de componentes que funcionarán con un proyecto. Además de estos, dentro de los skecths se implementa una forma predeterminada de comunicación. En este apartado se explica los aaspectos generales de los sketchs, el proceso de comunicación que implementa y se da un introducción a los componentes.
+  Los Sketchs representan un conjunto de componentes que funcionarán con un proyecto. Además de estos, dentro de los skecths se implementa una forma predeterminada de comunicación. En este apartado se explica los aspectos generales de los sketchs, el proceso de comunicación que implementa y se da un introducción a los componentes.
 </p>
 
 <h4><a href="<?php Am::eUrl() ?>/documentacion/componentes">Componentes</a></h4>
 <p>
-  Los componentes son abstracciones de software de los elmeneots electrónicos utilizados en los proyectos de automatizacion, tales como interruptores, led, motores y sensores. En este apartado se detalla todos los componentes disponibles en Nébula y como usarlos.
+  Los componentes son abstracciones de software de los elementos electrónicos utilizados en los proyectos de automatizacion, tales como interruptores, led, motores y sensores. En este apartado se detalla todos los componentes disponibles en Nébula y como usarlos.
 </p>
 
 <h4><a href="<?php Am::eUrl() ?>/documentacion/helpers">Helpers</a></h4>
@@ -32,5 +32,5 @@
 
 <h4><a href="<?php Am::eUrl() ?>/documentacion/personalizacion-en-arduino">Personalización en Arduino</a></h4>
 <p>
-  El obejito principal de nébula es evitar la programación en Arduino, sin embargo, permite la personalización de la comunicación en muchos aspectos, mediante la codificación extra en Arduino. En este apartado se explica como realizar ciertos trucos avanzados para personalizar y extender las funcionalidades que ofrece Nébula.
+  El objetivo principal de nébula es evitar la programación en Arduino, sin embargo, permite la personalización de la comunicación en muchos aspectos, mediante la codificación extra en Arduino. En este apartado se explica como realizar ciertos trucos avanzados para personalizar y extender las funcionalidades que ofrece Nébula.
 </p>

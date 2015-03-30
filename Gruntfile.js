@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   'use strict';
-  
+
   // Project configuration.
   grunt.initConfig({
 
@@ -10,12 +10,38 @@ module.exports = function(grunt) {
       root: 'app',
       dist: 'dist',
     },
-    
+
     clean: {
       all: [
         '<%= app.dist %>/*',
         '!<%= app.dist %>/.git'
       ]
+    },
+
+    copy: {
+      all:{
+        files: [{
+          expand: true,
+          dot: true,
+          dest: '<%= app.dist %>',
+          src: [
+            'am.php',
+            '.htaccess',
+            'am/**/*',
+            '!am/.git/**',
+            'app/*',
+            'app/{conf,usr,views}/**/*',
+            'app/public/*',
+            'app/public/{font,images,scripts}/**/*',
+            'app/public/styles/*.css*'
+          ]
+        }, {
+          expand: true,
+          cwd: 'bower_components/bootstrap/dist',
+          dest: '<%= app.dist %>/public/',
+          src: 'fonts/**/*'
+        }]
+      }
     },
 
     imagemin: {
@@ -40,30 +66,6 @@ module.exports = function(grunt) {
           cwd: '<%= app.root %>',
           src: 'public/images/**/*.svg',
           dest: '<%= app.dist %>'
-        }]
-      }
-    },
-    
-    copy: {
-      all:{
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= app.root %>',
-          dest: '<%= app.dist %>',
-          src: [
-            'am.php',
-            '.htaccess',
-            'public/fonts/**/*',
-            'public/images/**/*.{webp,gif}',
-            '{am,conf,views,control,data}/**/*',
-            '!conf/compile.conf.php',
-          ]
-        }, {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          dest: '<%= app.dist %>/public/',
-          src: 'fonts/**/*'
         }]
       }
     },
@@ -125,11 +127,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'imagemin',
-    'svgmin',
     'copy',
-    'cssmin',
-    'uglify',
+    // 'imagemin',
+    // 'svgmin',
+    // 'cssmin',
+    // 'uglify',
     // 'htmlmin'
   ]);
 

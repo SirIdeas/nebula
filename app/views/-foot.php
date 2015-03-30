@@ -19,6 +19,6 @@
 <![endif]-->
 <script src="<?php Am::eUrl() ?>/scripts/cookie-msg.js"></script>
 <script type="text/javascript">
-  $.cookieMsg('top', 'simposiumtos-web', 'acercade');
+  $.cookieMsg('top', 'simposiumtos-web', 'http://es.wikipedia.org/wiki/Cookie_%28inform%C3%A1tica%29');
 </script>
 <script src="<?php Am::eUrl() ?>/scripts/site.js"></script>

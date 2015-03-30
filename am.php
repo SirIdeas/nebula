@@ -1,5 +1,7 @@
 <?php
 
+mt_srand((double)microtime() * 1000000);
+
 include "am/init.php";
 
-Am::task(dirname(__FILE__)."/app/"); // Realizar llamada
+Am::task("app/"); // Realizar llamada

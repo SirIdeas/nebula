@@ -21,13 +21,13 @@
             'Utilizamos cookies propias y de terceros para realizar análisis de uso y de medición',
             'de nuestra webpara mejorar nuestros servicios.<br>Si continua navegando, consideramos',
             'que acepta su uso. Puede cambiar la configuración u obtener más información ',
-            '<a a-there href="#">aquí</a>.',
+            '<a a-there target="_blank" href="#">aquí</a>.',
           '</p>',
         '</div>'
       ].join('');
 
       $(function(){
-        
+
         var modal = $(view);      // convertir a jQuery
         $('body').append(modal);  // Agregar al cuerpo
 

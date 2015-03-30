@@ -14,22 +14,18 @@
       Nébula hace uso de la librería <?php enlace("USB_Host_Shield_2.0") ?> mantenida por <?php enlace("Kristian Sloth Lauszus") ?> y creada inicialmente por <?php enlace("Oleg Mazurov") ?>. Para descargar directamente la última versión de esta librería puede utilizar el siguiente enlace: <?php enlace("Descargar USB_Host_Shield_2.0 desde GitHub") ?>.
     </p>
     <p>
-      De igual forma se debe descargar la librería propia de <?php enlace("Nébula para Arduino") ?>. Para descargar directamente la última versión de esta librería  puede utilizar el siguiente enlace: <?php enlace("Descargar Nb desde GitHub") ?>.
+      De igual forma se debe descargar la librería propia de <?php enlace("Nébula para Arduino") ?>. Para descargar directamente la última versión de la librería puede utilizar el siguiente enlace: <?php enlace("Descargar Nb desde GitHub") ?>.
     </p>
 
     <p>
-      Estas librerías deben ser descomprimidas en la directorio <i>libraries/</i> de nuestra carpeta Arduino IDE. 
+      Estas librerías deben ser descomprimidas en la directorio <i>libraries/</i> de nuestra carpeta Arduino IDE.
     </p>
 
     <div class="nota card yellow">
       <p class="card-content">
-        <i>Nota</i>: Los nombres de las carpetas de librerías debe contener solo caracteres alfanuméricos y/o "_", por lo que es posible que se requiera renombrar la carpeta descomprimida de USB_Host_Shield_2.0.
-      </p>
-    </div>
-
-    <div class="nota card yellow">
-      <p class="card-content">
-        <i>Nota</i>: Para el fucionamiento de la librería <?php enlace("USB_Host_Shield_2.0") ?> con la placa <?php enlace("Arduino Mega ADK") ?> debe cambiar el valor del macro <code>USE_UHS_MEGA_ADK</code> a 1. <strong>(Línea #42 del archivo <i>&lt;usb_host_shield_library_folder&gt;)/settings.h</i></strong>
+        <i><strong>Notas</strong></i>:<br>
+        * Los nombres de las carpetas de librerías debe contener solo caracteres alfanuméricos y/o "_", por lo que es posible que se requiera renombrar la carpeta descomprimida de USB_Host_Shield_2.0.<br>
+        * Para el fucionamiento de la librería <?php enlace("USB_Host_Shield_2.0") ?> con la placa <?php enlace("Arduino Mega ADK") ?> debe cambiar el valor del macro <code>USE_UHS_MEGA_ADK</code> a 1. <strong>(Línea #42 del archivo <i>&lt;usb_host_shield_library_folder&gt;)/settings.h</i></strong>
       </p>
     </div>
   </div>
@@ -52,7 +48,7 @@
     </p>
     <div class="nota card yellow">
       <p class="card-content">
-        <i>Nota</i>: Nébula es compatible la API 16: Android 4.1 (Jelly Bean) o posterior. 
+        <i>Nota</i>: Nébula es compatible la API 16: Android 4.1 (Jelly Bean) o posterior.
       </p>
     </div>
     <p>

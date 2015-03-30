@@ -13,18 +13,18 @@
   </p>
 </div>
 <p>
-  No se debe confundir un <i>accesorio</i> con un dispositivo Android conectado en <i>modo Accessory</i>. Un <i>accesorio</i> es un hardware externo construído para comunicarse con un dispositivi Android, mientras que un dispositivo Android conectado en <i>modo Accessory</i> se refiere al modo de conexión USB establecida entre el dispositivo Android y el accesorio.
+  No se debe confundir un <i>accesorio</i> con un dispositivo Android conectado en <i>modo Accessory</i>. Un <i>accesorio</i> es un hardware externo construído para comunicarse con un dispositivo Android, mientras que un dispositivo Android conectado en <i>modo Accessory</i> se refiere al modo de conexión USB establecida entre el dispositivo Android y el accesorio.
 </p>
 <div class="nota card yellow">
   <p class="card-content">
-    <i>Nota</i>: Para un myor endendimiento visitar <?php enlace("Accessory Development Kit") ?>
+    <i>Nota</i>: Para un mayor endendimiento visitar <?php enlace("Accessory Development Kit") ?>
   </p>
 </div>
 
 
 <h4 id="sketch-arduino">Sketch de Arduino</h4>
 <p>
-  Se debe cargar en la placa de Arduino un sketch que interpreta los comandos del dispositivo Android conectado en modo Accessory. Para esto, en el Arduino IDE se debe abrir el sketch ejemplo de Nébula para ADK (<i>File->Examples->Nb->adk</i>) y posteriormente cargarlo en la placa a usar.
+  Se debe cargar en la placa de Arduino un sketch que interpreta los comandos del dispositivo Android conectado en modo Accessory. Para esto, en el Arduino IDE se debe abrir el sketch ejemplo de Nébula para ADK (<i>File->Examples->nb->adk</i>) y posteriormente cargarlo en la placa a usar.
 </p>
 <p>
   Este sketch posee el código mínimo para comunicarse el dispositivo Android conectado en modo Accessory. Este se explica a continuación:
@@ -67,7 +67,7 @@
 
     <i><strong>Configuración inicial</strong></i>
     <p>
-      En la función <code>setup</code> de Arduino se coloca la inicialización del objeto <code>Usb</code> la cual es requerida según la documentación de <?php enlace("USB_Host_Shield_2.0") ?>
+      En la función <code>setup</code> de Arduino se coloca la inicialización del objeto <code>Usb</code> el cual es requerido según los ejemplos de <?php enlace("USB_Host_Shield_2.0") ?>
     </p>
 
   </div>
@@ -81,7 +81,7 @@
 
     <i><strong>Tareas</strong></i>
     <p>
-      Las tareas a ejecutar consisten en llamar el método <code>Task</code> del objeto <code>USB Usb</code> (requerida según la documentación de <?php enlace("USB_Host_Shield_2.0") ?>) y el método <code>task</code> del objeto <code>NbAdk com</code>. Este último es el encargado de interpretar y enviar los mensajes por defecto entre la placa Arduino utilizada y el dispositivos Android.
+      Las tareas a ejecutar consisten en llamar el método <code>Task</code> del objeto <code>USB Usb</code> (requerida según los ejemplos de <?php enlace("USB_Host_Shield_2.0") ?>) y el método <code>task</code> del objeto <code>NbAdk com</code>. Este último es el encargado de interpretar y enviar los mensajes por defecto entre la placa Arduino utilizada y el dispositivos Android.
     </p>
 
   </div>
@@ -89,7 +89,7 @@
     <pre><?php echo getCodeFile("sketch-simple-loop") ?></pre>
   </div>
 </div>
-    
+
 <div class="nota card yellow">
   <p class="card-content">
     <i>Nota</i>: Es importante resaltar que la librería <code>Nb.h</code> siempre debe incluirse después de dependencias de la librería <?php enlace("USB_Host_Shield_2.0") ?>, debido a que la primera verifica los tipos de comunicación incluidos.
@@ -127,7 +127,7 @@
 </div>
 
 <p>
-  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase <?php docEnlace("NbLedDigital") ?> que representa la abstracción el LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
+  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase <?php docEnlace("NbLedDigital") ?> que representa la abstracción del LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
 </p>
 <pre>private NbLedDigital led = new NbLedDigital(13);</pre>
 
@@ -146,7 +146,7 @@
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     led.setValue(isChecked);
   }
-  
+
 });
 </pre>
 
@@ -162,7 +162,7 @@
 <div class="row">
   <div class="col m9">
     <p>
-      El dispositivo Android debe ser conectado al puerto USB Host de la placa Arduino Mega. Al momento de realizar la conexión, el dispositivo Android mostrará un mensaje de advertencia indicando que no se ha encontrado un aplicación compatible con el hardware conectado. En el apartado <a href="" style="color:red">Pendiente</a> se señala como indicar a la aplicación los hardware compatibles. Por los momentos bastará con cerrar el diálogo de incompatibilidad.
+      El dispositivo Android debe ser conectado al puerto USB Host de la placa Arduino Mega. Al momento de realizar la conexión, el dispositivo Android mostrará un mensaje de advertencia indicando que no se ha encontrado un aplicación compatible con el hardware conectado. <!-- En el apartado <a href="" style="color:red">Pendiente</a> se señala como indicar a la aplicación los hardware compatibles. Por los momentos bastará con cerrar el diálogo de incompatibilidad. -->
     </p>
   </div>
   <div class="col m3 center">
@@ -183,5 +183,5 @@
 </div>
 
 <p>
-  Puede descargar el proyecto Android para Eclipse desde el siguiente enlace: <a href="" style="color:red">Descargar NbAdkLedBlink</a>
+  Puede descargar el proyecto Android para Eclipse desde el siguiente página: <?php enlace("Descargar NbLedBlinkAdk") ?>.
 </p>
