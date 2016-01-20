@@ -36,7 +36,7 @@ public class MainActivity extends NbBtMainActivityHelper {
 	private NbButton boton = new NbButton(41);
 	private NbLedDigital led = new NbLedDigital(8);
 	
-	private Vector<String> mensajes = new Vector<>();
+	private Vector<String> mensajes = new Vector<String>();
 	
 	private Timer timerLed = null;
 	private Timer timerMarkesina = null;
