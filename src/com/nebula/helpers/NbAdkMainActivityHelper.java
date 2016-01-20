@@ -9,6 +9,8 @@ import com.nebula.adk.NbAdk;
 import com.nebula.com.NbComHandler;
 import com.nebula.com.NbComStateEnum;
 import com.nebula.sketch.NbSketch;
+import com.nebula.NbBuffer;
+import com.nebula.NbBytes;
 import com.nebula.R;
 
 public class NbAdkMainActivityHelper extends Activity{
@@ -21,7 +23,14 @@ public class NbAdkMainActivityHelper extends Activity{
 		private static final long serialVersionUID = -2410315236868140995L;
 		public void loop() {
 			NbAdkMainActivityHelper.this.loop();
-		};
+		}
+		public NbBytes getUserBytes() {
+			return NbAdkMainActivityHelper.this.getUserBytes();
+		}
+		public boolean unknowCmd(int cmd, NbBuffer data) throws com.nebula.NbBuffer.ReadException {
+
+			return NbAdkMainActivityHelper.this.unknowCmd(cmd, data); 
+		}
 	};
 	
 	// Titulo principal de la ventana;
@@ -35,6 +44,13 @@ public class NbAdkMainActivityHelper extends Activity{
 	public void loop(){
 		
 	}
+	public NbBytes getUserBytes() {
+		return null;
+	}
+	public boolean unknowCmd(int cmd, NbBuffer data) throws com.nebula.NbBuffer.ReadException{
+		return false;
+	}
+	
 	
 	// Devuelve el sketch de la actividad
 	public NbSketch getSketch(){
