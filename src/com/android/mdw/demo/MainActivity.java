@@ -17,7 +17,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main extends NbBtMainActivityHelper implements SensorEventListener {
+public class MainActivity extends NbBtMainActivityHelper implements SensorEventListener {
 	
 	private static final int ID_SERVO_IZQ = 4;
 	private static final int ID_SERVO_DER = 5;
@@ -33,7 +33,7 @@ public class Main extends NbBtMainActivityHelper implements SensorEventListener 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
 		// Inicializar Servos
