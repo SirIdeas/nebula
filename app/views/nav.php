@@ -9,7 +9,7 @@
       </button>
       <a class="navbar-brand vertical-middle" href="(:/:)">
         <div><span class="logo"></span></div>
-        <div>&nbsp;&nbsp;Nébula - (:= $pagina :)</div>
+        <div>&nbsp;&nbsp;Nébula</div>
       </a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
