@@ -30,7 +30,7 @@ html
   overflow: hidden
   
 body
-  height: 100%  
+  height: 100%
   overflow: auto
   relative: top
   color: $color-text
@@ -111,4 +111,54 @@ footer.page
     list-style-type: none
     line-height: 1.1em
     font-size: 14px
+
     margin-top: 8px
+
+////////////////////////////////////////////////////////////////////////////
+// Bloque de clases
+////////////////////////////////////////////////////////////////////////////
+    
+.block-classes
+  color                   white
+  text-align              center
+  .row
+    margin                0
+  .texto
+    padding               0.5rem 0
+  .sep
+    padding-bottom        0.5rem
+  [class^="color-"]
+    box-shadow            2px 2px 8px rgba(50,50,50,0.5)
+    
+  .color-1
+    background-color      blue
+  .color-2
+    background-color      blueviolet
+  .color-3
+    background-color      darkslateblue
+  .color-4
+    background-color      crimson
+  .color-5
+    background-color      lime
+  .color-6
+    background-color      darkorange
+
+////////////////////////////////////////////////////////////////////////////
+// Tabla decola de mensajes
+////////////////////////////////////////////////////////////////////////////
+    
+.rejilla
+  td
+    font-size             10px
+    text-align            center
+    border                1px solid black
+    border-radius         0
+  tbody th
+    border-bottom         1px solid black
+  .byte
+    width                 50px
+    text-align            center
+  .obb
+    background-color      gray
+  .even
+    background-color      lightgray

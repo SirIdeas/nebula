@@ -1,7 +1,7 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Componentes" #)
-(# set:pagina="documentacion" #)
-(# set:paso="componentes" #)
+(:: parent:views/content.php :)
+(:: set:title="Componentes" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="componentes" :)
 
 <h1 id="componentes">Componentes</h1>
 

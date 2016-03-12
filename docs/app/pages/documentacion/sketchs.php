@@ -1,13 +1,9 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Sketchs" #)
-(# set:pagina="documentacion" #)
-(# set:paso="sketchs" #)
+(:: parent:views/content.php :)
+(:: set:title="Sketchs" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="sketchs" :)
 
-<?php 
-
-$dialecto = Am::getConfig("usr/dialecto");
-
-?>
+<?php  $dialecto = Am::getProperty("dialecto"); ?>
 
 <h1 id="sketch">Sketch</h1>
 <p>
@@ -22,7 +18,7 @@ $dialecto = Am::getConfig("usr/dialecto");
 
 <h4 id="proceso-de-comunicacion">Proceso de comunicación</h4>
 <div class="row">
-  <div class="col m6">
+  <div class="col-sm-6">
     <p>
       El proceso de comunicación está basado en un algoritmo de sincronización activa y bidireccional, donde cada parte lee los datos de entrada, interpreta las acciones y responde; luego entra en un estado de espera para la siguiente entrada.
     </p>
@@ -30,22 +26,22 @@ $dialecto = Am::getConfig("usr/dialecto");
       Por lo general, la comunicación es establecida desde el dispositivo móvil o desde la aplicación. En el momento en el que el hardware externo detecta la conexión envía un primer mensaje de verificación y cae en espera de mensajes de entrada. Luego, la aplicación envía los bytes de configuración al hardware externo y cae en espera. El hardware externo interpreta la configuración recibida y envía los bytes pertinentes. Por último, comienza un ciclo infinito en el que la aplicación y hardware externo envía bytes de información entre si, siempre esperando la respuesta de su contraparte. Todo el proceso de comunicación termina en el momento que se rompa la conexión entre el hardware externo y el dispositivo inteligente.
     </p>
   </div>
-  <div class="col m6 center">
-    <table class="striped proceso-com">
+  <div class="col-sm-6 center">
+    <table class="table">
       <thead>
         <tr><th>Paso</th><th>Aplicación Android</th><th>Hardware Arduino</th></tr>
       </thead>
       <tbody>
-        <tr><th class="center">1</th><td>Iniciar conexión</td><td></td></tr>
-        <tr><th class="center">2</th><td>Esperar primer mensaje</td><td>Establacer conexión</td></tr>
-        <tr><th class="center">3</th><td></td><td>Enviar verificación</td></tr>
-        <tr><th class="center">4</th><td>Recibir verificación</td><td>Esperar tareas</td></tr>
-        <tr><th class="center">5</th><td>Enviar configuración</td><td></td></tr>
-        <tr><th class="center">6</th><td>Esperar mensajes</td><td>Leer tareas</td></tr>
-        <tr><th class="center">7</th><td></td><td>Ejecutar tareas</td></tr>
-        <tr><th class="center">8</th><td>Recibir mensajes</td><td>Enviar mensajes</td></tr>
-        <tr><th class="center">9</th><td>Interpretar información</td><td>Ir al #4</td></tr>
-        <tr><th class="center">10</th><td>Ir al paso #6</td><td></td></tr>
+        <tr><th class="text-center">1</th><td>Iniciar conexión</td><td></td></tr>
+        <tr><th class="text-center">2</th><td>Esperar primer mensaje</td><td>Establacer conexión</td></tr>
+        <tr><th class="text-center">3</th><td></td><td>Enviar verificación</td></tr>
+        <tr><th class="text-center">4</th><td>Recibir verificación</td><td>Esperar tareas</td></tr>
+        <tr><th class="text-center">5</th><td>Enviar configuración</td><td></td></tr>
+        <tr><th class="text-center">6</th><td>Esperar mensajes</td><td>Leer tareas</td></tr>
+        <tr><th class="text-center">7</th><td></td><td>Ejecutar tareas</td></tr>
+        <tr><th class="text-center">8</th><td>Recibir mensajes</td><td>Enviar mensajes</td></tr>
+        <tr><th class="text-center">9</th><td>Interpretar información</td><td>Ir al #4</td></tr>
+        <tr><th class="text-center">10</th><td>Ir al paso #6</td><td></td></tr>
       </tbody>
     </table>
     <span><i><small>Proceso de comunicación</small></i></span>
@@ -61,7 +57,7 @@ $dialecto = Am::getConfig("usr/dialecto");
   Cada acción del <i>Dialecto</i> tienen un valor número único que lo diferencia del resto. El dialecto está definido tanto en la parte librería de Android (clase <?php docEnlace("NbDialect") ?>) como en la libería de Arduino (constantes <code>NB_MSG_*</code>).
 </p>
 
-<table class="striped proceso-com">
+<table class="table">
   <thead>
     <tr><th>Valor</th><th>Nombre</th><th>Acción</th></tr>
   </thead>
@@ -119,7 +115,7 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
   De igual forma que en las comunicaciones, la clase <?php docEnlace("NbSkecth") ?> posee ciertos eventos que pueden ser detectados y manejados a conveniencia. Es se realiza mediante la clases manejadora de eventos <?php docEnlace("NbSketchHandler") ?>. Los posibles eventos están definidos en enumeración <?php docEnlace("NbSketchMessageEnum") ?> y se describen a continuación:
 </p>
 
-<table class="striped proceso-com">
+<table class="table">
   <thead>
     <tr>
       <th>Estado</th>

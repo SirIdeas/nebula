@@ -1,7 +1,8 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Estructura general" #)
-(# set:pagina="documentacion" #)
-(# set:paso="estructura" #)
+
+(:: parent:views/content.php :)
+(:: set:title="Estructura general" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="estructura" :)
 
 
 <h1 id="estructura-general">Estructura general</h1>
@@ -18,7 +19,7 @@
   Las clases <?php docEnlace("NbAdk") ?> y <?php docEnlace("NbSPP") ?> pueden usarse en placas dispongan puertos USB anfitrión compatibles con la librería <?php enlace("USB_Host_Shield_2.0") ?> como por ejemplo: las placas de Arduino compatibles con las <?php enlace("shield_usb_host") ?>, <?php enlace("Arduino Mega ADK") ?>, <?php enlace("Seediuno") ?>, <?php enlace("Freeduino") ?>, entre otros.
 </p>
 <p>
-  Por otro lado, la clase <?php docEnlace("NbSerial") ?> está destinada a usarse con placas que se comuniquen con el dispositivo Android por medio de los puertos UART, sin importar si la conexión se realiza de forma alámbrica (conexión directa mediante un <?php enlace("cable usb ORT") ?>) o inalámbria (con módulos como <?php enlace("HC-05") ?> o <?php enlace("BlueSMiRF") ?>).
+  Por otro lado, la clase <?php docEnlace("NbSerial") ?> está destinada a usarse con placas que se comuniquen con el dispositivo Android por medio de los puertos UART, sin importar si la conexión se realiza de forma alámbrica (conexión directa mediante un <?php enlace("cable usb OTG") ?>) o inalámbria (con módulos como <?php enlace("HC-05") ?> o <?php enlace("BlueSMiRF") ?>).
 </p>
 
 <h4 id="libreria-android">Librería Android: <code>NbLibAndroid</code></h4>
@@ -30,11 +31,11 @@
 </p>
 
 <div class="row">
-  <div class="col m6">
+  <div class="col-md-6">
     <ul>
       <li>
         <p>
-          <strong>Comunicación:</strong> Posee todo relacionado a establecer la conexión el hardware separados en los dos método soportados: Bluetooth y ADK. De igual forma, posee clases que apoyan esta tarea, como lo son los manejadores de eventos de conexión, algunos helpers, constantes de estados y errores entre otros.
+          <strong>Comunicación:</strong> Posee todo relacionado a establecer la conexión el hardware separados en los dos método sopoados: Bluetooth y ADK. De igual forma, posee clases que apoyan esta tarea, como lo son los manejadores de eventos de conexión, algunos helpers, constantes de estados y errores entre otros.
         </p>
       </li>
       <li>
@@ -49,8 +50,8 @@
       </li>
     </ul>
   </div>
-  <div class="col m6">
+  <div class="col-md-6">
     <div class="center"><i><small>Estructura principal Librería Android</small></i></div>
-    (# place:views/documentacion/NbLibAndroid-blocks.html #)
+    (:: place:pages/documentacion/NbLibAndroid-blocks.html :)
   </div>
 </div>

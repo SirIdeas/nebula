@@ -87,3 +87,58 @@ footer.page {
   font-size: 14px;
   margin-top: 8px;
 }
+.block-classes {
+  color: #fff;
+  text-align: center;
+}
+.block-classes .row {
+  margin: 0;
+}
+.block-classes .texto {
+  padding: 0.5rem 0;
+}
+.block-classes .sep {
+  padding-bottom: 0.5rem;
+}
+.block-classes [class^="color-"] {
+  -webkit-box-shadow: 2px 2px 8px rgba(50,50,50,0.5);
+  box-shadow: 2px 2px 8px rgba(50,50,50,0.5);
+}
+.block-classes .color-1 {
+  background-color: #00f;
+}
+.block-classes .color-2 {
+  background-color: #8a2be2;
+}
+.block-classes .color-3 {
+  background-color: #483d8b;
+}
+.block-classes .color-4 {
+  background-color: #dc143c;
+}
+.block-classes .color-5 {
+  background-color: #0f0;
+}
+.block-classes .color-6 {
+  background-color: #ff8c00;
+}
+.rejilla td {
+  font-size: 10px;
+  text-align: center;
+  border: 1px solid #000;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.rejilla tbody th {
+  border-bottom: 1px solid #000;
+}
+.rejilla .byte {
+  width: 50px;
+  text-align: center;
+}
+.rejilla .obb {
+  background-color: #808080;
+}
+.rejilla .even {
+  background-color: #d3d3d3;
+}

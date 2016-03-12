@@ -1,7 +1,7 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Personalización en Arduino" #)
-(# set:pagina="documentacion" #)
-(# set:paso="personalizacion-en-arduino" #)
+(:: parent:views/content.php :)
+(:: set:title="Personalización en Arduino" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="personalizacion-en-arduino" :)
 
 <h1>Personalización en Arduino</h1>
 <p>
@@ -17,7 +17,7 @@
   A continuación se presenta un ejemplo donde se agregan dos comandos:
 </p>
 <div class="row">
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Arduino</strong></p>
 
 
@@ -65,7 +65,7 @@ void setup(){
 </pre>
 
   </div>
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Android</strong></p>
 <p>
   Se definen las constantes para los comandos
@@ -104,7 +104,7 @@ NbSketch sketch = new NbSketch(){
 
 <div class="row">
   
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Android</strong></p>
 
 <p>
@@ -152,7 +152,7 @@ var2.setValue(76);
 </pre>
   </div>
 
-<div class="col m6">
+<div class="col-sm-6">
     <p><strong>Arduino</strong></p>
 
 
@@ -222,7 +222,7 @@ void setup(){
   <strong>Enviar información a un directa</strong>: Consiste en eviar datos mediante comandos especiales.
 </p>
 <div class="row">
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Arduino</strong></p>
 <p>
   Para la demostración se define un identificador para enviar información a un objeto
@@ -273,7 +273,7 @@ void setup(){
 }
 </pre>
   </div>
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Android</strong></p>
 <p>
   Declaramos el identificador del objeto y el comando personalizado.
@@ -335,7 +335,7 @@ NbSketch sketch = new NbSketch(){
   Asímismo, se puede procesar los datos de entrada antes de que estos sean evaluados en el algoritmo predeterminado establecido en Nébula, y posteriormente decidir si se desea retormar este. Esto se puede hacer de la siguiente forma:
 </p>
 <div class="row">
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Arduino</strong></p>
 <p>
   Se define una función que recibirá todos los comandos leídos antes de ser procesados por el agloritmo. Esta función recibe dos parámetros:
@@ -371,7 +371,7 @@ void setup(){
 }
 </pre>
   </div>
-  <div class="col m6">
+  <div class="col-sm-6">
     <p><strong>Android</strong></p>
 <p>
   Para interceptar los mensajes en la aplicación Android, se debe sobreescribir el método <?php docEnlace("NbSketch.preproccess") ?> del sketch. Esta función recibe el comando leído en el primer parámetro como un entero, y un buffer con los datos entrantes en el segundo parámetro. Además esta función puede retornar 3 posibles valores:
@@ -434,56 +434,56 @@ NbSketch sketch = new NbSketch(){
   </thead>
   <tbody>
     <tr>
-      <th>MSG_FINISH</th>
+      <th><code>MSG_FINISH</code></th>
       <td class="obb">CMD</td>
     </tr>
     <tr>
-      <th>MSG_DIGITAL_IN_CONF</th>
-      <td class="obb">CMD</td>
-      <td class="even">Pin</td>
-    </tr>
-    <tr>
-      <th>MSG_PIN_MODE_OUT</th>
+      <th><code>MSG_DIGITAL_IN_CONF</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
     </tr>
     <tr>
-      <th>MSG_ANALOG_WRITE</th>
+      <th><code>MSG_PIN_MODE_OUT</code></th>
+      <td class="obb">CMD</td>
+      <td class="even">Pin</td>
+    </tr>
+    <tr>
+      <th><code>MSG_ANALOG_WRITE</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb">Valor</td>
     </tr>
     <tr>
-      <th>MSG_ANALOG_IN_CONF</th>
+      <th><code>MSG_ANALOG_IN_CONF</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
     </tr>
     <tr>
-      <th>MSG_ANALOG_IN_READ</th>
+      <th><code>MSG_ANALOG_IN_READ</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb" colspan="2">Lectura</td>
     </tr>
     <tr>
-      <th>MSG_DIGITAL_WRITE</th>
+      <th><code>MSG_DIGITAL_WRITE</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb">Valor</td>
     </tr>
     <tr>
-      <th>MSG_OBJECT_CMD</th>
+      <th><code>MSG_OBJECT_CMD</code></th>
       <td class="obb">CMD</td>
       <td class="even" colspan="2">Id</td>
       <td colspan="4" style="border-right-style:dashed">Datos (la cantidad de bytes depende del objeto)</td>
     </tr>
     <tr>
-      <th>MSG_DIGITAL_IN_READ</th>
+      <th><code>MSG_DIGITAL_IN_READ</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb">Lectura</td>
     </tr>
     <tr>
-      <th>MSG_MOTORDC_WRITE</th>
+      <th><code>MSG_MOTORDC_WRITE</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin EN</td>
       <td class="obb">Pin IN1</td>
@@ -493,7 +493,7 @@ NbSketch sketch = new NbSketch(){
       <td class="obb">Valor IN2</td>
     </tr>
     <tr>
-      <th>MSG_STEPTOSTEP_MOVE</th>
+      <th><code>MSG_STEPTOSTEP_MOVE</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin A</td>
       <td class="obb">Pin B</td>
@@ -505,13 +505,13 @@ NbSketch sketch = new NbSketch(){
       <td class="obb">Actual</td>
     </tr>
     <tr>
-      <th>MSG_SET_STATE_DIGITAL</th>
+      <th><code>MSG_SET_STATE_DIGITAL</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb">Estado</td>
     </tr>
     <tr>
-      <th>MSG_SET_STATE_ANALOG</th>
+      <th><code>MSG_SET_STATE_ANALOG</code></th>
       <td class="obb">CMD</td>
       <td class="even">Pin</td>
       <td class="obb">Estado</td>

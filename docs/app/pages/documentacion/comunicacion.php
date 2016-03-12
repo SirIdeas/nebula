@@ -1,13 +1,9 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Comunicación" #)
-(# set:pagina="documentacion" #)
-(# set:paso="comunicacion" #)
+(:: parent:views/content.php :)
+(:: set:title="Comunicación" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="comunicacion" :)
 
-<?php 
-
-$dialecto = Am::getConfig("usr/dialecto");
-
-?>
+<?php $dialecto = Am::getProperty("usr/dialecto"); ?>
 
 <h1 id="comunicacion">Comunicación</h1>
 
@@ -34,16 +30,16 @@ $dialecto = Am::getConfig("usr/dialecto");
   La librería Nebúla debe ser incluía despues de incluír los elementos de comunicación utilizados de otras librerías (en el caso de <?php docEnlace("NbAdk") ?> y <?php docEnlace("NbSPP") ?>). Sin embargo, para implementar una comunicación por puertos UART se debe incluir explicitamente la librería correspondiente:
 </p>
 <div class="row">
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación Android ADK.</small></i></div>
+  <div class="col-sm-4">
+    <div class="text-center"><i><small>Para comunicación Android ADK.</small></i></div>
     <pre><?php echo getCodeFile("sketch-adk-include") ?></pre>
   </div>
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación SPP.</small></i></div>
+  <div class="col-sm-4">
+    <div class="text-center"><i><small>Para comunicación SPP.</small></i></div>
     <pre><?php echo getCodeFile("sketch-spp-include") ?></pre>
   </div>
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación puerto UART.</small></i></div>
+  <div class="col-sm-4">
+    <div class="text-center"><i><small>Para comunicación puerto UART.</small></i></div>
     <pre><?php echo getCodeFile("sketch-serial-include") ?></pre>
   </div>
 </div>
@@ -56,22 +52,22 @@ $dialecto = Am::getConfig("usr/dialecto");
 </p>
 
 <div class="row">
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación Android ADK.</small></i></div>
+  <div class="col-md-4">
+    <div class="text-center"><i><small>Para comunicación Android ADK.</small></i></div>
     <p>
       La comunicación por ADK requiere los objetos <code>Usb Usb</code> (manejo del puerto USB anfitrión) y <code>ADK adk</code>(asbtracación del protocolo de comunicación ADK). Por último se instancia el objeto <code>NbAdk com</code> que representa la abstracción de la comunicación con la estructura de mensajes de Nébula por ADK.
     </p>
     <pre><?php echo getCodeFile("sketch-adk-objetos") ?></pre>
   </div>
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación SPP.</small></i></div>
+  <div class="col-md-4">
+    <div class="text-center"><i><small>Para comunicación SPP.</small></i></div>
     <p>
       En la comunicación por SPP se requiere el objeto <code>Usb Usb</code> (manejo del puerto USB anfitrión), un objeto <code>BTD Btd</code> (manejo del Bluetooth) y <code>SPP SerialBt</code> (asbtracción de la comunicación Serial vía Bluetooth). Por último se requiere el obejto <code>NbSPP com</code> que representa la abstracción de la comunicación con la estructura de mensajes de Nébula por SPP.
     </p>
     <pre><?php echo getCodeFile("sketch-spp-objetos") ?></pre>
   </div>
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación puerto UART.</small></i></div>
+  <div class="col-md-4">
+    <div class="text-center"><i><small>Para comunicación puerto UART.</small></i></div>
     <p>
       Para implementar una comunicación mendiante un puerto UART de la placa Arduino en uso se utiliza del objeto <code>NbSerial com</code>. Esta clase recibe el objeto HardwareSerial que utilizará para la comunicación.
     </p>
@@ -86,12 +82,12 @@ $dialecto = Am::getConfig("usr/dialecto");
   Sea cual sea el caso para la implentación de la comunicación mediante Nébula sencilla solo hace falta llamar el método <code>task</code> del objeto <code>com</code>.
 </p>
 <div class="row">
-  <div class="col m8">
-    <div class="center"><i><small>Para comunicación ADK y SPP.</small></i></div>
+  <div class="col-md-8">
+    <div class="text-center"><i><small>Para comunicación ADK y SPP.</small></i></div>
     <pre><?php echo getCodeFile("sketch-simple") ?></pre>
   </div>
-  <div class="col m4">
-    <div class="center"><i><small>Para comunicación UART.</small></i></div>
+  <div class="col-md-4">
+    <div class="text-center"><i><small>Para comunicación UART.</small></i></div>
     <pre><?php echo getCodeFile("sketch-serial-setup-loop") ?></pre>
   </div>
 </div>
@@ -141,13 +137,13 @@ com.disconnect();
 
 <div class="row">
 
-  <div class="col m7">
+  <div class="col-md-7">
 
     <p>
       Las conexión solo pueden tener tres (3) posibles estados definidos en la librería Android en la enumeración <?php docEnlace("NbComMsgEnum") ?>:
     </p>
 
-    <table class="striped proceso-com">
+    <table class="table">
       <thead>
         <tr><th>Estado</th><th>Descripción</th></tr>
       </thead>
@@ -159,7 +155,7 @@ com.disconnect();
     </table>
   </div>
 
-  <div class="col m5 center">
+  <div class="col-md-5 text-center">
     <img class="ajustar" src="<?php Am::eUrl() ?>/images/diagrama-estados-conexion.png" alt="Diagrama de estados de las conexiones">
     <span><i><small>Diagrama de estados de las conexiones</small></i></span>
     <br>
@@ -173,7 +169,7 @@ com.disconnect();
   Durante la comunicación se generan diferentes eventos que pueden ser manejados a conveniencia desde la aplicación librería Android. Estos eventos son estan definidos en la enumeración <?php docEnlace("NbComMsgEnum") ?> y pueden ser manejados mediante el manejador de mensajes <?php docEnlace("NbComHandler") ?>. A continuación se explican los diferentes eventos genéricos de la comunicación:
 </p>
 
-<table class="striped proceso-com">
+<table class="table">
   <thead>
     <tr>
       <th>Estado</th>
@@ -234,7 +230,7 @@ com.disconnect();
 <p>
   Adicionalmente, la comunicación Bluetooth dispone de ciertos eventos especiales, uno para apoyar las rutinas de comunicación, el resto para ser utilizados en las acciones de listado de dispositivos. Estos eventos tambien están definidos en la enumeración <?php docEnlace("NbComMsgEnum") ?>, sin embargo pueden ser atendidos por la clase <?php docEnlace("NbBtHandler") ?> que es una especialización de <?php docEnlace("NbComHandler") ?>. A continuación de listan los eventos espcíficos para conexiones Bluetooth manejados:
 </p>
-<table class="striped proceso-com">
+<table class="table">
   <thead>
     <tr>
       <th>Estado</th>
@@ -293,7 +289,7 @@ com.disconnect();
   En las rutinas de conexión se pueden generar ciertos conexiones, que aunque no es importante detectarlos, pueden llegar a ser de interés del programador diferenciarlos en proyectos avanzados. Estos errores estan definidos en la enumeración <?php docEnlace("NbComErrorEnumEstos") ?>, y pueden ser detectados en el método <?php docEnlace("NbComHandler.error") ?> de los manejadores <?php docEnlace("NbComHandler") ?> implementados. A continuación se presentan los diferentes errores que se pueden presentar.
 </p>
 
-<table class="striped proceso-com">
+<table class="table">
   <thead>
     <tr><th>Error</th><th>Tipo de conexión</th><th>Descripción</th></tr>
   </thead>

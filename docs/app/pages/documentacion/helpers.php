@@ -1,7 +1,7 @@
-(# parent:views/_content.php #)
-(# set:title="{$_env->name} | Helpers" #)
-(# set:pagina="documentacion" #)
-(# set:paso="helpers" #)
+(:: parent:views/content.php :)
+(:: set:title="Helpers" :)
+(:: set:pagina="documentacion" :)
+(:: set:paso="helpers" :)
 
 <h1 id="helpers">Helpers</h1>
 <p>

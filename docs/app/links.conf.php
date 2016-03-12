@@ -19,7 +19,7 @@ return array(
   "BlueSMiRF" => "https://www.sparkfun.com/products/12577",
   "HC-05" => "http://www.geekfactory.mx/radio/bluetooth-hc-05-y-hc-06-tutorial-de-configuracion/",
   "shield_usb_host" => "",
-  "cable usb ORT" => "",
+  "cable usb OTG" => "",
   "Seediuno" => "",
   "Freeduino" => "",
 );
