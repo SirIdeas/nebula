@@ -1,0 +1,40 @@
+$separator_color: #c3c3c3;
+
+.reveal{
+  font-size: 32px;
+}
+
+#ponente-wrapper{
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	font-size: 0.8em;
+	display: none;
+}
+
+.separator{
+	width: 50%;
+	height:5px;
+	background-color: $separator_color;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.no-margin-top-bottom{
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.fondo-blanco{
+	background-color: white !important;
+}
+
+.reset-img{
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+blockquote{
+	background-color: transparent !important;
+}
