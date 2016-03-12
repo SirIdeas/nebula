@@ -1,5 +1,0 @@
-// Función de procesamiento
-void loop() {
-  Usb.Task();
-  com.task();
-}

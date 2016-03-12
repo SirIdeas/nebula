@@ -1,2 +1,0 @@
-#include <adk.h>
-#include <Nb.h>

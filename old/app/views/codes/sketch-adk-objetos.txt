@@ -1,9 +1,0 @@
-USB Usb;
-ADK adk(&Usb,
-  "UNEG",
-  "NebulaBoard",
-  "Nébula Board", "1.0",
-  "http://nebula.sirideas.com",
-  "0000000012345678");
-
-NbAdk com(&adk);
