@@ -14,7 +14,6 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown (:= $pagina=='comenzar'? 'active' : '' :)">
