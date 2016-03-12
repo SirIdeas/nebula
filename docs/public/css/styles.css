@@ -1,0 +1,89 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  top: 0;
+  color: #263238;
+  padding-top: 70px;
+}
+footer.page {
+  text-align: center;
+  height: 50px;
+  background-color: #455a64;
+  color: #fff;
+  width: 100%;
+}
+.page-inner {
+  padding-bottom: 30px;
+}
+.vertical-middle {
+  display: table;
+}
+.vertical-middle >div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.ajustar {
+  max-width: 100%;
+}
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar-brand .logo {
+  background-image: url("../images/nb-s.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.home-inner {
+  color: #fff;
+}
+.home-inner p {
+  color: #fff;
+}
+.home-inner i:before {
+  font-size: 96px;
+}
+.page-home {
+  height: 100%;
+  background-image: url("../images/index.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.page-home footer.page {
+  background-color: transparent;
+}
+.page-home body {
+  background-color: rgba(0,0,0,0.5);
+}
+.indice {
+  margin-top: 50px;
+  text-align: right;
+  padding: 0 20px 0 0;
+}
+.indice ul {
+  padding: 0;
+}
+.indice h6 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.indice li {
+  list-style-type: none;
+  line-height: 1.1em;
+  font-size: 14px;
+  margin-top: 8px;
+}

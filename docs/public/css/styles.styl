@@ -1,0 +1,114 @@
+@import nib
+@import 'globals.styl'
+
+////////////////////////////////////////////////////////////////////////////
+// Colores
+////////////////////////////////////////////////////////////////////////////
+
+$color-text = #263238
+$color-text-inv = white
+$color-main = #263238
+$color-base = #b0bec5
+$color-sec = #455a64
+$color-soft = #455a64
+
+////////////////////////////////////////////////////////////////////////////
+// Global
+////////////////////////////////////////////////////////////////////////////
+
+$header-height = 50px
+$header-margin-bottom = 20px
+$body-padding-top = $header-height + $header-margin-bottom
+$footer-height = 50px
+
+////////////////////////////////////////////////////////////////////////////
+// Template
+////////////////////////////////////////////////////////////////////////////
+
+html
+  height: 100%
+  overflow: hidden
+  
+body
+  height: 100%  
+  overflow: auto
+  relative: top
+  color: $color-text
+  padding-top: $body-padding-top
+  
+footer.page
+  text-align: center
+  height: $footer-height
+  background-color: $color-sec
+  color: $color-text-inv
+  width: 100%
+  
+.page-inner
+  padding-bottom: 30px
+  
+////////////////////////////////////////////////////////////////////////////
+// Generales
+////////////////////////////////////////////////////////////////////////////
+
+.vertical-middle
+  display: table
+  >div
+    display: table-cell
+    vertical-align: middle
+
+.ajustar
+  max-width: 100%
+  
+.navbar-brand
+  padding-top: 0
+  padding-bottom: 0
+  .logo
+    background-image: url(../images/nb-s.png)
+    background-size: cover
+    background-position: center
+    display: inline-block
+    width: 35px
+    height: 35px
+    
+
+////////////////////////////////////////////////////////////////////////////
+// Home
+////////////////////////////////////////////////////////////////////////////
+
+.home-inner
+  color: white
+  p
+    color: white
+  i:before
+    font-size: 96px
+    
+.page-home
+  height: 100%;
+  background-image: url(../images/index.jpg)
+  background-size: cover
+  background-position: center
+  footer.page
+    background-color: transparent
+  body
+    background-color: rgba(0,0,0,.5)
+  
+////////////////////////////////////////////////////////////////////////////
+// Sidebar
+////////////////////////////////////////////////////////////////////////////
+
+.indice
+  margin-top: 50px
+  text-align: right
+  padding: 0 20px 0 0
+  ul
+    padding: 0
+  h6
+    font-weight: bold
+    font-size: 16px
+    margin-top: 15px
+    margin-bottom: 0
+  li
+    list-style-type: none
+    line-height: 1.1em
+    font-size: 14px
+    margin-top: 8px

@@ -1,0 +1,57 @@
+// com es una instancia de NbBt o NbAdk.
+NbSketch sketch = new NbSkecth();
+
+sketch.addHandler(new NbSketchHandler(){
+
+  // Cambio de estado de un pin digital.
+  public void changedDigitalState(NbCmpVector components, int pin, boolean state){
+    // components: Listado de componentes del sketch correspondientes al pin
+    // indicado.
+    // pin: Pin cuyo stado cambió.
+    // state: Nuevo estado del componente.
+  }
+
+  // Cambio de estado de un pin analógico.
+  public void changedAnalogState(NbCmpVector components, int pin, boolean state){
+    // components: Listado de componentes del sketch correspondientes al pin
+    // indicado.
+    // pin: Pin cuyo stado cambió.
+    // state: Nuevo estado del componente.
+  }
+
+  // Cambio de estado de un objeto.
+  public void changedObjectState(NbCmp component, int id, boolean state){
+    // component: Instancia del componente cuyo valor cambio.
+    // indicado.
+    // id: Identificador único del componente.
+    // state: Nuevo estado del componente.
+  }
+
+  // Cambio de valor de un pin de entrada digital.
+  public void changedDigitalValue(NbCmpVector components, int pin, boolean value){
+    // components: Listado de componentes del sketch correspondientes al pin
+    // indicado.
+    // pin: Pin cuyo lectura cambió.
+    // value: Valor nuevo.
+  }
+
+  // Cambio de valor de un pin de entrada analógico.
+  public void changedAnalogValue(NbCmpVector components, int pin, long value){
+    // components: Listado de componentes del sketch correspondientes al pin
+    // indicado.
+    // pin: Pin cuyo lectura cambió.
+    // value: Valor nuevo.
+  }
+
+  // Cambio de valor de objeto.
+  public void changedObjectValue(NbCmp component, int id){
+    // NbCmp: Instancia del componente cuyo valor cambio.
+    // id: Identificador único del componente.
+  }
+
+  // No se encuentra un objeto solicitado.
+  public void objectNotFount(int id){
+    // id: Identificador único del obejto buscado.
+  }
+
+});
