@@ -1,6 +1,7 @@
 (:: set:siteTitle='Nébula' :)
 (:: set:title='Inicio' :)
 (:: set:pagina='home' :)
+(:: set:paso='home' :)
 
 <!DOCTYPE html>
 <html class="page-(:= $pagina :)">
