@@ -16,7 +16,7 @@
   Pueden existir diferentes tipos de componentes: entradas y salidas, analógicos y digitales, simples y compuestos. 
 </p>
 
-<h4 id="proceso-de-comunicacion">Proceso de comunicación</h4>
+<h2 id="proceso-de-comunicacion">Proceso de comunicación</h2>
 <div class="row">
   <div class="col-sm-6">
     <p>
@@ -26,7 +26,7 @@
       Por lo general, la comunicación es establecida desde el dispositivo móvil o desde la aplicación. En el momento en el que el hardware externo detecta la conexión envía un primer mensaje de verificación y cae en espera de mensajes de entrada. Luego, la aplicación envía los bytes de configuración al hardware externo y cae en espera. El hardware externo interpreta la configuración recibida y envía los bytes pertinentes. Por último, comienza un ciclo infinito en el que la aplicación y hardware externo envía bytes de información entre si, siempre esperando la respuesta de su contraparte. Todo el proceso de comunicación termina en el momento que se rompa la conexión entre el hardware externo y el dispositivo inteligente.
     </p>
   </div>
-  <div class="col-sm-6 center">
+  <div class="col-sm-6 text-center">
     <table class="table">
       <thead>
         <tr><th>Paso</th><th>Aplicación Android</th><th>Hardware Arduino</th></tr>
@@ -49,7 +49,7 @@
 </div>
 
 
-<h4 id="estructura-de-mensajes">Estructura de mensajes</h4>
+<h2 id="estructura-de-mensajes">Estructura de mensajes</h2>
 <p>
   Los mensajes enviados entre la aplicación Android y el sketch de Arduino consiste en una lista de bytes que representan un grupo de <i>instrucciones</i>, <i>argumentos</i> y <i>datos</i>. Las <i>instrucciones</i> están conformadas en un set de acciones llamado <i>Dialecto</i> definidas que pueden realizar la librería de Nébula en la aplicación Android y/o en el sketch de Arduino, mientras que los <i>argumentos</i> parametrizan las acciones a realizar y por último los <i>datos</i> representan los datos enviados de una parte a la otra.
 </p>
@@ -72,11 +72,11 @@
   </tbody>
 </table>
 
-<h4 id="ejemplo">Ejemplo</h4>
+<h2 id="ejemplo">Ejemplo</h2>
 <p>
   Imagine que desea encender y apagar un primer led con un botón y controlar la intensidad de un segundo led con un potenciómetro. Una implementación acertada de una solucíón en Nébula podría ser:
 </p>
-<pre>
+<pre><code class="language-java">
 // com es una instancia de NbBt o NbAdk.
 NbCom com = getCom();
 
@@ -103,13 +103,13 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
     ledAlg.setValue(component.getValueMap(0,255,0,1023));
   }
 });
-</pre>
+</code></pre>
 
 <p>
   Los componentes electrónicos que no se frecuentes tambien pueden manejarse desde Nébula, aunque se requiere una codificación especial. Consulte el apartado <a href="" style="color:red">PENDIENTE</a> para mas información.
 </p>
 
-<h4 id="eventos-en-los-sketchs">Eventos en los Sketchs</h4>
+<h2 id="eventos-en-los-sketchs">Eventos en los Sketchs</h2>
 
 <p>
   De igual forma que en las comunicaciones, la clase <?php docEnlace("NbSkecth") ?> posee ciertos eventos que pueden ser detectados y manejados a conveniencia. Es se realiza mediante la clases manejadora de eventos <?php docEnlace("NbSketchHandler") ?>. Los posibles eventos están definidos en enumeración <?php docEnlace("NbSketchMessageEnum") ?> y se describen a continuación:
@@ -158,14 +158,14 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 <p>
   Se puede utilizar el método <?php docEnlace("NbSkecth.addHandler") ?> de la clase <?php docEnlace("NbSkecth") ?> para agregar un manejador de eventos:
 </p>
-<pre><?php echo getCodeFile("android-uso-nb-sketch-handler") ?></pre>
+<pre><code class="language-java"><?php echo getCodeFile("android-uso-nb-sketch-handler") ?></code></pre>
 
 
-<h4 id="eventos-en-los-sketchs">Método Loop</h4>
+<h2 id="eventos-en-los-sketchs">Método Loop</h2>
 <p>
   Despues de procesar la cola de mensajes enviadas desde el microcontrolador a la aplicación, y antes de enviar la respuesta, se llama el método <?php docEnlace("NbSkecth.loop") ?>. De giual forma dispone de un método <?php docEnlace("NbSkecth.getUserBytes") ?> permite definir un grupo de bytes enviados al final de la cola de mensaje con comandos personalizados. Finalmente el método <?php docEnlace("NbSkecth.addSetupByte") ?> permite agregar bytes al final de la cola de mensaje de configuración. Estps métodos pueden ser reescritos para enviar comandos personalizados como los tratados en el apartado <a href="<?php Am::eUrl() ?>/documentacion/personalizacion-en-arduino">Personalización en Arduino</a>.
 </p>
-<pre>
+<pre><code class="language-java">
 
 // instanciar 
 NbSketch sketch = new NbSketch(){
@@ -191,4 +191,4 @@ NbSketch sketch = new NbSketch(){
 
 // Agregar un byte a la cola de mensaje
 sketch.addSetupByte(cmd1);
-</pre>
+</code></pre>

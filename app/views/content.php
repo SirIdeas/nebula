@@ -31,12 +31,12 @@ $siguiente = $actual!==false && $actual<(count($pasosIndexes)-1)? $pasos[$pasosI
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-3 hidden-xs">
+    <div class="col-sm-3 col-md-2 hidden-xs">
       <div class="indice">
         (:: place:views/sidebar.php :)
       </div>
     </div>
-    <div class="col-sm-9 col-xs-12">
+    <div class="col-sm-9 col-md-10 col-xs-12">
       <div class="page-inner">
     
         (:: put:stepBar :)

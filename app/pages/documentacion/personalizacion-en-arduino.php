@@ -9,7 +9,7 @@
 </p>
 
 
-<h4>Comandos desconocidos</h4>
+<h2>Comandos desconocidos</h2>
 <p>
   La comunicación predeterminada en Nébula se basa en un grupo de comandos principales descritos en la sección de <a href="<?php Am::eUrl() ?>/documentacion/sketchs#estructura-de-mensajes">Comunicación</a>. Si se desea agregar comandos extras a estos, se puede utiliza el callback de procesamiento de comandos desconocidos.
 </p>
@@ -25,16 +25,16 @@
 <p>
   Se define las constantes para identificar cada comando.
 </p>
-<pre>
+<pre><code class="language-cpp">
 #define CMD_1 (__NB_LAST_MSG_CODE + 0x1)
 #define CMD_2 (__NB_LAST_MSG_CODE + 0x2)
-</pre>
+</code></pre>
 
 
 <p>
   Se define una funcion que maneje los comandos desconocidos. Esta función recibe como parámetro un char que representa el comando recibido y retorna verdader o falso, depeniendo si completo o no el comando enviado satisfactoriamente. Si el comando recibido sigue siendo desconocido debe retornarn falso.
 </p>
-<pre>
+<pre><code class="language-cpp">
 bool cmd_else(char cmd){
   switch(cmd){
   case CMD_1:
@@ -51,18 +51,18 @@ bool cmd_else(char cmd){
   }
   return false;
 }
-</pre>
+</code></pre>
 
 
 <p>
   Se asignar el callback al la instancia de comunicación.
 </p>
-<pre>
+<pre><code class="language-cpp">
 void setup(){
   ...
   com.setCallbackUnk(cmd_unk);
 }
-</pre>
+</code></pre>
 
   </div>
   <div class="col-sm-6">
@@ -70,15 +70,15 @@ void setup(){
 <p>
   Se definen las constantes para los comandos
 </p>
-<pre>
+<pre><code class="language-java">
 int CMD_1 = NbDialect.__LAST_MSG_CODE + 1;
 int CMD_2 = NbDialect.__LAST_MSG_CODE + 2;
-</pre>
+</code></pre>
 
 <p>
   Se instancia el sketch reescribiendo el método getUserBytes.
 </p>
-<pre>
+<pre><code class="language-java">
 NbSketch sketch = new NbSketch(){
   protected void getUserBytes(){
     
@@ -92,12 +92,12 @@ NbSketch sketch = new NbSketch(){
 
   }
 }
-</pre>
+</code></pre>
   </div>
 </div>
 
 
-<h4>Comandos a Componentes Objetos</h4>
+<h2>Comandos a Componentes Objetos</h2>
 <p>
   Cuando se esta enviando comandos correspondientes a objetos personalizados, se deben implementar como en el siguiente ejemplo:
 </p>
@@ -113,7 +113,7 @@ NbSketch sketch = new NbSketch(){
 <p>
   En el ejemplo actual se enviarán el valor del componente cada vez que se setee el mismo.
 </p>
-<pre>
+<pre><code class="language-java">
 public class NbSetVar extends NbCmpOutObj{
   
   public NbSetVar(int id) {
@@ -133,11 +133,11 @@ public class NbSetVar extends NbCmpOutObj{
   }
 
 }
-</pre>
+</code></pre>
 <p>
   Por último, se crean instancias de este objeto con identificadores diferentes. Si el componente es conectado a un sketch este se encargará de enviar los comandos cada que corresponda.
 </p>
-<pre>
+<pre><code class="language-java">
 // Definir identificadores
 int ID_1 = 1;
 int ID_2 = 2;
@@ -149,7 +149,7 @@ NbSetVar var2 = new NbSetVar(ID_2);
 // Setear values
 var1.setValue(32);
 var2.setValue(76);
-</pre>
+</code></pre>
   </div>
 
 <div class="col-sm-6">
@@ -159,21 +159,21 @@ var2.setValue(76);
 <p>
   Se define las constantes de los identidicadores de cada objeto.
 </p>
-<pre>
+<pre><code class="language-cpp">
 #define ID_1 1
 #define ID_2 2
-</pre>
+</code></pre>
 <p>
   Declarar las variables que contendrán los valores
 </p>
-<pre>
+<pre><code class="language-cpp">
 int var1 = 0;
 int var2 = 0;
-</pre>
+</code></pre>
 <p>
   Se define una funcion para manejar los mensajes a objetos. Esta función recive un entero que representa el identificador del objeto al que se envió el mensaje. Además esta función retorna verdadero si logra completar la tarea enviada al objeto, de lo contrario retorna falso.
 </p>
-<pre>
+<pre><code class="language-cpp">
 bool cmd_object(int id){
 
   switch(id){
@@ -197,21 +197,21 @@ bool cmd_object(int id){
   }
   return false;
 }
-</pre>
+</code></pre>
 <p>
   Finalemente se debe asignar la función a la instancia de comunicación como si indaca a continuación:
 </p>
-<pre>
+<pre><code class="language-cpp">
 void setup(){
   ...
   com.setCallbackObject(cmd_object);
 }
-</pre>
+</code></pre>
   </div>
 
 </div>
 
-<h4>Enviar datos de Arduino a Android</h4>
+<h2>Enviar datos de Arduino a Android</h2>
 <p>
   De igual forma puede existir la necesidad de enviar datos desde el microcontrolador a la aplicación en Android. Existen dos formas de enviar información a la aplicación:
 </p>
@@ -228,15 +228,15 @@ void setup(){
   Para la demostración se define un identificador para enviar información a un objeto
   y un comando personalizado.
 </p>
-<pre>
+<pre><code class="language-cpp">
 #define ID_1 1
 #define CMD_1 (__NB_LAST_MSG_CODE + 0x1)
-</pre>
+</code></pre>
 
 <p>
   Para enviar datos desde el microcontrolador se debe definir una función sin parámetros y sin valor de retorno. Se enviará la lectura del pin analógico 0 a un objeto con un determinado identificador, y la lectura del pin analógico 1 por un mensaje personalizado.
 </p>
-<pre>
+<pre><code class="language-cpp">
 
 int lect0 = 0;
 int lect1 = 0;
@@ -262,30 +262,30 @@ void cmd_send(void){
   }
 
 }
-</pre>
+</code></pre>
 <p>
   Por ultimo, asignamos esta función como callback para enviar datos personalizados a la instancia de comunicación:
 </p>
-<pre>
+<pre><code class="language-cpp">
 void setup(){
   ...
   com.setCallbackSend(cmd_send);  
 }
-</pre>
+</code></pre>
   </div>
   <div class="col-sm-6">
     <p><strong>Android</strong></p>
 <p>
   Declaramos el identificador del objeto y el comando personalizado.
 </p>
-<pre>
+<pre><code class="language-java">
 int ID_1 1;
 int CMD_1 = NbDialect.__LAST_MSG_CODE + 1;
-</pre>
+</code></pre>
 <p>
   Para recibir el los datos en un componente objeto podemos definir una clase que herede de la clase <?php docEnlace("NbCmpOutObj") ?> y reescribir el método <?php docEnlace("NbCmpOutObj.readData") ?> para leer los datos correspondientes de la misma forma en que fueron enviados
 </p>
-<pre>
+<pre><code class="language-java">
 public class NbGetVar extends NbCmpOutObj{
   
   public NbGetVar(int id) {
@@ -307,11 +307,11 @@ public class NbGetVar extends NbCmpOutObj{
 
 // Instanciar un objeto con el identificador usado
 NbGetVar analog0 = new NbGetVar(ID_1);
-</pre>
+</code></pre>
 <p>
   Por otro lado, para recibir los datos enviados por mensaje personalizado se puede instanciar el sketch rescribiendo el método <?php docEnlace("NbCmpOutObj.unknowCmd") ?>. Este método es llamado cada vez que se lee un mensaje o desconocido. Si esta función logra ejecutar el comando satisfactoriamente deberá retornar verdadero, de lo contrario debe retornar falso.
 </p>
-<pre>
+<pre><code class="language-java">
 
 // variable para almacenar la lectura recibida.
 int analog1 = 0;
@@ -326,11 +326,11 @@ NbSketch sketch = new NbSketch(){
     }
   }
 }
-</pre>
+</code></pre>
   </div>
 </div>
 
-<h4>Preprocesamiento de datos</h4>
+<h2>Preprocesamiento de datos</h2>
 <p>
   Asímismo, se puede procesar los datos de entrada antes de que estos sean evaluados en el algoritmo predeterminado establecido en Nébula, y posteriormente decidir si se desea retormar este. Esto se puede hacer de la siguiente forma:
 </p>
@@ -347,7 +347,7 @@ NbSketch sketch = new NbSketch(){
 <p>
   Por último, este callback deberá retornar verdadero si logra concretar una tarea satisfactoriamente. Si la cola de mensaje no tiene todos los bytes esperados para ejecutar la tarea correspondiente la función deberá retornar falso.
 </p>
-<pre>
+<pre><code class="language-cpp">
 bool cmd_pre(char cmd, bool& unk){
   ...
   // Comando desconocido. Seguir evaluando con
@@ -360,16 +360,16 @@ bool cmd_pre(char cmd, bool& unk){
   // Tarea ejecutado satisfactoriamente
   return true;
 }
-</pre>
+</code></pre>
 <p>
   Por último se debe asignar el callback a la instancia de la comunicación.
 </p>
-<pre>
+<pre><code class="language-cpp">
 void setup(){
   ...
   com.setCallbackPre(cmd_pre);  
 }
-</pre>
+</code></pre>
   </div>
   <div class="col-sm-6">
     <p><strong>Android</strong></p>
@@ -379,7 +379,7 @@ void setup(){
 <p><strong><code>CmdResult.COMPLETE</code></strong>: Indica que la tarea para el comando se completo satisfactoriamente.</p>
 <p><strong><code>CmdResult.INCOMPLETE</code></strong>: Indica que la tarea para el comando no se culminó correctamente.</p>
 <p><strong><code>CmdResult.UNKNOW</code></strong>: Indica que no se reconoció el comando.</p>
-<pre>
+<pre><code class="language-java">
 NbSketch sketch = new NbSketch(){
   protected CmdResult
     preproccess(int cmd, NbBuffer data)
@@ -398,11 +398,11 @@ NbSketch sketch = new NbSketch(){
 
   }
 }
-</pre>
+</code></pre>
   </div>
 </div>
 
-<h5>Cola de mensajes</h5>
+<h3>Cola de mensajes</h3>
 <p>
   Para poder procesaro la cola de mensaje de forma personalizada, se debería conocer también la estrucutra de la misma.
 </p>

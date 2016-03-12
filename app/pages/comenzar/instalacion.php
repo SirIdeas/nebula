@@ -4,7 +4,7 @@
 (:: set:paso="instalacion" :)
 
 <h1 id="instalacion">Instalación</h1>
-<h4 id="arduino-ide">Arduino IDE</h4>
+<h2 id="arduino-ide">Arduino IDE</h2>
 <div class="row">
   <div class="col-sm-6 col-md-8">
     <p>
@@ -23,13 +23,9 @@
 
     <div class="panel panel-info">
       <div class="panel-heading">
-        <i><strong>Notas</strong></i><br>
-        <ul>
-          <li>Los nombres de las carpetas de librerías debe contener solo caracteres alfanuméricos y/o "_", por lo que es posible que se requiera renombrar la carpeta descomprimida de USB_Host_Shield_2.0.</li>
-        </ul>
-        <ul>
-          <li>Para el fucionamiento de la librería <?php enlace("USB_Host_Shield_2.0") ?> con la placa <?php enlace("Arduino Mega ADK") ?> debe cambiar el valor del macro <code>USE_UHS_MEGA_ADK</code> a 1. <strong>(Línea #42 del archivo <i>&lt;usb_host_shield_library_folder&gt;)/settings.h</i></strong></li>
-        </ul>
+        <strong>Notas</strong>
+        <div>* Los nombres de las carpetas de librerías debe contener solo caracteres alfanuméricos y/o "_", por lo que es posible que se requiera renombrar la carpeta descomprimida de USB_Host_Shield_2.0.</div>
+        <div>* Para el fucionamiento de la librería <?php enlace("USB_Host_Shield_2.0") ?> con la placa <?php enlace("Arduino Mega ADK") ?> debe cambiar el valor del macro <code>USE_UHS_MEGA_ADK</code> a 1. <strong>(Línea #42 del archivo <i>&lt;usb_host_shield_library_folder&gt;)/settings.h</i></strong></div>
       </div>
     </div>
 
@@ -45,7 +41,7 @@
 </div>
 
 
-<h4 id="eclipse-ide">Eclipse IDE</h4>
+<h2 id="eclipse-ide">Eclipse IDE</h2>
 <div class="row">
   <div class="col-sm-7">
     <p>
@@ -53,7 +49,7 @@
     </p>
     <div class="panel panel-info">
       <div class="panel-heading">
-        <i><strong>Nota</strong></i>: Nébula es compatible la API 16: Android 4.1 (Jelly Bean) o posterior.
+        <strong>Nota</strong>: Nébula es compatible la API 16: Android 4.1 (Jelly Bean) o posterior.
       </div>
     </div>
     <p>

@@ -17,17 +17,17 @@
   Este apartado tiene las siguientes secciones:
 </p>
 
-<h4><a href="(:/:)/comenzar/instalacion">Instalación</a></h4>
+<h2><a href="(:/:)/comenzar/instalacion">Instalación</a></h2>
 <p>
   Se enseña como instalar las librerías en el entorno de programación Arduino/Arndroid.
 </p>
 
-<h4><a href="(:/:)/comenzar/adk-led-blink">ADK Led Blink</a></h4>
+<h2><a href="(:/:)/comenzar/adk-led-blink">ADK Led Blink</a></h2>
 <p>
   Ejemplo básico de como controlar un diodo LED por medio de Nébula a través de una conexión ADK.
 </p>
 
-<h4><a href="(:/:)/comenzar/bt-led-blink">BT Led Blink</a></h4>
+<h2><a href="(:/:)/comenzar/bt-led-blink">BT Led Blink</a></h2>
 <p>
   Ejemplo básico de como controlar un diodo LED por medio de Nébula a través de una conexión Bluetooth.
 </p>
