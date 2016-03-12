@@ -1,11 +1,8 @@
 {
-  "name": "poligloto",
-  "version": "0.0.0",
-  "dependencies": {
-    "materialize": "0.92.1"
-  },
+  "name": "app",
+  "version": "0.0.1",
+  "dependencies": {},
   "devDependencies": {
-    "json3": "~3.3.2",
-    "es5-shim": "~4.0.3"
+    "bootstrap": "^3.3.6"
   }
 }
