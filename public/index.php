@@ -13,7 +13,10 @@
  * helpers escenciales, manejo de errores personalizado.
  * 
  */
-include '../../../am/am/autoload.php';
+if(is_file('../../am/autoload.php'))
+  include '../../am/autoload.php';
+else
+  include '../../../am/am/autoload.php';
 
 /**
  * -----------------------------------------------------------------------------
