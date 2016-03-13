@@ -12,7 +12,7 @@ Descargar desde [GitHub](https://github.com/SirIdeas/nebula/archive/android.zip)
 ## Uso Básico
 
 ### Comunicación por BT
-```
+```java
 // Actividad para elegir el dispositivo al que se conectará
 public class BtDevicesListActivity extends NbBtDeviceListActivityHelper {
 }
