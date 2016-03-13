@@ -1,10 +1,8 @@
-/* ========================================================================
- * Nebula Arduino Lib: NbSoftwareSerial v0.0.1-beta
- * http://sirideas.github.io/nebula/
- * ========================================================================
- * Copyright 2014-2015 UNEG
- * Licensed under MIT (https://github.com/SirIdeas/nebula/blob/master/LICENSE)
- * ========================================================================
+/**
+ * Proyecto Nébula
+ *
+ * @author Alex J. Rondón <arondn2@gmail.com>
+ * 
  */
 
 #ifndef NbSerial_h
