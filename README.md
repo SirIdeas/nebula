@@ -1,4 +1,4 @@
-#Nébula AndroidLib
+#Nébula Librería Arduino
 Librería Arduino del proyecto Nébula basada en la librería en [USB Host Library 2.0](https://github.com/felis/USB_Host_Shield_2.0).
 Contiene clases de conexión para ADK, Bluetooth y cominucación Serial.
 
