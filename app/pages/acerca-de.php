@@ -51,3 +51,27 @@
 <p>
   <blockquote><i>A los profesores: Nancy Ávila, Carlos Abbafy, Andrés Caniumilla, Alejandro Marcus, Sandra Castillo por haberme guiado y servir de modelo como profesionales y como persona.</i> Seminario Guillermo</blockquote>
 </p>
+
+<h3>Repositorios</h3>
+
+<h4>Librerías</h4>
+<ul>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/android">Android</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/arduino">Arduino</a></li>
+</ul>
+
+<h4>Ejemplos</h4>
+<ul>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.led.blink.bt">Control de led por BT</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.led.blink.adk">Control de led por ADK</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.messages">Comando por mensajes de textos</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.test">Prueba de control de NebulaBot</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.accelerometer">Control con Acelerómetro</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.follow.color">Seguimiento de color - OpenCV</a></li>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/sample.follow.face">Seguimiento de rostro - OpenCV</a></li>
+</ul>
+
+<h4>Otros</h4>
+<ul>
+  <li><a href="https://github.com/SirIdeas/nebula/tree/docs">Repositorio de la documentación</a></li>
+</ul>
