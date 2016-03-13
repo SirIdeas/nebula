@@ -1,23 +1,100 @@
-# Nébula
-Librería para comunicación Bluetooth, ADK y Serial entre placas Arduino y dispositivos móviles Android. Incluye implementación de las rutinas de los componentes de mayor uso en proyectos electrónicos.
+# Nébula Librería Android
 
-## Documentación
+Librería Android para desarrollo de aplicaciónes basadas en el proyecto Nébula.
 
-La documentación correspondiente está [disponible en línea](http://nebula.sirideas.com).
+## Requerimientos
+-Entorno para desarrollo de aplicaciones Android: Android SDK + Eclipse IDE + ADT
 
-## Licencia
+## Instalación
 
-Este software está licenciado bajo la [MIT](LICENSE), documentado bajo [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
+Descargar desde [GitHub](https://github.com/SirIdeas/nebula/archive/android.zip) y descomprimir en la carpeta deseada.
 
-## Contribuciones
+## Uso Básico
 
-Por favor reporte los bugs, sugerencias y agregué peticiones en el [GitHub issue tracker](https://github.com/SirIdeas/nebula/issues).
+### Comunicación por BT
+```
+// Actividad para elegir el dispositivo al que se conectará
+public class BtDevicesListActivity extends NbBtDeviceListActivityHelper {
+}
 
-## Registro de cambios
+// Actividad principal
+public class MainActivity extends NbBtMainActivityHelper{
+  
+  // Instanciar un LED Digital
+  private NbLedDigital led = new NbLedDigital(13);
+  
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    
+    // Indicar la actividad a utilizar para listar los accesorios BT
+    setBtDeviceListActivityClass(BtDevicesListActivity.class);
+    
+    // Conectar el led al Sketch
+    getSketch().connect(led);
+    
+    // Asignar listener al ToggleButton para encender y apagar el LED
+    ((ToggleButton)findViewById(R.id.toggleButton1))
+      .setOnCheckedChangeListener(new OnCheckedChangeListener() {
+      
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+          led.setValue(isChecked);
+        }
+        
+      });
+    
+  }
+  
+}
+```
 
-Ver [CHANGELOG](CHANGELOG.md).
+### Comunicación por ADK
+```java
+public class MainActivity extends NbAdkMainActivityHelper {
+    
+  // Instanciar un LED Digital
+  private NbLedDigital led = new NbLedDigital(13);
 
-## Historia
-* Nace como alternativa para desarrollar aplicaciones móviles para Android que controlen dispositivos electrónicos gobernados por placas Arduino, mediante comunicación Bluetooth, ADK o Serial luego de participar en varias competencias de robótica nacionales de Venezuela desde el 2011.
-* Luego de esto se presenta el [@arondn2](http://twitter.com/arondn2) y [@gjseminario](http://twitter.com/gjseminario) presentan el proyecto como trabajo de grado para la obtención del título de Ingeniero en Informática en la Universidad Nacional Experimental de Guayana.
-* Desarrollado y mantenido por [@arondn2](http://twitter.com/arondn2) y [@gjseminario](http://twitter.com/gjseminario) en [Sir Ideas, C. A.](http://sirideas.com/).
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+      
+    // Conectar el led al Sketch
+    getSketch().connect(led);
+      
+    // Asignar listener al ToggleButton para encender y apagar el LED
+    ((ToggleButton)findViewById(R.id.toggleButton1))
+      .setOnCheckedChangeListener(new OnCheckedChangeListener() {
+          
+        @Override
+        public void onCheckedChanged(CompoundButton bv, boolean isChecked) {
+          led.setValue(isChecked);
+        }
+          
+      });
+      
+  }
+  
+}
+```
+
+## Ejemplos
+
+- [Control de led por BT](https://github.com/SirIdeas/nebula/tree/sample.led.blink.bt)
+- [Control de led por ADK](https://github.com/SirIdeas/nebula/tree/sample.led.blink.adk)
+- [Comando por mensajes de textos](https://github.com/SirIdeas/nebula/tree/sample.messages)
+- [Prueba de control de NebulaBot](https://github.com/SirIdeas/nebula/tree/sample.test)
+- [Control con Acelerómetro](https://github.com/SirIdeas/nebula/tree/sample.accelerometer)
+- [Seguimiento de color - Open CV](https://github.com/SirIdeas/nebula/tree/sample.follow.color)
+- [Seguimiento de rostro - Open CV](https://github.com/SirIdeas/nebula/tree/sample.follow.face)
+
+## Mas información
+Visita el website con la documentación del [Proyecto Nébula](http://nebula.sirideas.com/).
+
+##Licencia
+Liberado bajo licencia [MIT](https://github.com/SirIdeas/nebula/blob/master/LICENSE).
