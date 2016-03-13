@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Seguimiento de color con OpenCV
+# Ejemplo Nébula - Seguimiento de color
 
 Aplicación para NebulaBot que permite configurar y seguir un color mediante el OpenCV.
 
