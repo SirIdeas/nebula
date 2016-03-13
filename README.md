@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Mostrar en Display LCD los mensajes texto recibios en un dispositivo Android.
+# Ejemplo Nébula - SMS en Display LCD.
 
 Aplicación de ejemplo que muestra los mensaje recibidos en un dispositivo Android en una pantalla LCD mediante Nébula.
 
