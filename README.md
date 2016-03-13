@@ -5,7 +5,7 @@ Aplicación basada en [https://github.com/androidMDW/guia6completo](https://gith
 
 ## Requerimientos
 
-Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
+- Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
 
 ## Instalación
 
@@ -19,8 +19,8 @@ Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive
 - [Comando por mensajes de textos](https://github.com/SirIdeas/nebula/tree/sample.messages)
 - [Prueba de control de NebulaBot](https://github.com/SirIdeas/nebula/tree/sample.test)
 - [Control con Acelerómetro](https://github.com/SirIdeas/nebula/tree/sample.accelerometer)
-- [Seguimiento de color - Open CV](https://github.com/SirIdeas/nebula/tree/sample.follow.color)
-- [Seguimiento de rostro - Open CV](https://github.com/SirIdeas/nebula/tree/sample.follow.face)
+- [Seguimiento de color - OpenCV](https://github.com/SirIdeas/nebula/tree/sample.follow.color)
+- [Seguimiento de rostro - OpenCV](https://github.com/SirIdeas/nebula/tree/sample.follow.face)
 
 ## Mas información
 Visita el Website con la documentación del [Proyecto Nébula](http://nebula.sirideas.com/) o el repositorio en [GitHub](https://github.com/SirIdeas/nebula)
