@@ -1,4 +1,4 @@
-<footer class="page vertical-middle">
+<footer class="footer vertical-middle">
   <div>
     <div class="container">
       <small>
@@ -6,4 +6,4 @@
       </small>
     </div>
   </div>
-</footer>  
+</footer>

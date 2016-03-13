@@ -2,7 +2,7 @@
 
   Options +FollowSymLinks
   RewriteEngine On
-  # RewriteBase /git/am/docs/public/
+  # RewriteBase /git/nebula/nebula.docs/public/
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule . index.php [L]

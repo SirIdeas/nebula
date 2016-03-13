@@ -163,7 +163,7 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 <h2 id="eventos-en-los-sketchs">Método Loop</h2>
 <p>
-  Despues de procesar la cola de mensajes enviadas desde el microcontrolador a la aplicación, y antes de enviar la respuesta, se llama el método <?php docEnlace("NbSkecth.loop") ?>. De giual forma dispone de un método <?php docEnlace("NbSkecth.getUserBytes") ?> permite definir un grupo de bytes enviados al final de la cola de mensaje con comandos personalizados. Finalmente el método <?php docEnlace("NbSkecth.addSetupByte") ?> permite agregar bytes al final de la cola de mensaje de configuración. Estps métodos pueden ser reescritos para enviar comandos personalizados como los tratados en el apartado <a href="<?php Am::eUrl() ?>/documentacion/personalizacion-en-arduino">Personalización en Arduino</a>.
+  Despues de procesar la cola de mensajes enviadas desde el microcontrolador a la aplicación, y antes de enviar la respuesta, se llama el método <?php docEnlace("NbSkecth.loop") ?>. De giual forma dispone de un método <?php docEnlace("NbSkecth.getUserBytes") ?> permite definir un grupo de bytes enviados al final de la cola de mensaje con comandos personalizados. Finalmente el método <?php docEnlace("NbSkecth.addSetupByte") ?> permite agregar bytes al final de la cola de mensaje de configuración. Estos métodos pueden ser reescritos para enviar comandos personalizados como los tratados en el apartado <a href="<?php Am::eUrl() ?>/documentacion/personalizacion-en-arduino">Personalización en Arduino</a>.
 </p>
 <pre><code class="language-java">
 

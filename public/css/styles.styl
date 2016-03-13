@@ -9,7 +9,7 @@ $color-text = #263238
 $color-text-inv = white
 $color-main = #263238
 $color-base = #b0bec5
-$color-sec = #455a64
+$color-sec = #f0f0f0
 $color-soft = #455a64
 
 ////////////////////////////////////////////////////////////////////////////
@@ -26,23 +26,24 @@ $footer-height = 50px
 ////////////////////////////////////////////////////////////////////////////
 
 html
-  height: 100%
-  overflow: hidden
+  position: relative
+  min-height: 100%
   
 body
-  height: 100%
-  overflow: auto
-  relative: top
+  background-color: transparent
   color: $color-text
   padding-top: $body-padding-top
+  margin-bottom: $footer-height
+  z-index:1
   
-footer.page
+.footer
+  z-index: 1
   text-align: center
   height: $footer-height
-  background-color: $color-sec
-  color: $color-text-inv
+  absolute: bottom 0
   width: 100%
-  
+  background-color: $color-sec
+
 .page-inner
   padding-bottom: 30px
   
@@ -76,6 +77,8 @@ footer.page
 ////////////////////////////////////////////////////////////////////////////
 
 .home-inner
+  position: relative
+  z-index: 1
   color: white
   p
     color: white
@@ -84,12 +87,18 @@ footer.page
     
 .page-home
   height: 100%;
-  background-image: url(../images/index.jpg)
-  background-size: cover
-  background-position: center
-  footer.page
+  .footer
+    color: white
     background-color: transparent
-  body
+  &:before
+    content ' '
+    fixed: top left right bottom
+    background-image: url(../images/index.jpg)
+    background-size: cover
+    background-position: center
+  &:after
+    content ' '
+    fixed: top left right bottom
     background-color: rgba(0,0,0,.5)
   
 ////////////////////////////////////////////////////////////////////////////

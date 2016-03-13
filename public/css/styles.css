@@ -1,21 +1,22 @@
 html {
-  height: 100%;
-  overflow: hidden;
+  position: relative;
+  min-height: 100%;
 }
 body {
-  height: 100%;
-  overflow: auto;
-  position: relative;
-  top: 0;
+  background-color: transparent;
   color: #263238;
   padding-top: 70px;
+  margin-bottom: 50px;
+  z-index: 1;
 }
-footer.page {
+.footer {
+  z-index: 1;
   text-align: center;
   height: 50px;
-  background-color: #455a64;
-  color: #fff;
+  position: absolute;
+  bottom: 0;
   width: 100%;
+  background-color: #f0f0f0;
 }
 .page-inner {
   padding-bottom: 30px;
@@ -45,6 +46,8 @@ footer.page {
   height: 35px;
 }
 .home-inner {
+  position: relative;
+  z-index: 1;
   color: #fff;
 }
 .home-inner p {
@@ -55,16 +58,31 @@ footer.page {
 }
 .page-home {
   height: 100%;
+}
+.page-home .footer {
+  color: #fff;
+  background-color: transparent;
+}
+.page-home:before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("../images/index.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
 }
-.page-home footer.page {
-  background-color: transparent;
-}
-.page-home body {
+.page-home:after {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0,0,0,0.5);
 }
 .indice {

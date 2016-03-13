@@ -4,7 +4,7 @@
 
 <h1>Acerca de</h1>
 <p>
-  Proyecto desarrollado por Alexander Rondón (<a target="_blank" href="https://twitter.com/arondn2">@arondn2</a>) y Guillermo Seminario (<a target="_blank" href="https://twitter.com/gjseminario">@gjseminario</a>), asesorado por la Dra. Luz Marina Prada para optar al título de Ingeniería en Informática en la <a target="_blank" href="http://www.uneg.edu.ve/htmls/?t&p=portal.html">Universidad Nacional Experimental de Guayana (UNEG)</a>, bajo el nombre: <strong>PLATAFORMA PARA PRÁCTICAS DE SISTEMAS DE CONTROL CON DISPOSITIVOS MÓVILES INTELIGENTES ANDROID PARA EL LABORATORIO DE AUTOMATIZACIÓN INDUSTRIAL DE LA UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA (UNEG)</strong>.
+  Proyecto desarrollado por Alexander Rondón (<a target="_blank" href="https://twitter.com/arondn2">@arondn2</a>) y Guillermo Seminario (<a target="_blank" href="https://twitter.com/gjseminario">@gjseminario</a>), asesorado por la Dra. Luz Marina Prada para optar al título de Ingeniería en Informática en la <a target="_blank" href="http://www.uneg.edu.ve/htmls/?t&p=portal.html">Universidad Nacional Experimental de Guayana (UNEG)</a>, bajo el nombre: <strong>PLATAFORMA PARA PRÁCTICAS DE SISTEMAS DE CONTROL CON DISPOSITIVOS MÓVILES INTELIGENTES ANDROID PARA EL LABORATORIO DE AUTOMATIZACIÓN INDUSTRIAL DE LA UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA</strong> <a href="(:/:)/presentation/" target="_blank">(Ver presentación)</a>.
 </p>
 
 <h3>Resumen</h3>
