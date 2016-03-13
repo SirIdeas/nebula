@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Seguimiento de Rostro con OpenCV
+# Ejemplo Nébula - Seguimiento de Rostro
 
 Aplicación para NebulaBot para seguir el rostro de personas mediante FaceDetection de OpenCV.
 
