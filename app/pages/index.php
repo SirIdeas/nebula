@@ -7,7 +7,7 @@
 
     <img src="(:/:)/images/nb-m.png" alt="Logo">
 
-    <h1>Nébula</h1>
+    <h1>Proyecto Nébula</h1>
     <h3>
       Librería para comunicación de Aplicaciones Android con placas Arduino
     </h3>
