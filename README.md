@@ -4,7 +4,8 @@ Aplicación para NebulaBot que permite configurar y seguir un color mediante el 
 
 ## Requerimientos
 
-Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
+- Entorno para compilar aplicaciones Android con OpenCV 2.4.9
+- Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
 
 ## Instalación
 
