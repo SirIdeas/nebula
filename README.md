@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Control completo de plataforma NebualBot.
+# Ejemplo Nébula - Componentes NebulaBot.
 
 Aplicación ejemplo para el control de todos los componentes integrados en la plataforma NebulaBot.
 
