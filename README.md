@@ -4,7 +4,7 @@ Aplicación ejemplo para el control de todos los componentes integrados en la pl
 
 ## Requerimientos
 
-Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
+- Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
 
 ## Instalación
 
