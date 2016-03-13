@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Control de Robot mediante acelorómetro
+# Ejemplo Nébula - Control con acelorómetro
 
 Aplicación de ejemplo para controlar Nebula Bot por medio del acelerómetro.
 Aplicación basada en [https://github.com/androidMDW/guia6completo](https://github.com/androidMDW/guia6completo)
