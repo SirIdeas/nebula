@@ -15,8 +15,10 @@
  */
 if(is_file('../../am/autoload.php'))
   include '../../am/autoload.php';
-else
+elseif(is_file('../../../am/am/autoload.php'))
   include '../../../am/am/autoload.php';
+else
+  include '../../amathista/am/autoload.php';
 
 /**
  * -----------------------------------------------------------------------------
