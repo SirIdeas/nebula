@@ -94,7 +94,7 @@ public class MainActivity extends NbAdkMainActivityHelper {
 - [Seguimiento de rostro - Open CV](https://github.com/SirIdeas/nebula/tree/sample.follow.face)
 
 ## Mas información
-Visita el website con la documentación del [Proyecto Nébula](http://nebula.sirideas.com/).
+Visita el Website con la documentación del [Proyecto Nébula](http://nebula.sirideas.com/) o el repositorio en [GitHub](https://github.com/SirIdeas/nebula)
 
 ##Licencia
 Liberado bajo licencia [MIT](https://github.com/SirIdeas/nebula/blob/master/LICENSE).
