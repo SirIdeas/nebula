@@ -157,7 +157,7 @@ void Nb::operate(void){
   while(available(1)){
     recovery();
     cmd = read();
-    if(unk && _fnPre){
+    if(!unk && _fnPre){
       if((*_fnPre)(cmd, unk)){
         if(!unk) purge();  // comando ejecutado satisfactoriamente
       }else return; // Faltan bytes
