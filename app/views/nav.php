@@ -39,7 +39,7 @@
           </ul>
         </li>
         <li class="(:= $pagina=='acerca-de'? 'active' : '' :)"><a href="(:/:)/acerca-de">Acerca de</a></li>
-        <li><a href="https://github.com/SirIdeas/nebula">GitHub</a></li>
+        <li><a target="_blank" href="https://github.com/SirIdeas/nebula">GitHub</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
