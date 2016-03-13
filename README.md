@@ -4,7 +4,7 @@ Aplicación de ejemplo para controlar un LED vía Bluetooth haciendo uso de Néb
 
 ## Requerimientos
 
-Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
+- Descargar [Nébula Librería Android](https://github.com/SirIdeas/nebula/archive/android-stable-1.0.0.zip).
 
 ## Instalación
 
