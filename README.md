@@ -1,5 +1,4 @@
 #Nébula AndroidLib
-
 Librería Arduino del proyecto Nébula basada en la librería en [USB Host Library 2.0](https://github.com/felis/USB_Host_Shield_2.0).
 Contiene clases de conexión para ADK, Bluetooth y cominucación Serial.
 
@@ -8,12 +7,11 @@ Contiene clases de conexión para ADK, Bluetooth y cominucación Serial.
 -Librearía [USB Host Library 2.0](https://github.com/felis/USB_Host_Shield_2.0).
 
 ##Instalación
-
 Descargar desde [GitHub](https://github.com/SirIdeas/nebula/archive/arduino.zip) y descomprimir en la carpeta ArduinoIDE/libraries/.
 
 ## Uso Básico
 ### Comunicación BT
-```
+```cpp
 // Incluir Librerías
 #include <SPP.h>
 #include <Nb.h>
@@ -41,7 +39,7 @@ void loop(){
 ```
 
 ### Comunicación por ADK
-```
+```cpp
 // Incluir Librerías
 #include <adk.h>
 #include <Nb.h>
@@ -68,7 +66,7 @@ void loop() {
 ```
 
 ## Comunicación Serial
-```
+```cpp
 // Incluir Librerías
 #include <Nb.h>
 #include <NbSerial.h>
@@ -86,11 +84,12 @@ void loop(){
   com.task();
 }
 ```
+
 ## Uso Avanzado
 
 ### Tareas de objectos
 Asignación de callback que permite procesar las tareas enviadas a objetos. recibe el ID del objeto al que se le envía la tarea. Debe retornar true si logra realizar una tarea satisfactoriamente.
-```
+```cpp
 bool callback_object(int id){
   return true;
 }
@@ -98,9 +97,10 @@ bool callback_object(int id){
 // Dentro de la función void setup()
 com.setCallbackObject(callback_object);
 ```
+
 ### Comandos desconocidos
 Asignación del callback llamado en el caso de que el comando no sea reconocido. Debe retornar true si logra realizar una tarea satisfactoriamente.
-```
+```cpp
 bool callback_unk(int cmd){
   return true;
 }
@@ -108,19 +108,21 @@ bool callback_unk(int cmd){
 // Dentro de la función void setup()
 com.setCallbackUnk(callback_unk);
 ```
+
 ### Envío de datos extra
 Aignación de callback para enviar datos personalizados. 
-```
+```cpp
 void callback_send(void){
 }
 
 // Dentro de la función void setup()
 com.setCallbackSend(callback_send);
 ```
+
 ### Preprocesamiento de comandos
 Asignación de callback que permite procesar los comando recibidos de forma personalizada antes de ser manejados por la biblioteca. Recibe el próximo comando a evaluar y un segundo párametro booleano por referencia al cual se le debe asigna true cuando el comando recibido no debe ser procesado por el callback.
 Debe retornar true si reconoce el comando fué procesado satisfactoriamente, o si fué un comando desconocido.
-```
+```cpp
 bool callback_pre(char cmd, bool& unk){
   return true;
 }
