@@ -7,7 +7,7 @@ return array(
   "Kristian Sloth Lauszus" => "https://github.com/Lauszus",
   "Oleg Mazurov" => "https://github.com/felis",
   "Nébula para Arduino" => "https://github.com/SirIdeas/nebula",
-  "Descargar Nb desde GitHub" => "https://github.com/SirIdeas/nebula/archive/master.zip",
+  "Descargar Nb desde GitHub" => "https://github.com/SirIdeas/nebula/archive/arduino.zip",
   "Installing the Eclipse Plugin" => "http://developer.android.com/sdk/installing/installing-adt.html",
   "NbLibAndroid" => "https://github.com/SirIdeas/nebula",
   "Descargar NbLibAndroid desde GitHub" => "https://github.com/SirIdeas/nebula/archive/master.zip",
