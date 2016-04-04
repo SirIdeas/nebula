@@ -1,5 +1,10 @@
-bin
-gen
-obj
-.classpath
-.settings
+.DS_Store
+/.gradle
+/gradle
+/local.properties
+/build
+/*/build
+/.idea
+/gradlew
+/gradlew.bat
+*.iml

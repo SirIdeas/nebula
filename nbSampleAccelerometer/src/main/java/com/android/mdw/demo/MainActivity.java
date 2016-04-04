@@ -104,9 +104,9 @@ public class MainActivity extends NbBtMainActivityHelper implements SensorEventL
                 last_update = current_time;
             }
             
-            ((TextView) findViewById(R.id.txtAccX)).setText("Acelerómetro X: " + curX);
-            ((TextView) findViewById(R.id.txtAccY)).setText("Acelerómetro Y: " + curY);
-            ((TextView) findViewById(R.id.txtAccZ)).setText("Acelerómetro Z: " + curZ);
+            ((TextView) findViewById(R.id.txtAccX)).setText("Aceler√≥metro X: " + curX);
+            ((TextView) findViewById(R.id.txtAccY)).setText("Aceler√≥metro Y: " + curY);
+            ((TextView) findViewById(R.id.txtAccZ)).setText("Aceler√≥metro Z: " + curZ);
             
             mover(curX, curY, curZ);
             
