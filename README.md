@@ -1,6 +1,7 @@
 # Ejemplo Nébula - Control con acelorómetro
 
-Aplicación de ejemplo para controlar un LED vía Bluetooth haciendo uso de Nébula.
+Aplicación de ejemplo para controlar Nebula Bot por medio del acelerómetro.
+Aplicación basada en [https://github.com/androidMDW/guia6completo](https://github.com/androidMDW/guia6completo)
 
 ## Requerimientos
 
@@ -13,6 +14,7 @@ Aplicación de ejemplo para controlar un LED vía Bluetooth haciendo uso de Néb
 
 ## Otros ejemplos
 
+- [Control de led por Bluetooth](https://github.com/SirIdeas/nebula/tree/sample.led.blink.bt)
 - [Control de led por ADK](https://github.com/SirIdeas/nebula/tree/sample.led.blink.adk)
 - [Comando por mensajes de textos](https://github.com/SirIdeas/nebula/tree/sample.messages)
 - [Prueba de control de NebulaBot](https://github.com/SirIdeas/nebula/tree/sample.test)
