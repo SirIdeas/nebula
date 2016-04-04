@@ -1,4 +1,4 @@
-package com.android.mdw.demo;
+package com.nebula.samples.btledblink;
 
 import com.nebula.helpers.NbBtDeviceListActivityHelper;
 

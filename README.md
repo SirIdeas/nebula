@@ -9,10 +9,7 @@ Aplicación de ejemplo para controlar un LED vía Bluetooth haciendo uso de Néb
 ## Instalación
 
 - Descargar código fuente de la aplicación.
-- Agrgar librería Nebula descargada.
-```
-$ git clone https://github.com/SirIdeas/nebula.git -b android nbLib
-```
+- Descomprimir librería Nébula descargada en el directorio nbLib dentro de este proyecto.
 
 ## Otros ejemplos
 

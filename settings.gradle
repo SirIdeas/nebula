@@ -1,2 +1,2 @@
 include ':nbLib'
-include ':nbSampleAccelerometer'
+include ':nbSampleLedBlinkBt'
