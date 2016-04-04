@@ -9,7 +9,7 @@ Aplicación de ejemplo que muestra los mensaje recibidos en un dispositivo Andro
 ## Instalación
 
 - Descargar código fuente de la aplicación.
-- Agrgar librería Nebula descargada.
+- Descomprimir librería Nébula descargada en el directorio nbLib dentro de este proyecto.
 
 ## Otros ejemplos
 
