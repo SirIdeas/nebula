@@ -10,7 +10,7 @@ Aplicación para NebulaBot para seguir el rostro de personas mediante FaceDetect
 ## Instalación
 
 - Descargar código fuente de la aplicación.
-- Agrgar librería Nebula descargada.
+- Descomprimir librería Nébula descargada en el directorio nbLib dentro de este proyecto.
 
 ## Otros ejemplos
 
