@@ -10,7 +10,7 @@ Aplicación para NebulaBot que permite configurar y seguir un color mediante el 
 ## Instalación
 
 - Descargar código fuente de la aplicación.
-- Agrgar librería Nebula descargada.
+- Descomprimir librería Nébula descargada en el directorio nbLib dentro de este proyecto.
 
 ## Otros ejemplos
 
