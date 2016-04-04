@@ -1,4 +1,4 @@
-# Ejemplo Nébula - Control de LED vía Bluetooth
+# Ejemplo Nébula - Control con acelorómetro
 
 Aplicación de ejemplo para controlar un LED vía Bluetooth haciendo uso de Nébula.
 
