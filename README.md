@@ -3,7 +3,7 @@
 Librería Android para desarrollo de aplicaciónes basadas en el proyecto Nébula.
 
 ## Requerimientos
--Entorno para desarrollo de aplicaciones Android: Android SDK + Eclipse IDE + ADT
+- Android Studio
 
 ## Instalación
 
