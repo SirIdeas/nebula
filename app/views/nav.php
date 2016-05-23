@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand vertical-middle" href="(:/:)">
+      <a class="navbar-brand vertical-middle" href="(:/:)/">
         <div><span class="logo"></span></div>
         <div>Proyecto Nébula</div>
       </a>
