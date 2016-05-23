@@ -1,14 +1,14 @@
-(:: parent:views/content.php :)
-(:: set:title="Helpers" :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="helpers" :)
+(: parent:'views/content.php'
+(: $title = 'Helpers'
+(: $pagina = 'documentacion'
+(: $paso = 'helpers'
 
 <h1 id="helpers">Helpers</h1>
 <p>
   La libreía de Nébula para Android ofrece algunas clases con elementos básicos que permiten comenzar rápidamente la condificación de aplicaciones. Existe un helper para conexiones por ADK (NbAdkMainActivityHelper) y dos helpers para Bluetooth un(NbBtMainActivityHelper)
 </p>
 
-<h2 id="adk-helper">Actividad ADK (<?php docEnlace("NbAdkMainActivityHelper") ?>)</h2>
+<h2 id="adk-helper">Actividad ADK ((: docEnlace("NbAdkMainActivityHelper") :))</h2>
 <p>
   Es una clase para implementar actividades que utiliza un conexión ADK y un sketch. El estado de esta conexión siempre es visible en la barra de título. Tiene implementadas las opciones de conectar y desconectar en un menú de opciones.
 </p>
@@ -36,13 +36,13 @@ NbAdk adk = getCom();
 NbSketch sketch = getSketch();
 </code></pre>
 
-<h2 id="bt-helper">Actividad Bluetooth (<?php docEnlace("NbBtMainActivityHelper") ?>)</h2>
+<h2 id="bt-helper">Actividad Bluetooth ((: docEnlace("NbBtMainActivityHelper") :))</h2>
 <p>
   Es una clase para implementar actividades que utiliza un conexión Bluetooth y un sketch. El estado de esta conexión siempre es visible en la barra de título. Tiene implementadas las opciones de conectar y desconectar en un menú de opciones.
 </p>
 <p>
-  A diferencia de su contraparte <?php docEnlace("NbAdkMainActivityHelper") ?>, este helpers implementa las funcionalidades básicas para verificar si el dispositivo posee bluetooth, encenderlo y obtener la dirección del dispositivo al que se desea conectar a través de clases
-  implementadas con el helper <?php docEnlace("NbBtDeviceListActivityHelper") ?>.
+  A diferencia de su contraparte (: docEnlace("NbAdkMainActivityHelper") :), este helpers implementa las funcionalidades básicas para verificar si el dispositivo posee bluetooth, encenderlo y obtener la dirección del dispositivo al que se desea conectar a través de clases
+  implementadas con el helper (: docEnlace("NbBtDeviceListActivityHelper") :).
 </p>
 <p>
   Una forma de implementar una actividad apartir de este helper es:
@@ -118,7 +118,7 @@ setRequestConnectDeviceSecure(valor);
 setRequestConnectDeviceInsecure(valor);
 </code></pre>
 
-<h2 id="bt-helper-devices">Dispositivos Bluetooth (<?php docEnlace("NbBtDeviceListActivityHelper") ?>)</h2>
+<h2 id="bt-helper-devices">Dispositivos Bluetooth ((: docEnlace("NbBtDeviceListActivityHelper") :))</h2>
 <p>
   Este helper tiene como obejtivo final obtener la dirección de un dispositivos bluetooth.
   Para esto, esta clase implementa el listado de dispositivos pareados, realiza el escaneo Bluetooth, lista los dispositivos encontrados en el escaneo.

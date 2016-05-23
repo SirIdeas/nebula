@@ -57,9 +57,6 @@ body {
 .home-inner i:before {
   font-size: 96px;
 }
-.page-home {
-  height: 100%;
-}
 .page-home .footer {
   color: #fff;
   background-color: transparent;

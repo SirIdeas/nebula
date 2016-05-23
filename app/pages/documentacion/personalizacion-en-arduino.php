@@ -1,7 +1,7 @@
-(:: parent:views/content.php :)
-(:: set:title="Personalización en Arduino" :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="personalizacion-en-arduino" :)
+(: parent:'views/content.php'
+(: $title="Personalización en Arduino"
+(: $pagina="documentacion"
+(: $paso="personalizacion-en-arduino"
 
 <h1>Personalización en Arduino</h1>
 <p>
@@ -11,7 +11,7 @@
 
 <h2>Comandos desconocidos</h2>
 <p>
-  La comunicación predeterminada en Nébula se basa en un grupo de comandos principales descritos en la sección de <a href="<?php Am::eUrl() ?>/documentacion/sketchs#estructura-de-mensajes">Comunicación</a>. Si se desea agregar comandos extras a estos, se puede utiliza el callback de procesamiento de comandos desconocidos.
+  La comunicación predeterminada en Nébula se basa en un grupo de comandos principales descritos en la sección de <a href="(:/:)/documentacion/sketchs#estructura-de-mensajes">Comunicación</a>. Si se desea agregar comandos extras a estos, se puede utiliza el callback de procesamiento de comandos desconocidos.
 </p>
 <p>
   A continuación se presenta un ejemplo donde se agregan dos comandos:
@@ -108,7 +108,7 @@ NbSketch sketch = new NbSketch(){
     <p><strong>Android</strong></p>
 
 <p>
-  Para definir componentes objeto, debe heredar la clase <?php docEnlace("NbCmpOutObj") ?>. Cada vez que esta desee enviar datos al microcontrolador se debe utilizar el método <?php docEnlace("NbCmpOutObj.addCmd") ?>, el cual recibe un array de bytes con los datos que se desea enviar.
+  Para definir componentes objeto, debe heredar la clase (: docEnlace("NbCmpOutObj") :). Cada vez que esta desee enviar datos al microcontrolador se debe utilizar el método (: docEnlace("NbCmpOutObj.addCmd") :), el cual recibe un array de bytes con los datos que se desea enviar.
 </p>
 <p>
   En el ejemplo actual se enviarán el valor del componente cada vez que se setee el mismo.
@@ -283,7 +283,7 @@ int ID_1 1;
 int CMD_1 = NbDialect.__LAST_MSG_CODE + 1;
 </code></pre>
 <p>
-  Para recibir el los datos en un componente objeto podemos definir una clase que herede de la clase <?php docEnlace("NbCmpOutObj") ?> y reescribir el método <?php docEnlace("NbCmpOutObj.readData") ?> para leer los datos correspondientes de la misma forma en que fueron enviados
+  Para recibir el los datos en un componente objeto podemos definir una clase que herede de la clase (: docEnlace("NbCmpOutObj") :) y reescribir el método (: docEnlace("NbCmpOutObj.readData") :) para leer los datos correspondientes de la misma forma en que fueron enviados
 </p>
 <pre><code class="language-java">
 public class NbGetVar extends NbCmpOutObj{
@@ -309,7 +309,7 @@ public class NbGetVar extends NbCmpOutObj{
 NbGetVar analog0 = new NbGetVar(ID_1);
 </code></pre>
 <p>
-  Por otro lado, para recibir los datos enviados por mensaje personalizado se puede instanciar el sketch rescribiendo el método <?php docEnlace("NbCmpOutObj.unknowCmd") ?>. Este método es llamado cada vez que se lee un mensaje o desconocido. Si esta función logra ejecutar el comando satisfactoriamente deberá retornar verdadero, de lo contrario debe retornar falso.
+  Por otro lado, para recibir los datos enviados por mensaje personalizado se puede instanciar el sketch rescribiendo el método (: docEnlace("NbCmpOutObj.unknowCmd") :). Este método es llamado cada vez que se lee un mensaje o desconocido. Si esta función logra ejecutar el comando satisfactoriamente deberá retornar verdadero, de lo contrario debe retornar falso.
 </p>
 <pre><code class="language-java">
 
@@ -374,7 +374,7 @@ void setup(){
   <div class="col-sm-6">
     <p><strong>Android</strong></p>
 <p>
-  Para interceptar los mensajes en la aplicación Android, se debe sobreescribir el método <?php docEnlace("NbSketch.preproccess") ?> del sketch. Esta función recibe el comando leído en el primer parámetro como un entero, y un buffer con los datos entrantes en el segundo parámetro. Además esta función puede retornar 3 posibles valores:
+  Para interceptar los mensajes en la aplicación Android, se debe sobreescribir el método (: docEnlace("NbSketch.preproccess") :) del sketch. Esta función recibe el comando leído en el primer parámetro como un entero, y un buffer con los datos entrantes en el segundo parámetro. Además esta función puede retornar 3 posibles valores:
 </p>
 <p><strong><code>CmdResult.COMPLETE</code></strong>: Indica que la tarea para el comando se completo satisfactoriamente.</p>
 <p><strong><code>CmdResult.INCOMPLETE</code></strong>: Indica que la tarea para el comando no se culminó correctamente.</p>

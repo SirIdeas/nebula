@@ -1,6 +1,6 @@
-(:: parent:views/content.php :)
-(:: set:title='Acerca de' :)
-(:: set:pagina="acerca-de" :)
+(: parent:'views/content.php'
+(: $title='Acerca de'
+(: $pagina="acerca-de"
 
 <h1>Acerca de</h1>
 <p>

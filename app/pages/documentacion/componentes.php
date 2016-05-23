@@ -1,12 +1,12 @@
-(:: parent:views/content.php :)
-(:: set:title="Componentes" :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="componentes" :)
+(: parent:'views/content.php'
+(: $title = 'Componentes'
+(: $pagina = 'documentacion'
+(: $paso = 'componentes'
 
 <h1 id="componentes">Componentes</h1>
 
 <p>
-  Los componentes son abstracciones de los elementos que se pueden encontrar en nuestros proyectos, por ejemplo: LEDs, interruptores, botones, motores, sensores de temperatura y distancia entre otros. Todos los objetos sin implementaciones de la clase <?php docEnlace("NbCmp") ?>
+  Los componentes son abstracciones de los elementos que se pueden encontrar en nuestros proyectos, por ejemplo: LEDs, interruptores, botones, motores, sensores de temperatura y distancia entre otros. Todos los objetos sin implementaciones de la clase (: docEnlace("NbCmp") :).
 </p>
 
 
@@ -56,7 +56,7 @@ cmp.getValue(0,255,0,1023);
 
 <h2 id="eventos">Eventos</h2>
 <p>
-  Los componentes poseen dos eventos: cambio de estado y cambio de valor. Estos pueden ser detectados y manejados mediantes las clases <?php docEnlace("NbCmp.OnStateChangeListener") ?> y <?php docEnlace("NbCmp.OnValueChangeListener") ?> correspondientemente como se muestra a continuación:
+  Los componentes poseen dos eventos: cambio de estado y cambio de valor. Estos pueden ser detectados y manejados mediantes las clases (: docEnlace("NbCmp.OnStateChangeListener") :) y (: docEnlace("NbCmp.OnValueChangeListener") :) correspondientemente como se muestra a continuación:
 </p>
 <pre><code class="language-java">
 // Instancia del componente
@@ -91,7 +91,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="led-digital">LED Digital (<?php docEnlace("NbLedDigital") ?>)</h3>
+<h3 id="led-digital">LED Digital ((: docEnlace("NbLedDigital") :))</h3>
 <p>
   <i>Salida/Digital/Simple</i>. No requiere identificador. Require una salida digital. Tiene dos posibles salidas: 0 (LOW) o 1 (HIGH).
 </p>
@@ -99,7 +99,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 led="led-analogico">LED Analógico (<?php docEnlace("NbLedAnalog") ?>)</h3>
+<h3 led="led-analogico">LED Analógico ((: docEnlace("NbLedAnalog") :))</h3>
 <p>
   <i>Salida/Analógica/Simple</i>. No requiere identificador. Require una salida PWM. Su rango de valor va de 0 a 255.
 </p>
@@ -107,7 +107,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="boton">Botón (<?php docEnlace("NbButton") ?>)</h3>
+<h3 id="boton">Botón ((: docEnlace("NbButton") :))</h3>
 <p>
   <i>Entrada/Digital/Simple</i>. No requiere identificador. Require una entrada digital. Su posibles valores son 0 (LOW) o 1 (HIGH).
 </p>
@@ -115,7 +115,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="switch">Interruptor (<?php docEnlace("NbSwitch") ?>)</h3>
+<h3 id="switch">Interruptor ((: docEnlace("NbSwitch") :))</h3>
 <p>
   <i>Entrada/Digital/Simple</i>. No requiere identificador. Require una entrada digital. Su posibles valores son 0 (LOW) o 1 (HIGH).
 </p>
@@ -123,7 +123,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="potenciometro">Potenciómetro (<?php docEnlace("NbTrimmer") ?>)</h3>
+<h3 id="potenciometro">Potenciómetro ((: docEnlace("NbTrimmer") :))</h3>
 <p>
   <i>Entrada/Analógica/Simple</i>. No requiere identificador. Require una entrada analógica. Su rango de valor es de 0 a 1023 (lectura sin procesar).
 </p>
@@ -131,7 +131,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="cny70">Sensor de línea CNY70 (<?php docEnlace("NbCNY70") ?>)</h3>
+<h3 id="cny70">Sensor de línea CNY70 ((: docEnlace("NbCNY70") :))</h3>
 <p>
   <i>Entrada/Analógica/Simple</i>. No requiere identificador. Require una entrada analógica. Su rango de valor es de 0 a 1023 (lectura sin procesar).
 </p>
@@ -139,7 +139,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="ldr">Fotoresistencia o LDR (<?php docEnlace("NbLDR") ?>)</h3>
+<h3 id="ldr">Fotoresistencia o LDR ((: docEnlace("NbLDR") :))</h3>
 <p>
   <i>Entrada/Analógica/Simple</i>. No requiere identificador. Require una entrada analógica. Su rango de valor es de 0 a 1023 (lectura sin procesar).
 </p>
@@ -147,7 +147,7 @@ cmp.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 
 
 
-<h3 id="lm35">Sensor de temperatura LM35 (<?php docEnlace("NbLM35") ?>)</h3>
+<h3 id="lm35">Sensor de temperatura LM35 ((: docEnlace("NbLM35") :))</h3>
 <p>
   <i>Entrada/Analógica/Simple</i>. No requiere identificador. Require una entrada analógica. Su rango de valor es de 0 a 1023 (lectura sin procesar).
 </p>
@@ -160,7 +160,7 @@ ldr.getValueAtCelcius();
 
 
 
-<h3 id="sharp">Sensor de distancia reflectivo SHARP (<?php docEnlace("NbSHARP") ?>)</h3>
+<h3 id="sharp">Sensor de distancia reflectivo SHARP ((: docEnlace("NbSHARP") :))</h3>
 <p>
   <i>Entrada/Analógica/Simple</i>. No requiere identificador. Require una entrada analógica. Su rango de valor es de 0 a 1023 (lectura sin procesar).
 </p>
@@ -173,7 +173,7 @@ ldr.getValueAtCm();
 
 
 
-<h3 id="step-to-step">Motor Bipolar Paso a Paso (<?php docEnlace("NbStepToStep") ?>)</h3>
+<h3 id="step-to-step">Motor Bipolar Paso a Paso ((: docEnlace("NbStepToStep") :))</h3>
 <p>
   <i>Salida/Especial/Compuesta</i>. No requiere identificador. Require 4 salidas digitales.
 </p>
@@ -192,7 +192,7 @@ motor.move(-300, 20);
 
 <h2 id="motores">Motores</h2>
 <p>
-  Los motores representan los principales actuadores utilizados en los proyectos de automatización.Estos pueden ser motores de corriente continua (Motores CC) los cuales suelen ser controlados a través de puentes H; o Servomotores que ya disponen de todo lo necesario para ser controlador por salidas PWM. Los motores tratados en este apartado no incluyen los motores paso a paso a que son tratados diferente. Independiente del tipo de motor tratado, siempre dispondrán de una salida PWM para controlar su velocidad. A continuación se presenta como utilizar la meta clase <?php docEnlace("NbMotor") ?>.
+  Los motores representan los principales actuadores utilizados en los proyectos de automatización.Estos pueden ser motores de corriente continua (Motores CC) los cuales suelen ser controlados a través de puentes H; o Servomotores que ya disponen de todo lo necesario para ser controlador por salidas PWM. Los motores tratados en este apartado no incluyen los motores paso a paso a que son tratados diferente. Independiente del tipo de motor tratado, siempre dispondrán de una salida PWM para controlar su velocidad. A continuación se presenta como utilizar la meta clase (: docEnlace("NbMotor") :).
 </p>
 <pre><code class="language-java">
 // Instanciar un motor simple.
@@ -216,7 +216,7 @@ motor.stop().
 
 
 
-<h3 id="motor-one-dir">Motores CC Unidireccionales (<?php docEnlace("NbMotorDCOneDir") ?>)</h3>
+<h3 id="motor-one-dir">Motores CC Unidireccionales ((: docEnlace("NbMotorDCOneDir") :))</h3>
 <p>
   Requiere una salida PWM para indicar la velocidad y una salida digital para la dirección (aunque solo varía su salida en caso de que el motor este detenido). A continuación de indica un ejemplo de como usarlo:
 </p>
@@ -234,7 +234,7 @@ motor = new NbMotorDCOneDir(12, 11, 100);
 
 
 
-<h3 id="motor-two-dir">Motores CC Bidireccionales (<?php docEnlace("NbMotorDCTwoDir") ?>)</h3>
+<h3 id="motor-two-dir">Motores CC Bidireccionales ((: docEnlace("NbMotorDCTwoDir") :))</h3>
 <p>
   Requiere una salida PWM para indicar la velocidad y dos salidas digitales para la dirección. Este tipo de motores pueden girar en dos sentidos. La A continuación de indica un ejemplo de como usarlo:
 </p>
@@ -265,14 +265,14 @@ motor.setDir(NbDoubleDir.DIR_LEFT);
 
 
 
-<h3 id="servomotor">Servomotor (<?php docEnlace("NbServo") ?>)</h3>
+<h3 id="servomotor">Servomotor ((: docEnlace("NbServo") :))</h3>
 <p>
-  Los servomotores son implementaciones de los <?php docEnlace("NbMotor") ?>, sin embargo, debido a que requieren de la librería Servo de Arduino para su correcto funcionamiento en Nébula son tratados como Componentes Objetos, por lo que requieren codificación extra en Arduino.
+  Los servomotores son implementaciones de los (: docEnlace("NbMotor") :), sin embargo, debido a que requieren de la librería Servo de Arduino para su correcto funcionamiento en Nébula son tratados como Componentes Objetos, por lo que requieren codificación extra en Arduino.
 </p>
 <h6>Código en Arduino</h6>
-<pre><code class="language-java"><?php echo getCodeFile("arduino-NbServo") ?></code></pre>
+<pre><code class="language-java">(:= getCodeFile("arduino-NbServo") :)</code></pre>
 <p>
-  Por otro lado, para usar los servos en la aplicación Android podemos se realiza similar a como se hace con la clase <?php docEnlace("NbMotorDCTwoDir") ?>, con la salvedad de que, por definición, la velocidad del servo varía entre 0 y 180 teniendo el punto de detención en 90.
+  Por otro lado, para usar los servos en la aplicación Android podemos se realiza similar a como se hace con la clase (: docEnlace("NbMotorDCTwoDir") :), con la salvedad de que, por definición, la velocidad del servo varía entre 0 y 180 teniendo el punto de detención en 90.
 </p>
 <pre><code class="language-java">
 // Identificador del objeto
@@ -292,12 +292,12 @@ motor.setDir(NbDoubleDir.DIR_LEFT);
 
 
 
-<h3 id="pantalla-lcd">Pantallas LCD (<?php docEnlace("NbLiquidCrystal") ?>)</h3>
+<h3 id="pantalla-lcd">Pantallas LCD ((: docEnlace("NbLiquidCrystal") :))</h3>
 <p>
-  Representa las pantallas LCD que puede ser manejadas mediante la librería LiquiqCrystal para Arduino. Requiere <a href="<?php Am::eUrl() ?>/personalizacion-en-arduino">Personalización en Arduino</a> ya que es imposible automatizar el proceso de compilado con esta utilidad en Arduino.
+  Representa las pantallas LCD que puede ser manejadas mediante la librería LiquiqCrystal para Arduino. Requiere <a href="(:/:)/personalizacion-en-arduino">Personalización en Arduino</a> ya que es imposible automatizar el proceso de compilado con esta utilidad en Arduino.
 </p>
 <h6>Código en Arduino</h6>
-<pre><code class="language-java"><?php echo getCodeFile("arduino-NbLiquidCrystal") ?></code></pre>
+<pre><code class="language-java">(:= getCodeFile("arduino-NbLiquidCrystal") :)</code></pre>
 <p>
   Por otro lado en la aplicación Android se puede utilizad de la siguiente forma:
 </p>
@@ -329,9 +329,9 @@ lcd.print("Hola Mundo!");
 
 
 
-<h3 id="hcsr04">Sensor de distancia HC-SR04 (<?php docEnlace("NbHCSR04") ?>)</h3>
+<h3 id="hcsr04">Sensor de distancia HC-SR04 ((: docEnlace("NbHCSR04") :))</h3>
 <p>
   Los sensores de distancia HC-SR04 permiten determinar la distancia de un objeto de forma indirecta midiendo el tiempo que tarda en regresar las ondas de ultrasonido emitidas por el mismo. Debido a que la lectura de este tiempo depende de funciones especiales de Arduino es tratado como un Componente Objeto.
 </p>
 <p>Código en Arduino</p>
-<pre><code class="language-java"><?php echo getCodeFile("arduino-NbHCSR04") ?></code></pre>
+<pre><code class="language-java">(:= getCodeFile("arduino-NbHCSR04") :)</code></pre>

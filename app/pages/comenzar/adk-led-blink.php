@@ -1,7 +1,7 @@
-(:: parent:views/content.php :)
-(:: set:title="ADK Led Blink" :)
-(:: set:pagina="comenzar" :)
-(:: set:paso="adk-led-blink" :)
+(: parent:'views/content.php'
+(: $title = "ADK Led Blink"
+(: $pagina = "comenzar"
+(: $paso = "adk-led-blink"
 
 <h1 id="ejemplo1">Ejemplo 1 - ADK Led Blink</h1>
 <p>
@@ -9,7 +9,7 @@
 </p>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <strong>Nota</strong>: Para un mayor entendimiento del ejercicio se recomienda leer sobre la placa <?php enlace("Arduino Mega ADK") ?>.
+    <strong>Nota</strong>: Para un mayor entendimiento del ejercicio se recomienda leer sobre la placa (: enlace("Arduino Mega ADK") :).
   </div>
 </div>
 <p>
@@ -17,7 +17,7 @@
 </p>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <strong>Nota</strong>: Para un mayor endendimiento visitar <?php enlace("Accessory Development Kit") ?>
+    <strong>Nota</strong>: Para un mayor endendimiento visitar (: enlace("Accessory Development Kit") :)
   </div>
 </div>
 
@@ -36,7 +36,7 @@
 
     <h3>Incluir librerías</h3>
     <p>
-      El primer paso es incluir la librería a utilizar de <?php enlace("USB_Host_Shield_2.0") ?>. En este caso se utilizará la librería <code>adk.h</code> que permite la comunicación dispositivos Android conectados en modo Accessory.
+      El primer paso es incluir la librería a utilizar de (: enlace("USB_Host_Shield_2.0") :). En este caso se utilizará la librería <code>adk.h</code> que permite la comunicación dispositivos Android conectados en modo Accessory.
     </p>
     <p>
       El siguiente paso es incluir la librería de <code>Nb.h</code>, La cual verificará que tipo de comunicación se utilizará para entonces incluir lo correspondiente.
@@ -44,7 +44,7 @@
 
   </div>
   <div class="col-md-5">
-    <pre><code class="language-cpp"><?php echo getCodeFile("sketch-adk-include") ?></code></pre>
+    <pre><code class="language-cpp">(:= getCodeFile("sketch-adk-include") :)</code></pre>
   </div>
 </div>
 
@@ -53,12 +53,12 @@
 
     <h3>Instanciar clases</h3>
     <p>
-      Se crean las instancias de los objetos a utilizar. <code>USB Usb</code> y <code>ADK adk</code> son las instancias requeridas por librería <?php enlace("USB_Host_Shield_2.0") ?> y utilizadas por el objeto <code>NbAdk com</code> para la comunicación con el dispositivo Android conectado en modo Accessory.
+      Se crean las instancias de los objetos a utilizar. <code>USB Usb</code> y <code>ADK adk</code> son las instancias requeridas por librería (: enlace("USB_Host_Shield_2.0") :) y utilizadas por el objeto <code>NbAdk com</code> para la comunicación con el dispositivo Android conectado en modo Accessory.
     </p>
 
   </div>
   <div class="col-md-5">
-    <pre><code class="language-cpp"><?php echo getCodeFile("sketch-adk-objetos") ?></code></pre>
+    <pre><code class="language-cpp">(:= getCodeFile("sketch-adk-objetos") :)</code></pre>
   </div>
 </div>
 
@@ -67,12 +67,12 @@
 
     <h3>Configuración inicial</h3>
     <p>
-      En la función <code>setup</code> de Arduino se coloca la inicialización del objeto <code>Usb</code> el cual es requerido según los ejemplos de <?php enlace("USB_Host_Shield_2.0") ?>
+      En la función <code>setup</code> de Arduino se coloca la inicialización del objeto <code>Usb</code> el cual es requerido según los ejemplos de (: enlace("USB_Host_Shield_2.0") :)
     </p>
 
   </div>
   <div class="col-md-5">
-    <pre><code class="language-cpp"><?php echo getCodeFile("sketch-simple-setup") ?></code></pre>
+    <pre><code class="language-cpp">(:= getCodeFile("sketch-simple-setup") :)</code></pre>
   </div>
 </div>
 
@@ -81,18 +81,18 @@
 
     <h3>Tareas</h3>
     <p>
-      Las tareas a ejecutar consisten en llamar el método <code>Task</code> del objeto <code>USB Usb</code> (requerida según los ejemplos de <?php enlace("USB_Host_Shield_2.0") ?>) y el método <code>task</code> del objeto <code>NbAdk com</code>. Este último es el encargado de interpretar y enviar los mensajes por defecto entre la placa Arduino utilizada y el dispositivos Android.
+      Las tareas a ejecutar consisten en llamar el método <code>Task</code> del objeto <code>USB Usb</code> (requerida según los ejemplos de (: enlace("USB_Host_Shield_2.0") :)) y el método <code>task</code> del objeto <code>NbAdk com</code>. Este último es el encargado de interpretar y enviar los mensajes por defecto entre la placa Arduino utilizada y el dispositivos Android.
     </p>
 
   </div>
   <div class="col-md-5">
-    <pre><code class="language-cpp"><?php echo getCodeFile("sketch-simple-loop") ?></code></pre>
+    <pre><code class="language-cpp">(:= getCodeFile("sketch-simple-loop") :)</code></pre>
   </div>
 </div>
 
 <div class="nota card yellow">
   <p class="card-content">
-    <i>Nota</i>: Es importante resaltar que la librería <code>Nb.h</code> siempre debe incluirse después de dependencias de la librería <?php enlace("USB_Host_Shield_2.0") ?>, debido a que la primera verifica los tipos de comunicación incluidos.
+    <i>Nota</i>: Es importante resaltar que la librería <code>Nb.h</code> siempre debe incluirse después de dependencias de la librería (: enlace("USB_Host_Shield_2.0") :), debido a que la primera verifica los tipos de comunicación incluidos.
   </p>
 </div>
 
@@ -107,7 +107,7 @@
 
 <h3>Actividad principal</h3>
 <p>
-  En la actividad principal se establecerá conexión con el accesorio y se controlará el LED. Se utilizará la actividad <code>MainActivity</code> creada junto al proyecto. Esta heredará del helper <?php docEnlace("NbAdkMainActivityHelper") ?> ofrecido por Nébula. Este helper tiene todo lo necesario para conectarse y desconectarse a un hardware en modo Accessory por medio de opciones de menú.
+  En la actividad principal se establecerá conexión con el accesorio y se controlará el LED. Se utilizará la actividad <code>MainActivity</code> creada junto al proyecto. Esta heredará del helper (: docEnlace("NbAdkMainActivityHelper") :) ofrecido por Nébula. Este helper tiene todo lo necesario para conectarse y desconectarse a un hardware en modo Accessory por medio de opciones de menú.
 </p>
 <p>
   El layout de esta actividad solo consta de un <code>ToggleButton</code> que encenderá y apagará el LED:
@@ -115,24 +115,24 @@
 
 <div class="row">
   <div class="col-md-8">
-    <pre><code class="language-html"><?php echo getCodeFile("led-blink-main-activity-layout") ?></code></pre>
+    <pre><code class="language-html">(:= getCodeFile("led-blink-main-activity-layout") :)</code></pre>
   </div>
 
   <div class="col-md-4 text-center">
     <span><i><small>MainActivity</small></i></span>
-    <img class="ajustar" src="<?php Am::eUrl() ?>/images/NbAdkLedBlink.MainActivity.png" alt="NbAdkLedBlink.MainActivity">
+    <img class="ajustar" src="(:/:)/images/NbAdkLedBlink.MainActivity.png" alt="NbAdkLedBlink.MainActivity">
     <br>
   </div>
 
 </div>
 
 <p>
-  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase <?php docEnlace("NbLedDigital") ?> que representa la abstracción del LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
+  En el código de la clase <code>MainActivity</code> se posee un atributo privado con una instancia de la clase (: docEnlace("NbLedDigital") :) que representa la abstracción del LED físico a manejar. Se utilizará el LED del pin 13 del Arduino.
 </p>
 <pre><code class="language-java">private NbLedDigital led = new NbLedDigital(13);</code></pre>
 
 <p>
-  Nébula posee una clase <?php docEnlace("NbSketch") ?> que representa todos los componentes conectados. La clase <?php docEnlace("NbAdkMainActivityHelper") ?> posee una instancia de este objeto para conectar los componentes a manejar. Esta instancia puede ser obtenida mediante el método <?php docEnlace("NbAdkMainActivityHelper.getSketch") ?> para conectar el objeto <code>NbLedDigital led</code> al sketch.
+  Nébula posee una clase (: docEnlace("NbSketch") :) que representa todos los componentes conectados. La clase (: docEnlace("NbAdkMainActivityHelper") :) posee una instancia de este objeto para conectar los componentes a manejar. Esta instancia puede ser obtenida mediante el método (: docEnlace("NbAdkMainActivityHelper.getSketch") :) para conectar el objeto <code>NbLedDigital led</code> al sketch.
 </p>
 <pre><code class="language-java">getSketch().connect(led);</code></pre>
 
@@ -153,7 +153,7 @@
 <p>
   El código de la clase <code>MainActivity</code> deberá resultar algo parecido a lo siguiente:
 </p>
-<pre><code class="language-java"><?php echo getCodeFile("adk-led-blink-main-activity-class") ?></code></pre>
+<pre><code class="language-java">(:= getCodeFile("adk-led-blink-main-activity-class") :)</code></pre>
 
 <h2 id="resultados">Resultados</h2>
 <p>
@@ -167,7 +167,7 @@
   </div>
   <div class="col-md-4 text-center">
     <span><i><small>Mensaje de incompatibilidad</small></i></span>
-    <img class="ajustar" src="<?php Am::eUrl() ?>/images/NbAdkLedBlink.msg-incompatibilidad.png" alt="Mensaje de incompatibilidad.png">
+    <img class="ajustar" src="(:/:)/images/NbAdkLedBlink.msg-incompatibilidad.png" alt="Mensaje de incompatibilidad.png">
   </div>
 </div>
 <div class="row">
@@ -178,10 +178,10 @@
   </div>
   <div class="col-md-4 text-center">
     <span><i><small>Solicitud de permiso</small></i></span>
-    <img class="ajustar" src="<?php Am::eUrl() ?>/images/NbAdkLedBlink.msg-permiso.png" alt="Solicitud de permisos.png">
+    <img class="ajustar" src="(:/:)/images/NbAdkLedBlink.msg-permiso.png" alt="Solicitud de permisos.png">
   </div>
 </div>
 
 <p>
-  Puede descargar el proyecto Android para Eclipse desde el siguiente página: <?php enlace("Descargar NbLedBlinkAdk") ?>.
+  Puede descargar el proyecto Android para Eclipse desde el siguiente página: (: enlace("Descargar NbLedBlinkAdk") :).
 </p>

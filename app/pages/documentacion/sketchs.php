@@ -1,16 +1,15 @@
-(:: parent:views/content.php :)
-(:: set:title="Sketchs" :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="sketchs" :)
-
-<?php  $dialecto = Am::getProperty("dialecto"); ?>
+(: parent:'views/content.php'
+(: $title = "Sketchs"
+(: $pagina = "documentacion"
+(: $paso = "sketchs"
+(: $dialecto = Am::getProperty("dialecto")
 
 <h1 id="sketch">Sketch</h1>
 <p>
-  Las clases de comunicación permiten manejar los mensajes a conveniencia, sin embargo el apartado de skecth posee todo lo necesario para que las partes se entiendan sin necesidad de implementar un dialecto diferente. Esto se realiza mediante la clase <?php docEnlace("NbSketch") ?> y los componentes especializados de la clase <?php docEnlace("NbCmp") ?> como por ejemplo: <?php docEnlace("NbLedDigital") ?>, <?php docEnlace("NbLedAnalog") ?>, <?php docEnlace("NbButton") ?>, <?php docEnlace("NbInterruptor") ?>, <?php docEnlace("NbMotorDC") ?> y <?php docEnlace("NbLM35") ?>, entre otros.
+  Las clases de comunicación permiten manejar los mensajes a conveniencia, sin embargo el apartado de skecth posee todo lo necesario para que las partes se entiendan sin necesidad de implementar un dialecto diferente. Esto se realiza mediante la clase (: docEnlace("NbSketch") :) y los componentes especializados de la clase (: docEnlace("NbCmp") :) como por ejemplo: (: docEnlace("NbLedDigital") :), (: docEnlace("NbLedAnalog") :), (: docEnlace("NbButton") :), (: docEnlace("NbInterruptor") :), (: docEnlace("NbMotorDC") :) y (: docEnlace("NbLM35") :), entre otros.
 </p>
 <p>
-  La clase <?php docEnlace("NbSketch") ?> representa un conjunto de componentes electrónicos de entrada y salidas que serán manejados por la aplicación, mientras que las clases que heredan <?php docEnlace("NbCmp") ?> representan las los componentes en si.
+  La clase (: docEnlace("NbSketch") :) representa un conjunto de componentes electrónicos de entrada y salidas que serán manejados por la aplicación, mientras que las clases que heredan (: docEnlace("NbCmp") :) representan las los componentes en si.
 </p>
 <p>
   Pueden existir diferentes tipos de componentes: entradas y salidas, analógicos y digitales, simples y compuestos. 
@@ -54,7 +53,7 @@
   Los mensajes enviados entre la aplicación Android y el sketch de Arduino consiste en una lista de bytes que representan un grupo de <i>instrucciones</i>, <i>argumentos</i> y <i>datos</i>. Las <i>instrucciones</i> están conformadas en un set de acciones llamado <i>Dialecto</i> definidas que pueden realizar la librería de Nébula en la aplicación Android y/o en el sketch de Arduino, mientras que los <i>argumentos</i> parametrizan las acciones a realizar y por último los <i>datos</i> representan los datos enviados de una parte a la otra.
 </p>
 <p>
-  Cada acción del <i>Dialecto</i> tienen un valor número único que lo diferencia del resto. El dialecto está definido tanto en la parte librería de Android (clase <?php docEnlace("NbDialect") ?>) como en la libería de Arduino (constantes <code>NB_MSG_*</code>).
+  Cada acción del <i>Dialecto</i> tienen un valor número único que lo diferencia del resto. El dialecto está definido tanto en la parte librería de Android (clase (: docEnlace("NbDialect") :)) como en la libería de Arduino (constantes <code>NB_MSG_*</code>).
 </p>
 
 <table class="table">
@@ -62,13 +61,13 @@
     <tr><th>Valor</th><th>Nombre</th><th>Acción</th></tr>
   </thead>
   <tbody>
-    <?php foreach ($dialecto as $valor => $msg): ?>
+    (: foreach ($dialecto as $valor => $msg): :)
       <tr>
-        <th><code><?php echo $valor ?></code></th>
-        <td><code><?php echo $msg["nombre"] ?></code></td>
-        <td><?php echo $msg["accion"] ?></td>
+        <th><code>(:= $valor :)</code></th>
+        <td><code>(:= $msg["nombre"] :)</code></td>
+        <td>(:= $msg["accion"] :)</td>
       </tr>
-    <?php endforeach ?>
+    (: endforeach :)
   </tbody>
 </table>
 
@@ -112,7 +111,7 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 <h2 id="eventos-en-los-sketchs">Eventos en los Sketchs</h2>
 
 <p>
-  De igual forma que en las comunicaciones, la clase <?php docEnlace("NbSkecth") ?> posee ciertos eventos que pueden ser detectados y manejados a conveniencia. Es se realiza mediante la clases manejadora de eventos <?php docEnlace("NbSketchHandler") ?>. Los posibles eventos están definidos en enumeración <?php docEnlace("NbSketchMessageEnum") ?> y se describen a continuación:
+  De igual forma que en las comunicaciones, la clase (: docEnlace("NbSkecth") :) posee ciertos eventos que pueden ser detectados y manejados a conveniencia. Es se realiza mediante la clases manejadora de eventos (: docEnlace("NbSketchHandler") :). Los posibles eventos están definidos en enumeración (: docEnlace("NbSketchMessageEnum") :) y se describen a continuación:
 </p>
 
 <table class="table">
@@ -156,14 +155,14 @@ trimmer.setOnValueChangeListener(new NbCmp.OnValueChangeListener() {
 </table>
 
 <p>
-  Se puede utilizar el método <?php docEnlace("NbSkecth.addHandler") ?> de la clase <?php docEnlace("NbSkecth") ?> para agregar un manejador de eventos:
+  Se puede utilizar el método (: docEnlace("NbSkecth.addHandler") :) de la clase (: docEnlace("NbSkecth") :) para agregar un manejador de eventos:
 </p>
-<pre><code class="language-java"><?php echo getCodeFile("android-uso-nb-sketch-handler") ?></code></pre>
+<pre><code class="language-java">(:= getCodeFile("android-uso-nb-sketch-handler") :)</code></pre>
 
 
 <h2 id="eventos-en-los-sketchs">Método Loop</h2>
 <p>
-  Despues de procesar la cola de mensajes enviadas desde el microcontrolador a la aplicación, y antes de enviar la respuesta, se llama el método <?php docEnlace("NbSkecth.loop") ?>. De giual forma dispone de un método <?php docEnlace("NbSkecth.getUserBytes") ?> permite definir un grupo de bytes enviados al final de la cola de mensaje con comandos personalizados. Finalmente el método <?php docEnlace("NbSkecth.addSetupByte") ?> permite agregar bytes al final de la cola de mensaje de configuración. Estos métodos pueden ser reescritos para enviar comandos personalizados como los tratados en el apartado <a href="<?php Am::eUrl() ?>/documentacion/personalizacion-en-arduino">Personalización en Arduino</a>.
+  Despues de procesar la cola de mensajes enviadas desde el microcontrolador a la aplicación, y antes de enviar la respuesta, se llama el método (: docEnlace("NbSkecth.loop") :). De giual forma dispone de un método (: docEnlace("NbSkecth.getUserBytes") :) permite definir un grupo de bytes enviados al final de la cola de mensaje con comandos personalizados. Finalmente el método (: docEnlace("NbSkecth.addSetupByte") :) permite agregar bytes al final de la cola de mensaje de configuración. Estos métodos pueden ser reescritos para enviar comandos personalizados como los tratados en el apartado <a href="(:/:)/documentacion/personalizacion-en-arduino">Personalización en Arduino</a>.
 </p>
 <pre><code class="language-java">
 

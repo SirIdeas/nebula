@@ -1,7 +1,7 @@
-(:: parent:views/content.php :)
-(:: set:title='Comenzar' :)
-(:: set:pagina="comenzar" :)
-(:: set:paso="comenzar" :)
+(: parent:'views/content.php'
+(: $title = 'Comenzar'
+(: $pagina = "comenzar"
+(: $paso = "comenzar"
 
 <h1>Comenzar</h1>
 <p>

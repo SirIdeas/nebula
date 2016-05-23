@@ -1,7 +1,7 @@
-(:: parent:views/content.php :)
-(:: set:title='Documentación' :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="documentacion" :)
+(: parent:'views/content.php'
+(: $title = 'Documentación'
+(: $pagina = "documentacion"
+(: $paso = "documentacion"
 
 <h1>Documentación</h1>
 

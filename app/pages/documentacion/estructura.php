@@ -1,8 +1,7 @@
-
-(:: parent:views/content.php :)
-(:: set:title="Estructura general" :)
-(:: set:pagina="documentacion" :)
-(:: set:paso="estructura" :)
+(: parent:'views/content.php'
+(: $title = 'Estructura general'
+(: $pagina = 'documentacion'
+(: $paso = 'estructura'
 
 
 <h1 id="estructura-general">Estructura general</h1>
@@ -13,13 +12,13 @@
 
 <h2 id="libreria-arduino">Librería Arduino: <code>Nb</code></h2>
 <p>
-  La librería Arduino para Nébula consta de una clase principal llamada <?php docEnlace("Nb") ?> que representa la abstracción principal para la comunicación con dispositivos Android. De esta clases se especializan las clases <?php docEnlace("NbAdk") ?> para comunicación por ADK, <?php docEnlace("NbSPP") ?> para comunicación Serial por Bluetooth y <?php docEnlace("NbSerial") ?> para comunicación por los puerto UART.
+  La librería Arduino para Nébula consta de una clase principal llamada (: docEnlace("Nb") :) que representa la abstracción principal para la comunicación con dispositivos Android. De esta clases se especializan las clases (: docEnlace("NbAdk") :) para comunicación por ADK, (: docEnlace("NbSPP") :) para comunicación Serial por Bluetooth y (: docEnlace("NbSerial") :) para comunicación por los puerto UART.
 </p>
 <p>
-  Las clases <?php docEnlace("NbAdk") ?> y <?php docEnlace("NbSPP") ?> pueden usarse en placas dispongan puertos USB anfitrión compatibles con la librería <?php enlace("USB_Host_Shield_2.0") ?> como por ejemplo: las placas de Arduino compatibles con las <?php enlace("shield_usb_host") ?>, <?php enlace("Arduino Mega ADK") ?>, <?php enlace("Seediuno") ?>, <?php enlace("Freeduino") ?>, entre otros.
+  Las clases (: docEnlace("NbAdk") :) y (: docEnlace("NbSPP") :) pueden usarse en placas dispongan puertos USB anfitrión compatibles con la librería (: enlace("USB_Host_Shield_2.0") :) como por ejemplo: las placas de Arduino compatibles con las (: enlace("shield_usb_host") :), (: enlace("Arduino Mega ADK") :), (: enlace("Seediuno") :), (: enlace("Freeduino") :), entre otros.
 </p>
 <p>
-  Por otro lado, la clase <?php docEnlace("NbSerial") ?> está destinada a usarse con placas que se comuniquen con el dispositivo Android por medio de los puertos UART, sin importar si la conexión se realiza de forma alámbrica (conexión directa mediante un <?php enlace("cable usb OTG") ?>) o inalámbria (con módulos como <?php enlace("HC-05") ?> o <?php enlace("BlueSMiRF") ?>).
+  Por otro lado, la clase (: docEnlace("NbSerial") :) está destinada a usarse con placas que se comuniquen con el dispositivo Android por medio de los puertos UART, sin importar si la conexión se realiza de forma alámbrica (conexión directa mediante un (: enlace("cable usb OTG") :)) o inalámbria (con módulos como (: enlace("HC-05") :) o (: enlace("BlueSMiRF") :)).
 </p>
 
 <h2 id="libreria-android">Librería Android: <code>NbLibAndroid</code></h2>
@@ -45,13 +44,13 @@
       </li>
       <li>
         <p>
-          <strong>Utilidades:</strong> Conjunto de clases que sirven a apoyo para la implementacion de la comunicación de Nébula. Básicamente tiene tres clases: <?php docEnlace("NbTrace") ?>, <?php docEnlace("NbBytes") ?> y <?php docEnlace("NbBuffer") ?>.
+          <strong>Utilidades:</strong> Conjunto de clases que sirven a apoyo para la implementacion de la comunicación de Nébula. Básicamente tiene tres clases: (: docEnlace("NbTrace") :), (: docEnlace("NbBytes") :) y (: docEnlace("NbBuffer") :).
         </p>
       </li>
     </ul>
   </div>
   <div class="col-md-6">
     <div class="text-center"><i><small>Estructura principal Librería Android</small></i></div>
-    (:: place:pages/documentacion/NbLibAndroid-blocks.html :)
+    (: insert:'pages/documentacion/NbLibAndroid-blocks.html' :)
   </div>
 </div>
