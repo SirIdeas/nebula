@@ -2,12 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.sirideas.nbtest"
         minSdkVersion 14
         targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -21,5 +23,4 @@ android {
 dependencies {
     compile project(':williamChartLib')
     compile project(':nbLib')
-    compile 'com.android.support:support-v4:23.2.1'
 }
