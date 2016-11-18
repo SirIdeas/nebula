@@ -1,2 +1,2 @@
 include ':nbLib'
-include ':nbSampleLedBlinkAdk'
+include ':app'
