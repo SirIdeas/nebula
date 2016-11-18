@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nebula.samples.messages"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.nebula.samples.messages" >
 
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -11,10 +9,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <uses-feature android:name="android.hardware.bluetooth" />
-
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="23" />
 
     <application
         android:allowBackup="true"
