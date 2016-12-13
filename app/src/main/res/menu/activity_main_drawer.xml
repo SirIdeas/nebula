@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Inicio"/>
+
+        <item android:title="Básicos">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_led_blink"
+                        android:icon="@drawable/ic_menu_led_blink"
+                        android:title="Led Blink" />
+                    <item
+                        android:id="@+id/nav_messages"
+                        android:icon="@drawable/ic_menu_message"
+                        android:title="Mensages" />
+                    <item
+                        android:id="@+id/nav_acelerometro"
+                        android:icon="@drawable/ic_menu_gamepad"
+                        android:title="Acelerómetro" />
+
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="Básicos">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_follow_face"
+                        android:icon="@drawable/ic_menu_face"
+                        android:title="Seguir cara" />
+                    <item
+                        android:id="@+id/nav_follow_color"
+                        android:icon="@drawable/ic_menu_color"
+                        android:title="Seguir color" />
+
+                </group>
+            </menu>
+        </item>
+
+    </group>
+</menu>
